@@ -91,9 +91,8 @@
     
     double *aScalar = scalars;
     for (GiroscopeAndAccelerometerData *data in self.data) {
-        NSString *string = [self applyCrazyFunctionTo:[data rotationDescription]];
-        NSNumber *number = [[NSNumberFormatter new] numberFromString:string];
-        *aScalar = [number doubleValue];
+        double absoluteValue = sqrtl((data.acceleration.x*data.acceleration.x)+(data.acceleration.y*data.acceleration.y)+(data.acceleration.z*data.acceleration.z))-1;
+        *aScalar = absoluteValue;
         aScalar++;
     }
     return aScalar;

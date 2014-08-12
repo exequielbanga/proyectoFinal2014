@@ -94,7 +94,7 @@
                         <action selector="learn" destination="-1" eventType="touchUpInside" id="3pB-v8-frH"/>
                     </connections>
                 </button>
-                <segmentedControl appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fI4-wI-eKA">
+                <segmentedControl appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="fI4-wI-eKA">
                     <rect key="frame" x="234" y="10" width="77" height="29"/>
                     <segments>
                         <segment title="Rot"/>

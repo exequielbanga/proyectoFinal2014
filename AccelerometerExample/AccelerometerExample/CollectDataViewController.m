@@ -158,10 +158,6 @@
         movement->output = &output;
         
     }
-//        self.net = [[SNNeuralNet alloc] initWithTrainingData:netData
-//                                                          numRecords:filas
-//                                                           numInputs:columnasEntrada
-//                                                          numOutputs:1];
         self.net = [[SNNeuralNet alloc] initWithInputs:columnasEntrada hiddenLayers:@[@(columnasEntrada),@(columnasEntrada),@(columnasEntrada),@(columnasEntrada)] outputs:1];
         [self.net train:netData numRecords:filas];
 //        self.net.maxIterations = 20000;  // maximum training iterations
