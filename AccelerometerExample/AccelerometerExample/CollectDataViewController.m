@@ -128,7 +128,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.selectedMovement = self.data[indexPath.row];
-    NSLog(@"%@",self.selectedMovement.description);
 }
 
 - (IBAction)sliderChange:(UISlider *)slider{
@@ -158,10 +157,10 @@
         movement->output = &output;
         
     }
-        self.net = [[SNNeuralNet alloc] initWithInputs:columnasEntrada hiddenLayers:@[@(columnasEntrada),@(columnasEntrada),@(columnasEntrada),@(columnasEntrada)] outputs:1];
+        self.net = [[SNNeuralNet alloc] initWithInputs:columnasEntrada hiddenLayers:@[@(columnasEntrada)] outputs:1];
         [self.net train:netData numRecords:filas];
 //        self.net.maxIterations = 20000;  // maximum training iterations
-//        self.net.minError = 0.005;       // error threshold to reach
+        self.net.minError = 0.01;       // error threshold to reach
     if (self.net.isTrained) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lerned Baby ;)" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
@@ -183,7 +182,12 @@
         [self normalizeNewData];
         double *input = rotation?[self.selectedMovement rotationScalars]:[self.selectedMovement accelerationScalars];
         double *output = [self.net runInput:input];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Result: %.5f",output[0]] message:[NSString stringWithFormat:@"%@\n\n%f\n%f\n%f\n%f\n%f\n%f\n%f\n%f\n%f\n%f",[self.selectedMovement separatedDescription],input[0],input[1],input[2],input[3],input[4],input[5],input[6],input[7],input[8],input[9]] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        NSMutableString *message = [[NSMutableString alloc]initWithString:@"Inputs: \n"];
+        for (NSInteger i = 0; i < self.selectedMovement.data.count; i++) {
+            [message appendFormat:@"%.5f\n",input[i]];
+        }
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Result: %.5f",output[0]] message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
 
     }else{

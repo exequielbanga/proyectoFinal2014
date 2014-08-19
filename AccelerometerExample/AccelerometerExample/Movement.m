@@ -95,8 +95,7 @@
         *aScalar = absoluteValue;
         aScalar++;
     }
-    return aScalar;
-
+    return scalars;
 }
 
 
