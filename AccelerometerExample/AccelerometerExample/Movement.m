@@ -87,16 +87,98 @@
 }
 
 - (double*)accelerationScalars{
+    int n = 3;
     double *scalars = (double *)malloc(sizeof(double)*self.data.count);
     
     double *aScalar = scalars;
     for (GiroscopeAndAccelerometerData *data in self.data) {
-        double absoluteValue = sqrtl((data.acceleration.x*data.acceleration.x)+(data.acceleration.y*data.acceleration.y)+(data.acceleration.z*data.acceleration.z))-1;
-        *aScalar = absoluteValue;
+        //
+        double resultado;
+        char coordenadasConcatenadas[14];
+
+        char * coordenadasStr[3];
+
+        coordenadasStr[0] = getNPrimerosDigitos(data.acceleration.x, n);
+        coordenadasStr[1] = getNPrimerosDigitos(data.acceleration.y, n);
+        coordenadasStr[2] = getNPrimerosDigitos(data.acceleration.z, n);
+
+        sprintf(coordenadasConcatenadas, "1%s%s%s", coordenadasStr[0], coordenadasStr[1], coordenadasStr[2]);
+        
+        resultado = convertirStringADouble(coordenadasConcatenadas);
+
+        //
+        *aScalar = resultado;
         aScalar++;
     }
     return scalars;
 }
 
+
+//// C Functions
+
+char * convertirNumeroAString(double numero){
+	size_t tamanio = 10;
+	char * str = "";
+    
+	str = (char *)malloc(tamanio * sizeof(char));
+	sprintf(str, "%f", numero);
+    
+	return str;
+}
+
+int quitarCaracterDeCadena(char * str, char caracter){
+	int i = 0;
+	
+	while(i < strlen(str) && str[i] != caracter){
+		i++;
+	}
+    
+	if(i < strlen(str)){
+		while(str[i] != '\0'){
+			str[i] = str[i + 1];
+            
+			i++;
+		}
+	}
+    
+	return 0;
+}
+
+char * cortarCadenaNumerica(char * cadenaNumerica, int n){
+	size_t tamanio = 10;
+	char * str = "";
+    
+	str = (char *)malloc(tamanio * sizeof(char));
+    
+	sprintf( str, "%.4s", cadenaNumerica);
+    
+	return str;
+}
+
+double convertirStringADouble(char * strNumero){
+	int i = 1;
+	double newInteger;
+	newInteger = (double)strNumero[0] - '0';
+    
+	while(strNumero[i] != '\0'){
+		newInteger = (double)newInteger * 10;
+		newInteger = (double)newInteger + (strNumero[i] - '0');
+        
+		i++;
+	}
+    
+	return newInteger;
+}
+
+char * getNPrimerosDigitos(double numero, int n){
+	char * strNumero = '\0';
+    
+	numero = fabs(numero);
+	strNumero = convertirNumeroAString(numero);
+	quitarCaracterDeCadena(strNumero, '.');
+	strNumero = cortarCadenaNumerica(strNumero, n);
+    
+	return strNumero;
+}
 
 @end

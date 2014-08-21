@@ -158,9 +158,9 @@
         
     }
         self.net = [[SNNeuralNet alloc] initWithInputs:columnasEntrada hiddenLayers:@[@(columnasEntrada)] outputs:1];
-        [self.net train:netData numRecords:filas];
-//        self.net.maxIterations = 20000;  // maximum training iterations
+        self.net.maxIterations = 20000;  // maximum training iterations
         self.net.minError = 0.01;       // error threshold to reach
+    [self.net train:netData numRecords:filas];
     if (self.net.isTrained) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lerned Baby ;)" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
