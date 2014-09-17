@@ -23,6 +23,7 @@
 @property(nonatomic,strong)SNNeuralNet *net;
 @property(nonatomic,assign)NSUInteger currentMin;
 @property(nonatomic,strong)IBOutlet UISegmentedControl *segmented;
+@property(nonatomic,assign)BOOL recording;
 @end
 
 @implementation CollectDataViewController
@@ -55,8 +56,17 @@
     [self.data addObject:[Movement new]];
 }
 
+-(IBAction)startStop{
+    self.recording = !self.recording;
+    if (self.recording)
+        [self startPressingButton];
+    else
+        [self endPressingButton];
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
+    self.recording = NO;
     self.samplingTimeInterval = 1.0/50;
     [self.button setTargetForBeginTouch:self selector:@selector(startPressingButton)];
     [self.button setTargetForEndTouch:self selector:@selector(endPressingButton)];

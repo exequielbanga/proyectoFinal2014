@@ -18,5 +18,6 @@
 - (IBAction)deleteLast;
 - (IBAction)sliderChange:(UISlider *)slider;
 - (IBAction)recognice;
+- (IBAction)startStop;
 
 @end
