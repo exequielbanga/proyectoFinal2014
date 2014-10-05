@@ -39,7 +39,9 @@
     [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
 
     self.iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(17, 20, 48, 48)];
-    self.iconImageView.tintColor = [UIColor whiteColor];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 7) {
+        self.iconImageView.tintColor = [UIColor whiteColor];
+    }
     [self addSubview:self.iconImageView];
 
     self.firstLineLabel = [[UILabel alloc] initWithFrame:CGRectMake(17, 84, self.frame.size.width - 20, 20)];
@@ -66,13 +68,17 @@
 
 - (void)isBeingTouched {
     UIColor* newColor = [UIColor colorWithWhite:0.7f alpha:1];
-    self.iconImageView.tintColor = newColor;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 7) {
+        self.iconImageView.tintColor = newColor;
+    }
     self.firstLineLabel.textColor = newColor;
     self.secondLineLabel.textColor = newColor;
 }
 
 - (void)isNotBeingTouched {
-    self.iconImageView.tintColor = [UIColor whiteColor];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 7) {
+        self.iconImageView.tintColor = [UIColor whiteColor];
+    }
     self.firstLineLabel.textColor = [UIColor whiteColor];
     self.secondLineLabel.textColor = [UIColor whiteColor];
 }

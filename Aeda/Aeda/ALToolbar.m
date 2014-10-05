@@ -15,8 +15,10 @@
     ALToolbar* toolbar = [[ALToolbar alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     toolbar.barStyle = UIBarStyleDefault;
     toolbar.translucent = NO;
-    toolbar.barTintColor = [UIColor ALBlueColor];
-    toolbar.tintColor = [UIColor whiteColor];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 7) {
+        toolbar.barTintColor = [UIColor ALBlueColor];
+        toolbar.tintColor = [UIColor whiteColor];
+    }
     return toolbar;
 }
 

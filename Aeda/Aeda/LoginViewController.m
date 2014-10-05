@@ -34,13 +34,16 @@
         [self.passwordTextField resignFirstResponder];
         [self login];
     }];
-
-    self.passwordTextField.tintColor = [UIColor ALLightGrayColor];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 7) {
+        self.passwordTextField.tintColor = [UIColor ALLightGrayColor];
+    }
     self.passwordTextField.textColor = [UIColor ALLightGrayTextColor];
     self.passwordTextField.font = [UIFont allianzSansItalicWithSize:16];
     self.passwordTextField.inputAccessoryView = alToolbarUserPass;
 
-    self.usernameTextField.tintColor = [UIColor ALBlueColor];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 7) {
+        self.usernameTextField.tintColor = [UIColor ALBlueColor];
+    }
     self.usernameTextField.textColor = [UIColor ALBlueColor];
     self.usernameTextField.font = [UIFont allianzSansBoldWithSize:16];
     self.usernameTextField.inputAccessoryView = alToolbarUserName;

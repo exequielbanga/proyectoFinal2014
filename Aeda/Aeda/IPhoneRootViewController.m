@@ -31,9 +31,13 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    self.navigationController.navigationBar.barTintColor = [UIColor ALBlueColor];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 7) {
+        self.navigationController.navigationBar.barTintColor = [UIColor ALBlueColor];
+    }
     self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 7) {
+        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    }
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     NSUInteger numberOfControllersToRoot = 2;

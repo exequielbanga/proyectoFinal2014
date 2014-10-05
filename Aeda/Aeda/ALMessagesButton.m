@@ -50,7 +50,9 @@
 
 - (void)fillIconImage:(UIImage*)iconImage {
     self.iconImageView.image = [iconImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.iconImageView.tintColor = [UIColor whiteColor];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 7) {
+        self.iconImageView.tintColor = [UIColor whiteColor];
+    }
 }
 
 - (void)updateFill{
