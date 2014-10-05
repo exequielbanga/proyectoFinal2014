@@ -58,6 +58,14 @@
 		F6C2E4D119E18EAA00538EF7 /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E4CF19E18EAA00538EF7 /* OrderedDictionary.m */; };
 		F6CB386E19E1CADA00CA1A7D /* RutinaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB386C19E1CADA00CA1A7D /* RutinaViewController.m */; };
 		F6CB386F19E1CADA00CA1A7D /* RutinaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CB386D19E1CADA00CA1A7D /* RutinaViewController.xib */; };
+		F6CB387219E1CD9800CA1A7D /* ResultadoRutina.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB387119E1CD9800CA1A7D /* ResultadoRutina.m */; };
+		F6CB387519E1CDA500CA1A7D /* Rutina.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB387419E1CDA500CA1A7D /* Rutina.m */; };
+		F6CB387819E1CDE800CA1A7D /* Ejercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB387719E1CDE800CA1A7D /* Ejercicio.m */; };
+		F6CB387C19E1D34800CA1A7D /* SeguimientoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB387B19E1D34800CA1A7D /* SeguimientoViewController.m */; };
+		F6CB388019E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB387E19E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.m */; };
+		F6CB388119E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CB387F19E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.xib */; };
+		F6CB388419E1D3D200CA1A7D /* Barra.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB388319E1D3D200CA1A7D /* Barra.m */; };
+		F6CB388619E1D52100CA1A7D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CB388519E1D52100CA1A7D /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +173,20 @@
 		F6CB386B19E1CADA00CA1A7D /* RutinaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinaViewController.h; sourceTree = "<group>"; };
 		F6CB386C19E1CADA00CA1A7D /* RutinaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinaViewController.m; sourceTree = "<group>"; };
 		F6CB386D19E1CADA00CA1A7D /* RutinaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RutinaViewController.xib; sourceTree = "<group>"; };
+		F6CB387019E1CD9800CA1A7D /* ResultadoRutina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoRutina.h; sourceTree = "<group>"; };
+		F6CB387119E1CD9800CA1A7D /* ResultadoRutina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoRutina.m; sourceTree = "<group>"; };
+		F6CB387319E1CDA500CA1A7D /* Rutina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rutina.h; sourceTree = "<group>"; };
+		F6CB387419E1CDA500CA1A7D /* Rutina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rutina.m; sourceTree = "<group>"; };
+		F6CB387619E1CDE800CA1A7D /* Ejercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ejercicio.h; sourceTree = "<group>"; };
+		F6CB387719E1CDE800CA1A7D /* Ejercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ejercicio.m; sourceTree = "<group>"; };
+		F6CB387A19E1D34800CA1A7D /* SeguimientoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeguimientoViewController.h; sourceTree = "<group>"; };
+		F6CB387B19E1D34800CA1A7D /* SeguimientoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeguimientoViewController.m; sourceTree = "<group>"; };
+		F6CB387D19E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoRutinaTableViewCell.h; sourceTree = "<group>"; };
+		F6CB387E19E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoRutinaTableViewCell.m; sourceTree = "<group>"; };
+		F6CB387F19E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultadoRutinaTableViewCell.xib; sourceTree = "<group>"; };
+		F6CB388219E1D3D200CA1A7D /* Barra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Barra.h; sourceTree = "<group>"; };
+		F6CB388319E1D3D200CA1A7D /* Barra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Barra.m; sourceTree = "<group>"; };
+		F6CB388519E1D52100CA1A7D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CB388619E1D52100CA1A7D /* QuartzCore.framework in Frameworks */,
 				13C8E0298B964AE7BEE00B98 /* libPods-Aeda.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +212,7 @@
 		819C8FC2E0954297A6D991D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F6CB388519E1D52100CA1A7D /* QuartzCore.framework */,
 				ABFC7F0D7BCE4643B151466F /* libPods-Aeda.a */,
 			);
 			name = Frameworks;
@@ -297,6 +321,8 @@
 				F6C2E45C19E189C600538EF7 /* ALTableView.m */,
 				F6C2E45D19E189C600538EF7 /* ALToolbar.h */,
 				F6C2E45E19E189C600538EF7 /* ALToolbar.m */,
+				F6CB388219E1D3D200CA1A7D /* Barra.h */,
+				F6CB388319E1D3D200CA1A7D /* Barra.m */,
 			);
 			name = Controles;
 			sourceTree = "<group>";
@@ -363,6 +389,12 @@
 				F6C2E4AC19E18D9200538EF7 /* Persona.m */,
 				F6C2E48E19E18A6500538EF7 /* User.h */,
 				F6C2E48F19E18A6500538EF7 /* User.m */,
+				F6CB387019E1CD9800CA1A7D /* ResultadoRutina.h */,
+				F6CB387119E1CD9800CA1A7D /* ResultadoRutina.m */,
+				F6CB387319E1CDA500CA1A7D /* Rutina.h */,
+				F6CB387419E1CDA500CA1A7D /* Rutina.m */,
+				F6CB387619E1CDE800CA1A7D /* Ejercicio.h */,
+				F6CB387719E1CDE800CA1A7D /* Ejercicio.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -382,6 +414,7 @@
 		F6C2E49A19E18CE000538EF7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F6CB387919E1D31A00CA1A7D /* Seguimiento */,
 				F6C2E4AA19E18D3C00538EF7 /* Generic */,
 				F6C2E49B19E18CE900538EF7 /* Login */,
 			);
@@ -424,6 +457,9 @@
 				F6C2E4BC19E18E5700538EF7 /* TitleTextViewTableViewCell.h */,
 				F6C2E4BD19E18E5700538EF7 /* TitleTextViewTableViewCell.m */,
 				F6C2E4BE19E18E5700538EF7 /* TitleTextViewTableViewCell.xib */,
+				F6CB387D19E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.h */,
+				F6CB387E19E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.m */,
+				F6CB387F19E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -436,6 +472,15 @@
 				F6CB386D19E1CADA00CA1A7D /* RutinaViewController.xib */,
 			);
 			name = MisRutinas;
+			sourceTree = "<group>";
+		};
+		F6CB387919E1D31A00CA1A7D /* Seguimiento */ = {
+			isa = PBXGroup;
+			children = (
+				F6CB387A19E1D34800CA1A7D /* SeguimientoViewController.h */,
+				F6CB387B19E1D34800CA1A7D /* SeguimientoViewController.m */,
+			);
+			name = Seguimiento;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -524,6 +569,7 @@
 				F6C2E42B19E1870900538EF7 /* LaunchScreen.xib in Resources */,
 				F6CB386F19E1CADA00CA1A7D /* RutinaViewController.xib in Resources */,
 				F6C2E4C619E18E5700538EF7 /* ImageLabelTableViewCell.xib in Resources */,
+				F6CB388119E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.xib in Resources */,
 				F6C2E49819E18CC700538EF7 /* MisDatosTableViewHeader.xib in Resources */,
 				F6C2E46019E189C600538EF7 /* ALSegmentedControl.xib in Resources */,
 				F6C2E48B19E18A4F00538EF7 /* LoginViewController.xib in Resources */,
@@ -581,6 +627,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CB387219E1CD9800CA1A7D /* ResultadoRutina.m in Sources */,
 				F6C2E49719E18CC700538EF7 /* MisDatosTableViewHeader.m in Sources */,
 				F6CB386E19E1CADA00CA1A7D /* RutinaViewController.m in Sources */,
 				F6C2E4AD19E18D9200538EF7 /* Persona.m in Sources */,
@@ -602,18 +649,23 @@
 				F6C2E4C719E18E5700538EF7 /* LoadingNextPageView.m in Sources */,
 				F6C2E4C519E18E5700538EF7 /* ImageLabelTableViewCell.m in Sources */,
 				F6C2E47319E189E100538EF7 /* UIColor+ALAdditions.m in Sources */,
+				F6CB387519E1CDA500CA1A7D /* Rutina.m in Sources */,
 				F6C2E49919E18CC700538EF7 /* MisDatosViewController.m in Sources */,
 				F6C2E4CA19E18E5700538EF7 /* TitleTextViewTableViewCell.m in Sources */,
 				F6C2E44919E1895B00538EF7 /* HomeMenuHeaderTableView.m in Sources */,
 				F6C2E46419E189C600538EF7 /* ALLoggedButton.m in Sources */,
 				F6C2E46219E189C600538EF7 /* ALLabelForTableView.m in Sources */,
+				F6CB388019E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.m in Sources */,
 				F6C2E44819E1895B00538EF7 /* HomeMenuHeaderItem.m in Sources */,
 				F6C2E42019E1870900538EF7 /* AppDelegate.m in Sources */,
 				F6C2E45F19E189C600538EF7 /* ALSegmentedControl.m in Sources */,
 				F6C2E41D19E1870900538EF7 /* main.m in Sources */,
 				F6C2E48019E18A2D00538EF7 /* ALAuthenticationViewController.m in Sources */,
 				F6C2E46119E189C600538EF7 /* ALButton.m in Sources */,
+				F6CB387819E1CDE800CA1A7D /* Ejercicio.m in Sources */,
 				F6C2E4A219E18CFD00538EF7 /* LoginService.m in Sources */,
+				F6CB387C19E1D34800CA1A7D /* SeguimientoViewController.m in Sources */,
+				F6CB388419E1D3D200CA1A7D /* Barra.m in Sources */,
 				F6C2E46819E189C600538EF7 /* ALToolbar.m in Sources */,
 				F6C2E44A19E1895B00538EF7 /* HomeViewController.m in Sources */,
 				F6C2E4C219E18E5700538EF7 /* ButtonsTableViewCell.m in Sources */,
