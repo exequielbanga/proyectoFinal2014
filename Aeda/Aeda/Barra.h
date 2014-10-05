@@ -20,4 +20,6 @@ typedef enum{
 @property(nonatomic,strong)UIColor  *color;
 @property(nonatomic,strong)NSNumber *valor;
 
+- (void)setValorAnimated:(NSNumber *)valor;
+
 @end

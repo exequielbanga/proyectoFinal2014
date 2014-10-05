@@ -7,17 +7,19 @@
 //
 
 #import "ResultadoRutinaTableViewCell.h"
+#import "Barra.h"
+
+@interface ResultadoRutinaTableViewCell()
+@property(nonatomic,strong)IBOutlet UILabel *nombre;
+@property(nonatomic,strong)IBOutlet Barra *barra;
+@end
 
 @implementation ResultadoRutinaTableViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
+- (void)fillWithResultadoRutina:(ResultadoRutina *)resultadoRutina{
+    self.nombre.text = resultadoRutina.rutina.nombre;
+    [self.barra setValorAnimated:@(resultadoRutina.resultado)];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 @end

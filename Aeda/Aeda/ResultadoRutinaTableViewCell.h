@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ResultadoRutina.h"
 
 @interface ResultadoRutinaTableViewCell : UITableViewCell
+
+- (void)fillWithResultadoRutina:(ResultadoRutina *)resultadoRutina;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  MisAseguradosViewController.m
+//  SeguimientoViewController
 //  AllianzMisAsegurados
 //
 //  Created by Jonathan Banga on 3/10/14.
@@ -9,17 +9,17 @@
 #import "SeguimientoViewController.h"
 #import "ALButton.h"
 #import "UIColor+ALColor.h"
-//#import "AseguradoTableViewCell.h"
+#import "ResultadoRutinaTableViewCell.h"
+#import "ResultadoRutinaService.h"
 //#import "AseguradoViewController.h"
 
-#define kCellIdentifier @"MisAseguradosCellIdentifier"
+#define kCellIdentifier @"SeguimientoViewControllerCell"
 
-@interface SeguimientoViewController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate,UISearchBarDelegate>
+@interface SeguimientoViewController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
 
 @property(nonatomic,strong)UITableView *tableView;
-@property(nonatomic,strong)NSMutableArray *tableData;
-//@property(nonatomic,strong)CarteraService *service;
-@property(nonatomic,strong)UISearchBar *searchBar;
+@property(nonatomic,strong)NSArray *tableData;
+@property(nonatomic,strong)ResultadoRutinaService *service;
 
 @end
 
@@ -45,17 +45,13 @@
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    [self.tableView registerNib:[UINib nibWithNibName:@"AseguradoTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ResultadoRutinaTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kCellIdentifier];
     [self createTableHeader];
     [self createTableFooter];
     [self.view addSubview:self.tableView];
 }
 
 - (void)createTableHeader{
-    UISearchBar *header = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 44)];
-    header.delegate = self;
-    self.searchBar = header;
-    self.tableView.tableHeaderView = header;
 }
 
 - (void)createTableFooter{
@@ -69,28 +65,27 @@
     [self callService];
 }
 
-- (void)reloadData{
-//    [self hideLoadingMessage];
-//
-//    self.tableData = [NSMutableArray new];
-//    if (!self.searchBar.text.length) {
-//        [self.tableData addObjectsFromArray:(NSArray *)self.service.response];
-//    }else for (Asegurado *asegurado in (NSArray *)self.service.response) {
-//        if ([self asegurado:asegurado matchWithDescription:self.searchBar.text]) {
-//            [self.tableData addObject:asegurado];
-//        }
-//    }
-//
-//    [self.tableView reloadData];
+//Por mock, despues borrar
+- (void)userNotLoged{
+    [self callService];
 }
+
 
 #pragma mark - Service
 - (void)callService{
-//    [self showLoadingMessage];
-//    if (!self.service) {
-//        self.service = [CarteraService new];
-//    }
-//    [self.service getCartera];
+    [self showLoadingMessage];
+    if (!self.service) {
+        self.service = [ResultadoRutinaService new];
+    }
+    [self.service getResultadoRutinasWithBlock:^(NSObject *response,NSError *error){
+        [self hideLoadingMessage];
+        if (error) {
+            [self showError:@"Ah ocurrido un error, por favor intente mas tarde" delegate:self];
+        }else{
+            self.tableData = (NSArray *)response;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)serviceError:(NSNotification *)notification{
@@ -114,51 +109,22 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    AseguradoTableViewCell *cell = (AseguradoTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    
-//    [cell fillWithAsegurado:(Asegurado *)self.tableData[indexPath.row]];
-//
+    ResultadoRutinaTableViewCell *cell = (ResultadoRutinaTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    return [UITableViewCell new];
+    [cell fillWithResultadoRutina:(ResultadoRutina *)self.tableData[indexPath.row]];
+
+    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    return 44;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //    AseguradoViewController *viewController = [[AseguradoViewController alloc] initWithNibName:nil bundle:nil];
 //    viewController.persona = self.tableData[indexPath.row];
 //    [self.navigationController pushViewController:viewController animated:YES];
-}
-
-#pragma mark - Searchbar
-//- (BOOL)asegurado:(Asegurado *)asegurado matchWithDescription:(NSString *)description{
-//    BOOL result = NO;
-//    result = [[asegurado nombre] rangeOfString:description options:NSCaseInsensitiveSearch].location != NSNotFound;
-//    if (!result) {
-//        result = [[asegurado personaId] rangeOfString:description options:NSCaseInsensitiveSearch].location != NSNotFound;
-//    }
-//    return result;
-//}
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
-    self.searchBar.showsCancelButton = YES;
-}
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
-    self.searchBar.showsCancelButton = NO;
-}
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    [searchBar resignFirstResponder];
-    [self reloadData];
-}
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
-    [searchBar resignFirstResponder];
-    searchBar.text = @"";
-    [self reloadData];
 }
 
 @end

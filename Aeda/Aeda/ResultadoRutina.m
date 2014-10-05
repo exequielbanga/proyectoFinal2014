@@ -17,7 +17,7 @@
     if (self) {
         self.rutina = [[Rutina alloc] initMock];
         
-        self.resultado = .92;
+        self.resultado = .6 + (arc4random()%40)/100.0;
         
         self.detalleResultados = [NSMutableDictionary new];
         for (Ejercicio *ejercicio in self.rutina.ejercicios) {

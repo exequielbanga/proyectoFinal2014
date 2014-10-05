@@ -1,5 +1,5 @@
 //
-//  MisAseguradosViewController.h
+//  SeguimientoViewController.h
 //  AllianzMisAsegurados
 //
 //  Created by Jonathan Banga on 3/10/14.

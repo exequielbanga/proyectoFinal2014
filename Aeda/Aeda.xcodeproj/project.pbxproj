@@ -66,6 +66,7 @@
 		F6CB388119E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CB387F19E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.xib */; };
 		F6CB388419E1D3D200CA1A7D /* Barra.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB388319E1D3D200CA1A7D /* Barra.m */; };
 		F6CB388619E1D52100CA1A7D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CB388519E1D52100CA1A7D /* QuartzCore.framework */; };
+		F6CB388A19E1E22B00CA1A7D /* ResultadoRutinaService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB388919E1E22B00CA1A7D /* ResultadoRutinaService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +188,8 @@
 		F6CB388219E1D3D200CA1A7D /* Barra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Barra.h; sourceTree = "<group>"; };
 		F6CB388319E1D3D200CA1A7D /* Barra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Barra.m; sourceTree = "<group>"; };
 		F6CB388519E1D52100CA1A7D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F6CB388819E1E22B00CA1A7D /* ResultadoRutinaService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoRutinaService.h; sourceTree = "<group>"; };
+		F6CB388919E1E22B00CA1A7D /* ResultadoRutinaService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoRutinaService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +348,7 @@
 		F6C2E47619E18A1600538EF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F6CB387919E1D31A00CA1A7D /* Seguimiento */,
 				F6CB386A19E1CAA400CA1A7D /* MisRutinas */,
 				F6C2E49119E18CB800538EF7 /* MisDatos */,
 				F6C2E48419E18A3E00538EF7 /* Login */,
@@ -414,7 +418,7 @@
 		F6C2E49A19E18CE000538EF7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F6CB387919E1D31A00CA1A7D /* Seguimiento */,
+				F6CB388719E1E20B00CA1A7D /* ResultadoRutina */,
 				F6C2E4AA19E18D3C00538EF7 /* Generic */,
 				F6C2E49B19E18CE900538EF7 /* Login */,
 			);
@@ -481,6 +485,15 @@
 				F6CB387B19E1D34800CA1A7D /* SeguimientoViewController.m */,
 			);
 			name = Seguimiento;
+			sourceTree = "<group>";
+		};
+		F6CB388719E1E20B00CA1A7D /* ResultadoRutina */ = {
+			isa = PBXGroup;
+			children = (
+				F6CB388819E1E22B00CA1A7D /* ResultadoRutinaService.h */,
+				F6CB388919E1E22B00CA1A7D /* ResultadoRutinaService.m */,
+			);
+			name = ResultadoRutina;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -664,6 +677,7 @@
 				F6C2E46119E189C600538EF7 /* ALButton.m in Sources */,
 				F6CB387819E1CDE800CA1A7D /* Ejercicio.m in Sources */,
 				F6C2E4A219E18CFD00538EF7 /* LoginService.m in Sources */,
+				F6CB388A19E1E22B00CA1A7D /* ResultadoRutinaService.m in Sources */,
 				F6CB387C19E1D34800CA1A7D /* SeguimientoViewController.m in Sources */,
 				F6CB388419E1D3D200CA1A7D /* Barra.m in Sources */,
 				F6C2E46819E189C600538EF7 /* ALToolbar.m in Sources */,

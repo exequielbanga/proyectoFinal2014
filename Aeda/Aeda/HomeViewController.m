@@ -18,6 +18,7 @@
 #import "SupressFunction.h"
 
 #import "RutinaViewController.h"
+#import "SeguimientoViewController.h"
 
 #define kText @"kText"
 #define kImageName @"kImageName"
@@ -151,7 +152,9 @@
 }
 
 - (void)showSeguimiento {
-    
+    SeguimientoViewController *seguimientoViewController = [[SeguimientoViewController alloc] initWithNibName:nil bundle:nil];
+    seguimientoViewController.authDelegate = self;
+    [self showViewController:seguimientoViewController];
 }
 
 - (void)showMyLocation {

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Aeda/HomeViewController.m"
-            timestampString = "434228130.47433"
+            filePath = "Aeda/Barra.m"
+            timestampString = "434239200.143851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-homeItems"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-setMode:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
