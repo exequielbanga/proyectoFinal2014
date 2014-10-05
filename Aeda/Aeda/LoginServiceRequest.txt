@@ -1,0 +1,25 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:opc="http://xmlns.allianz.com.ar/Core/EBM/Infra/CSMService/Externo/OpCSMService" xmlns:ebm="http://xmlns.allianz.com.ar/CommonCore/EBM">
+<soapenv:Header>
+<user>mobileios</user>
+<pwd>allianzios2014</pwd>
+</soapenv:Header>
+<soapenv:Body>
+<opc:AuthenticateEBM>
+<ebm:EBMHeader>
+<ebm:Sender>
+<ebm:userName>diego.lebrante@allianz.com.ar</ebm:userName>
+<ebm:Application>AseguradosMobileIos</ebm:Application>
+<ebm:Country>ARG</ebm:Country>
+</ebm:Sender>
+<ebm:Target>Allianz</ebm:Target>
+</ebm:EBMHeader>
+<opc:DataArea>
+<opc:Authenticate>
+<opc:userId>@1@</opc:userId>
+<opc:password>@2@</opc:password>
+<opc:userType>3</opc:userType>
+</opc:Authenticate>
+</opc:DataArea>
+</opc:AuthenticateEBM>
+</soapenv:Body>
+</soapenv:Envelope>

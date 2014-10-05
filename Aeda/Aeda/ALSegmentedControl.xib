@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ALSegmentedControl">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ue9-FG-klr">
+                    <rect key="frame" x="0.0" y="0.0" width="160" height="44"/>
+                    <state key="normal" title="Entrada">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="wL3-xj-5oh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJB-XZ-deK">
+                    <rect key="frame" x="160" y="0.0" width="160" height="44"/>
+                    <state key="normal" title="Salida">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="koW-TS-TBa"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ue9-FG-klr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7wV-eg-ofQ"/>
+                <constraint firstItem="yJB-XZ-deK" firstAttribute="leading" secondItem="ue9-FG-klr" secondAttribute="trailing" id="CqG-g3-gqL"/>
+                <constraint firstItem="yJB-XZ-deK" firstAttribute="width" secondItem="ue9-FG-klr" secondAttribute="width" id="F8Z-oq-0oT"/>
+                <constraint firstAttribute="trailing" secondItem="yJB-XZ-deK" secondAttribute="trailing" id="Hyx-EP-bi7"/>
+                <constraint firstAttribute="bottom" secondItem="ue9-FG-klr" secondAttribute="bottom" id="cNE-9s-N4N"/>
+                <constraint firstAttribute="bottom" secondItem="yJB-XZ-deK" secondAttribute="bottom" id="cWM-jl-nrj"/>
+                <constraint firstItem="ue9-FG-klr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kLo-qw-6eD"/>
+                <constraint firstItem="yJB-XZ-deK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uCd-FE-iGo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="entryButton" destination="ue9-FG-klr" id="uxp-yK-ynL"/>
+                <outlet property="sentButton" destination="yJB-XZ-deK" id="Zhl-Xw-y4j"/>
+            </connections>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
