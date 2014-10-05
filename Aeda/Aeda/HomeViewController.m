@@ -107,7 +107,7 @@
     misDatos.target = self;
     misDatos.selector = @selector(showMisDatos);
 
-    HomeMenuHeaderItem* seguimiento = [HomeMenuHeaderItem itemWithImageName:@"Seguimiento" firstText:@"Seguimiento" secondText:@""];
+    HomeMenuHeaderItem* seguimiento = [HomeMenuHeaderItem itemWithImageName:@"Seguimiento" firstText:@"Mi" secondText:@"Seguimiento"];
     seguimiento.target = self;
     seguimiento.selector = @selector(showSeguimiento);
 
