@@ -111,7 +111,6 @@
     seguimiento.target = self;
     seguimiento.selector = @selector(showSeguimiento);
 
-
     return @[misRutinasItem, misDatos, seguimiento];
 }
 
@@ -152,6 +151,7 @@
 }
 
 - (void)showMyLocation {
+    
 }
 
 - (void)showInstitutionalSite {
