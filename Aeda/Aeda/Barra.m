@@ -14,15 +14,22 @@
 
 @interface Barra()
 @property(nonatomic,strong)UIView *bar;
+@property(nonatomic,strong)UILabel*label;
 @end
 
 @implementation Barra
 
 - (void)internalInit{
+    self.showsPercent = YES;
     self.backgroundColor = [UIColor clearColor];
     self.bar = [[UIView alloc] initWithFrame:self.bounds];
     [self addSubview:self.bar];
     self.mode = BarraModoHorizontal;
+    
+    self.label = [[UILabel alloc] initWithFrame:self.bounds];
+    self.label.backgroundColor = [UIColor clearColor];
+    self.label.alpha = 0;
+    [self addSubview:self.label];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -53,17 +60,26 @@
     }
 }
 
+- (void)setShowsPercent:(BOOL)showsPercent{
+    _showsPercent = showsPercent;
+    self.valor = self.valor;
+}
+
 - (void)setValor:(NSNumber *)valor{
     _valor = valor;
     self.bar.backgroundColor = [UIColor colorWithRed:1-[valor floatValue] green:[valor floatValue] blue:0 alpha:1];
     switch (self.mode) {
         case BarraModoHorizontal:
             self.bar.frame = CGRectMake(0, 0, self.frame.size.width * [self.valor floatValue], self.frame.size.height);
+            self.label.frame = CGRectMake(5, 0, self.frame.size.width, self.frame.size.height);
             break;
         case BarraModoVertical:
             self.bar.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height  * [self.valor floatValue]);
+            self.label.frame = CGRectMake(0,self.frame.size.height - 44,self.frame.size.width,39);
             break;
     }
+    self.label.text = [NSString stringWithFormat:@"%2.0f%%",[self.valor floatValue]*100];
+    self.label.alpha = self.showsPercent?1:0;
 }
 
 - (void)setValorAnimated:(NSNumber *)valor{

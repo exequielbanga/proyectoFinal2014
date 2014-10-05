@@ -19,6 +19,7 @@ typedef enum{
 @property(nonatomic,assign)BarraModo mode;
 @property(nonatomic,strong)UIColor  *color;
 @property(nonatomic,strong)NSNumber *valor;
+@property(nonatomic,assign)BOOL showsPercent;
 
 - (void)setValorAnimated:(NSNumber *)valor;
 
