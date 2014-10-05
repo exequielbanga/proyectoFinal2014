@@ -56,6 +56,8 @@
 		F6C2E4CA19E18E5700538EF7 /* TitleTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E4BD19E18E5700538EF7 /* TitleTextViewTableViewCell.m */; };
 		F6C2E4CB19E18E5700538EF7 /* TitleTextViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C2E4BE19E18E5700538EF7 /* TitleTextViewTableViewCell.xib */; };
 		F6C2E4D119E18EAA00538EF7 /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E4CF19E18EAA00538EF7 /* OrderedDictionary.m */; };
+		F6CB386E19E1CADA00CA1A7D /* RutinaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB386C19E1CADA00CA1A7D /* RutinaViewController.m */; };
+		F6CB386F19E1CADA00CA1A7D /* RutinaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CB386D19E1CADA00CA1A7D /* RutinaViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +162,9 @@
 		F6C2E4CE19E18EAA00538EF7 /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
 		F6C2E4CF19E18EAA00538EF7 /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
 		F6C2E4D019E18EAA00538EF7 /* SupressFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupressFunction.h; sourceTree = "<group>"; };
+		F6CB386B19E1CADA00CA1A7D /* RutinaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinaViewController.h; sourceTree = "<group>"; };
+		F6CB386C19E1CADA00CA1A7D /* RutinaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinaViewController.m; sourceTree = "<group>"; };
+		F6CB386D19E1CADA00CA1A7D /* RutinaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RutinaViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +319,7 @@
 		F6C2E47619E18A1600538EF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F6CB386A19E1CAA400CA1A7D /* MisRutinas */,
 				F6C2E49119E18CB800538EF7 /* MisDatos */,
 				F6C2E48419E18A3E00538EF7 /* Login */,
 				F6C2E47719E18A2300538EF7 /* Root */,
@@ -422,6 +428,16 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		F6CB386A19E1CAA400CA1A7D /* MisRutinas */ = {
+			isa = PBXGroup;
+			children = (
+				F6CB386B19E1CADA00CA1A7D /* RutinaViewController.h */,
+				F6CB386C19E1CADA00CA1A7D /* RutinaViewController.m */,
+				F6CB386D19E1CADA00CA1A7D /* RutinaViewController.xib */,
+			);
+			name = MisRutinas;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -506,6 +522,7 @@
 			files = (
 				F6C2E4A319E18CFD00538EF7 /* LoginServiceRequest.txt in Resources */,
 				F6C2E42B19E1870900538EF7 /* LaunchScreen.xib in Resources */,
+				F6CB386F19E1CADA00CA1A7D /* RutinaViewController.xib in Resources */,
 				F6C2E4C619E18E5700538EF7 /* ImageLabelTableViewCell.xib in Resources */,
 				F6C2E49819E18CC700538EF7 /* MisDatosTableViewHeader.xib in Resources */,
 				F6C2E46019E189C600538EF7 /* ALSegmentedControl.xib in Resources */,
@@ -565,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6C2E49719E18CC700538EF7 /* MisDatosTableViewHeader.m in Sources */,
+				F6CB386E19E1CADA00CA1A7D /* RutinaViewController.m in Sources */,
 				F6C2E4AD19E18D9200538EF7 /* Persona.m in Sources */,
 				F6C2E49019E18A6500538EF7 /* User.m in Sources */,
 				F6C2E47519E189E100538EF7 /* UIFont+ALFonts.m in Sources */,

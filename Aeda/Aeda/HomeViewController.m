@@ -17,6 +17,8 @@
 #import "ButtonsTableViewCell.h"
 #import "SupressFunction.h"
 
+#import "RutinaViewController.h"
+
 #define kText @"kText"
 #define kImageName @"kImageName"
 #define kSelectorName @"kSelectorName"
@@ -138,6 +140,8 @@
 }
 
 - (void)showMisRutinas {
+    RutinaViewController *rutinaViewController = [[RutinaViewController alloc] initWithNibName:@"RutinaViewController" bundle:nil];
+    [self showViewController:rutinaViewController];
 }
 
 - (IBAction)showMisDatos{
