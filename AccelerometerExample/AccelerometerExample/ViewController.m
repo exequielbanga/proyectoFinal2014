@@ -13,6 +13,7 @@
 #define kSamplingTimeInterval .5
 
 @interface ViewController ()
+@property(nonatomic,strong)NSMutableArray *buffer;
 @property(nonatomic,strong)CMMotionManager *motionManager;
 @property(nonatomic,strong)NSTimer *timer;
 @property(nonatomic,strong)NSMutableArray *data;
@@ -42,11 +43,16 @@
     newData.acceleration = self.motionManager.accelerometerData.acceleration;
     newData.rotation = self.motionManager.gyroData.rotationRate;
     [self.data addObject:newData];
+    [self.buffer insertObject:@(newData.acceleration.x) atIndex:0];
+    if (self.buffer.count > 10) {
+        [self.buffer removeLastObject];
+    }
 }
 
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.data = [NSMutableArray new];
+    self.buffer = [NSMutableArray new];
     [self loadMotionManager];
     [self startProccessingData];
 }

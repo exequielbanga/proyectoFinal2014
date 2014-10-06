@@ -14,7 +14,23 @@
 - (instancetype)initMock{
     self = [self init];
     if (self) {
-        self.nombre = @"Brazos Nivel 1";
+        switch (arc4random()%5) {
+            case 0:
+                self.nombre = @"Brazos Inicial";
+                break;
+            case 1:
+                self.nombre = @"Abdominales Intermedio";
+                break;
+            case 2:
+                self.nombre = @"Aeróbico";
+                break;
+            case 3:
+                self.nombre = @"Piernas";
+                break;
+            case 4:
+                self.nombre = @"Boxeo";
+                break;
+        }
         self.detalle = @"Esta rutina es ideal para comenzar a trabajar los músculos de ambos brazos.";
         NSMutableArray *ejercicios = [NSMutableArray new];
 

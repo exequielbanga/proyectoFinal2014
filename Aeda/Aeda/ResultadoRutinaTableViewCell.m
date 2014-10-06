@@ -8,6 +8,7 @@
 
 #import "ResultadoRutinaTableViewCell.h"
 #import "Barra.h"
+#import "UIColor+ALColor.h"
 
 @interface ResultadoRutinaTableViewCell()
 @property(nonatomic,strong)IBOutlet UILabel *nombre;
@@ -15,6 +16,11 @@
 @end
 
 @implementation ResultadoRutinaTableViewCell
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    return self;
+}
 
 - (void)fillWithResultadoRutina:(ResultadoRutina *)resultadoRutina{
     self.nombre.text = resultadoRutina.rutina.nombre;
