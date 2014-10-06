@@ -20,7 +20,9 @@
 @implementation Barra
 
 - (void)internalInit{
-    self.showsPercent = YES;
+    self.clipsToBounds = YES;
+    self.showsText = YES;
+    self.resaltar = NO;
     self.backgroundColor = [UIColor colorWithWhite:1 alpha:.15];
     self.bar = [[UIView alloc] initWithFrame:self.bounds];
     [self addSubview:self.bar];
@@ -64,12 +66,17 @@
     }
 }
 
-- (void)setShowsPercent:(BOOL)showsPercent{
-    _showsPercent = showsPercent;
+- (void)setShowsText:(BOOL)showsText{
+    _showsText = showsText;
     self.valor = self.valor;
 }
-- (void)setPercentText:(NSString *)percentText{
-    _percentText = percentText;
+- (void)setText:(NSString *)text{
+    _text = text;
+    self.valor = self.valor;
+}
+
+- (void)setResaltar:(BOOL)resaltar{
+    _resaltar = resaltar;
     self.valor = self.valor;
 }
 
@@ -87,17 +94,24 @@
             break;
     }
 
-    if (self.percentText) {
-        self.label.text = self.percentText;
+    if (self.text) {
+        self.label.text = self.text;
     }else{
         self.label.text = [NSString stringWithFormat:@"%2.0f%%",[self.valor floatValue]*100];
     }
-    self.label.alpha = self.showsPercent?1:0;
+    self.label.alpha = self.showsText?1:0;
+    
 }
 
 - (void)setValorAnimated:(NSNumber *)valor{
     [UIView animateWithDuration:kSpeed*[valor floatValue] animations:^{
         self.valor = valor;
+    }completion:^(BOOL completed){
+        if (self.resaltar) {
+            self.backgroundColor = [UIColor redColor];
+        }else{
+            self.backgroundColor = [UIColor colorWithWhite:1 alpha:.15];
+        }
     }];
 }
 
@@ -109,7 +123,7 @@
             self.bar.frame = CGRectMake(0, 0, 0, self.frame.size.height);
             break;
         case BarraModoVertical:
-            self.bar.frame = CGRectMake(0, 0, self.frame.size.width, 0);
+            self.bar.frame = CGRectMake(0, self.frame.size.height, self.frame.size.width, 0);
             break;
     }
 }

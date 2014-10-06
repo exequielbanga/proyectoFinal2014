@@ -90,8 +90,8 @@
         }else{
             [barra setValorAnimated:@([repeticionOriginal floatValue]/[repeticion floatValue])];
         }
-        
-        barra.percentText = [NSString stringWithFormat:@"%d/%d",[repeticion intValue],[repeticionOriginal intValue]];
+        barra.showsText = NO;
+        barra.text = [NSString stringWithFormat:@"%d/%d",[repeticion intValue],[repeticionOriginal intValue]];
         [self.scrollView addSubview:barra];
 
         //Actualizo el offset
@@ -116,14 +116,15 @@
 
             //Barra
             Barra *barraPausa = [[Barra alloc]initWithFrame:CGRectMake(xOffset, icono.frame.size.height + kYOffset, kBarraSize,  self.scrollView.frame.size.height - icono.frame.size.height - kYOffset)];
-
+            barraPausa.showsText = NO;
             barraPausa.mode = BarraModoVertical;
             if (pausa.integerValue < pausaOriginal.floatValue) {
                 [barraPausa setValorAnimated:@([pausa floatValue]/[pausaOriginal floatValue])];
             }else{
                 [barraPausa setValorAnimated:@([pausaOriginal floatValue]/[pausa floatValue])];
+                barraPausa.resaltar = YES;
             }
-            barraPausa.percentText = [NSString stringWithFormat:@"%d/%d",[pausa intValue],[pausaOriginal intValue]];
+            barraPausa.text = [NSString stringWithFormat:@"%d/%d",[pausa intValue],[pausaOriginal intValue]];
             [self.scrollView addSubview:barraPausa];
             xOffset = barraPausa.frame.origin.x + barraPausa.frame.size.width + kXOffset;
         }
