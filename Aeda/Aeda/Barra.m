@@ -103,6 +103,10 @@
     }
     [self updateViews];
 }
+- (void)setTolerancia:(CGFloat)tolerancia{
+    _tolerancia = tolerancia;
+    self.valor = self.valor;
+}
 
 - (void)setValorAnimated:(NSNumber *)valor{
     [UIView animateWithDuration:kSpeed*[valor floatValue] animations:^{
