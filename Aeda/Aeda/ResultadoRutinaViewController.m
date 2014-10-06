@@ -11,6 +11,7 @@
 #import "UIColor+ALColor.h"
 
 #define kYOffset 5
+#define kXOffset 5
 #define kEjercicioViewHeight 230
 
 @interface ResultadoRutinaViewController ()
@@ -37,12 +38,12 @@
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height-20)];
     [self.view addSubview:self.scrollView];
 
-    self.titulo = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.scrollView.frame.size.width, 44)];
+    self.titulo = [[UILabel alloc] initWithFrame:CGRectMake(kXOffset, 0, self.scrollView.frame.size.width - kXOffset*2, 44)];
     self.titulo.font = [UIFont boldSystemFontOfSize:17];
     self.titulo.textColor = [UIColor whiteColor];
     [self.scrollView addSubview:self.titulo];
 
-    self.detalle = [[UILabel alloc] initWithFrame:CGRectMake(0,self.titulo.frame.size.height + kYOffset, self.scrollView.frame.size.width, 44)];
+    self.detalle = [[UILabel alloc] initWithFrame:CGRectMake(kXOffset,self.titulo.frame.size.height + kYOffset, self.scrollView.frame.size.width - kXOffset*2, 44)];
     self.detalle.textColor = [UIColor whiteColor];
     self.detalle.numberOfLines = 0;
     [self.scrollView addSubview:self.detalle];
@@ -58,8 +59,8 @@
     self.titulo.text = self.resultadoRutina.nombre;
     
     self.detalle.text = self.resultadoRutina.detalle;
-    CGSize size = [self.detalle sizeThatFits:CGSizeMake(self.scrollView.frame.size.width, 1000)];
-    self.detalle.frame = CGRectMake(0, self.titulo.frame.size.height + kYOffset, self.scrollView.frame.size.width, size.height);
+    CGSize size = [self.detalle sizeThatFits:CGSizeMake(self.scrollView.frame.size.width - kXOffset*2, 1000)];
+    self.detalle.frame = CGRectMake(kXOffset, self.titulo.frame.size.height + kYOffset, self.scrollView.frame.size.width - kXOffset*2, size.height);
     
     [self.vistasResultadosEjercicios removeAllObjects];
     CGFloat yOffset = self.detalle.frame.origin.y + self.detalle.frame.size.height + kYOffset;

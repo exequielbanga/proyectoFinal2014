@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13C8E0298B964AE7BEE00B98 /* libPods-Aeda.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFC7F0D7BCE4643B151466F /* libPods-Aeda.a */; };
+		F62D522E19E311E800EF01FB /* ResultadoRepeticionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F62D522D19E311E800EF01FB /* ResultadoRepeticionView.m */; };
 		F63B690819E2B28500302B6C /* ResultadoRutinaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690719E2B28500302B6C /* ResultadoRutinaViewController.m */; };
 		F63B690B19E2B2E000302B6C /* ResultadoEjercicioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690A19E2B2E000302B6C /* ResultadoEjercicioView.m */; };
 		F63B690E19E2B6CA00302B6C /* ResultadoEjercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */; };
@@ -85,6 +86,8 @@
 /* Begin PBXFileReference section */
 		ABFC7F0D7BCE4643B151466F /* libPods-Aeda.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Aeda.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6F2F05B40354C27A864F90A /* Pods-Aeda.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aeda.xcconfig"; path = "Pods/Pods-Aeda.xcconfig"; sourceTree = "<group>"; };
+		F62D522C19E311E800EF01FB /* ResultadoRepeticionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoRepeticionView.h; sourceTree = "<group>"; };
+		F62D522D19E311E800EF01FB /* ResultadoRepeticionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoRepeticionView.m; sourceTree = "<group>"; };
 		F63B690619E2B28500302B6C /* ResultadoRutinaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoRutinaViewController.h; sourceTree = "<group>"; };
 		F63B690719E2B28500302B6C /* ResultadoRutinaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoRutinaViewController.m; sourceTree = "<group>"; };
 		F63B690919E2B2E000302B6C /* ResultadoEjercicioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoEjercicioView.h; sourceTree = "<group>"; };
@@ -498,6 +501,8 @@
 				F63B690719E2B28500302B6C /* ResultadoRutinaViewController.m */,
 				F63B690919E2B2E000302B6C /* ResultadoEjercicioView.h */,
 				F63B690A19E2B2E000302B6C /* ResultadoEjercicioView.m */,
+				F62D522C19E311E800EF01FB /* ResultadoRepeticionView.h */,
+				F62D522D19E311E800EF01FB /* ResultadoRepeticionView.m */,
 			);
 			name = Seguimiento;
 			sourceTree = "<group>";
@@ -681,6 +686,7 @@
 				F6C2E49919E18CC700538EF7 /* MisDatosViewController.m in Sources */,
 				F6C2E4CA19E18E5700538EF7 /* TitleTextViewTableViewCell.m in Sources */,
 				F6C2E44919E1895B00538EF7 /* HomeMenuHeaderTableView.m in Sources */,
+				F62D522E19E311E800EF01FB /* ResultadoRepeticionView.m in Sources */,
 				F6C2E46419E189C600538EF7 /* ALLoggedButton.m in Sources */,
 				F6C2E46219E189C600538EF7 /* ALLabelForTableView.m in Sources */,
 				F6CB388019E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.m in Sources */,

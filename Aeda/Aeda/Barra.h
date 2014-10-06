@@ -12,6 +12,10 @@ typedef enum{
     BarraModoHorizontal = 0,
     BarraModoVertical,
 }BarraModo;
+@class Barra;
+@protocol BarraDelegate <NSObject>
+- (void)barraWasTapped:(Barra *)barra;
+@end
 
 @interface Barra : UIView
 
@@ -21,6 +25,8 @@ typedef enum{
 @property(nonatomic,assign)BOOL showsText;
 @property(nonatomic,strong)NSString *text; //Si no es seteado, muestra porcentaje
 @property(nonatomic,assign)BOOL resaltar;
+@property(nonatomic,assign)CGFloat tolerancia;//0..1
+@property(nonatomic,weak)id<BarraDelegate>delegate;
 
 - (void)setValorAnimated:(NSNumber *)valor;
 

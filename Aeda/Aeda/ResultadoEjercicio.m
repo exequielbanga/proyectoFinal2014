@@ -15,7 +15,7 @@
     if (self) {
         self.resultadoTiempo = 323;
         self.resultadoRepeticiones = [[NSArray alloc] initWithObjects:@15,@12,@8, nil];
-        self.resultadoTiemposEntreRepeticiones = [[NSArray alloc] initWithObjects:@34,@19, nil];
+        self.resultadoTiemposEntreRepeticiones = [[NSArray alloc] initWithObjects:@34,@49, nil];
         self.resultadoPesos = [[NSArray alloc] initWithObjects:@2,@2,@3, nil];
     }
     return self;

@@ -7,6 +7,7 @@
 //
 
 #import "ResultadoEjercicioView.h"
+#import "ResultadoRepeticionView.h"
 #import "Barra.h"
 
 #define kXOffset 10
@@ -15,17 +16,21 @@
 #define kIconoSize 25
 
 
-@interface ResultadoEjercicioView()
+@interface ResultadoEjercicioView()<BarraDelegate>
 @property (nonatomic,strong) UILabel *titulo;
 @property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,strong) UILabel *completado;
+@property (nonatomic,strong) NSMutableArray *ejercicios;
+@property (nonatomic,strong) NSMutableArray *ejerciciosOriginales;
+@property (nonatomic,strong) NSMutableArray *tiempos;
+@property (nonatomic,strong) NSMutableArray *tiemposOriginales;
 @end
 
 @implementation ResultadoEjercicioView
 - (void)internalInitialization{
     self.backgroundColor = [UIColor clearColor];
     
-    self.titulo = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 44)];
+    self.titulo = [[UILabel alloc] initWithFrame:CGRectMake(kXOffset, 0, self.frame.size.width - kXOffset*2, 44)];
     self.titulo.font = [UIFont boldSystemFontOfSize:17];
     self.titulo.textColor = [UIColor whiteColor];
     [self addSubview:self.titulo];
@@ -34,7 +39,7 @@
     self.scrollView.showsHorizontalScrollIndicator = NO;
     [self addSubview:self.scrollView];
     
-    self.completado = [[UILabel alloc] initWithFrame:CGRectMake(0, self.scrollView.frame.size.height - 20, self.frame.size.width, 20)];
+    self.completado = [[UILabel alloc] initWithFrame:CGRectMake(kXOffset, self.scrollView.frame.size.height - 20, self.frame.size.width, 20)];
     self.completado.textColor = [UIColor whiteColor];
     self.completado.text = @"Completado:";
     [self.completado sizeToFit];
@@ -63,10 +68,20 @@
     [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.scrollView addSubview:self.completado];
 
-    CGFloat xOffset = self.completado.frame.size.width + kXOffset;
+    CGFloat xOffset = self.completado.frame.size.width + kXOffset*2;
+    
+    NSUInteger tag = 0;
+    
+    self.ejercicios = [NSMutableArray new];
+    self.ejerciciosOriginales = [NSMutableArray new];
+    self.tiempos = [NSMutableArray new];
+    self.tiemposOriginales = [NSMutableArray new];
+    
     for (NSInteger i = 0; i < resultadoEjercicio.resultadoRepeticiones.count; i++) {
         NSNumber *repeticion = resultadoEjercicio.resultadoRepeticiones[i];
         NSNumber *repeticionOriginal = resultadoEjercicio.repeticiones[i];
+        [self.ejercicios addObject:repeticion];
+        [self.ejerciciosOriginales addObject:repeticionOriginal];
         
         //Creo la barra del ejercicio
         //Icono
@@ -83,8 +98,10 @@
 
         //Barra
         Barra *barra = [[Barra alloc]initWithFrame:CGRectMake(xOffset, icono.frame.size.height + kYOffset, kBarraSize, self.scrollView.frame.size.height - icono.frame.size.height - kYOffset)];
+        barra.tag = tag;
+        tag ++;
         barra.mode = BarraModoVertical;
-        
+        barra.delegate = self;
         if (repeticion.integerValue < repeticionOriginal.integerValue) {
             [barra setValorAnimated:@([repeticion floatValue]/[repeticionOriginal floatValue])];
         }else{
@@ -102,6 +119,9 @@
             NSNumber *pausa = resultadoEjercicio.resultadoTiemposEntreRepeticiones[i];
             NSNumber *pausaOriginal = resultadoEjercicio.tiemposEntreRepeticiones[i];
             
+            [self.tiempos addObject:pausa];
+            [self.tiemposOriginales addObject:pausaOriginal];
+
             //Icono
             UIImageView *icono;
             if ([[[UIDevice currentDevice] systemVersion] floatValue] > 7) {
@@ -116,8 +136,12 @@
 
             //Barra
             Barra *barraPausa = [[Barra alloc]initWithFrame:CGRectMake(xOffset, icono.frame.size.height + kYOffset, kBarraSize,  self.scrollView.frame.size.height - icono.frame.size.height - kYOffset)];
+            barraPausa.tag = tag;
+            tag ++;
             barraPausa.showsText = NO;
+            barraPausa.tolerancia = kTolerancia;
             barraPausa.mode = BarraModoVertical;
+            barraPausa.delegate = self;
             if (pausa.integerValue < pausaOriginal.floatValue) {
                 [barraPausa setValorAnimated:@([pausa floatValue]/[pausaOriginal floatValue])];
             }else{
@@ -130,6 +154,29 @@
         }
     }
     self.scrollView.contentSize = CGSizeMake(xOffset, 0);
+}
+
+- (void)mostrarDetalleValor:(NSNumber *)valor esperado:(NSNumber *)valorEsperado modo:(ResultadoRepeticionViewModo)modo{
+    ResultadoRepeticionView *view = [[ResultadoRepeticionView alloc] initWithFrame:CGRectMake(0, kYOffset, self.frame.size.width, self.frame.size.height - kYOffset*2)];
+    view.valor = valor;
+    view.valorEsperado = valorEsperado;
+    view.modo = modo;
+    [self addSubview:view];
+}
+
+#pragma Barra Delegate
+- (void)barraWasTapped:(Barra *)barra{
+    
+    NSNumber *valor;
+    NSNumber *valorOriginal;
+    if (barra.tag%2) {// Tiempo
+        valor = self.tiempos[(barra.tag/2)];
+        valorOriginal = self.tiemposOriginales[(barra.tag/2)];
+    }else{//Ejercicio
+        valor = self.ejercicios[(barra.tag/2)];
+        valorOriginal = self.ejerciciosOriginales[(barra.tag/2)];
+    }
+    [self mostrarDetalleValor:valor esperado:valorOriginal modo:barra.tag%2];
 }
 
 @end

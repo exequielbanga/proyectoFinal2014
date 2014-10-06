@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#define kTolerancia .2;
 
 @interface Ejercicio : NSObject
 @property(nonatomic,strong)NSString         *nombre;

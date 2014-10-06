@@ -12,7 +12,6 @@
 #import "LoginService.h"
 #import "User.h"
 #import "UserManager.h"
-#import "UIFont+ALFonts.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) LoginService* loginService;
@@ -38,20 +37,13 @@
         self.passwordTextField.tintColor = [UIColor ALLightGrayColor];
     }
     self.passwordTextField.textColor = [UIColor ALLightGrayTextColor];
-    self.passwordTextField.font = [UIFont allianzSansItalicWithSize:16];
     self.passwordTextField.inputAccessoryView = alToolbarUserPass;
 
     if ([[[UIDevice currentDevice] systemVersion] floatValue] > 7) {
         self.usernameTextField.tintColor = [UIColor ALBlueColor];
     }
     self.usernameTextField.textColor = [UIColor ALBlueColor];
-    self.usernameTextField.font = [UIFont allianzSansBoldWithSize:16];
     self.usernameTextField.inputAccessoryView = alToolbarUserName;
-
-    self.loginButton.titleLabel.font = [UIFont allianzSansBoldWithSize:14];
-    self.forgotPasswordButton.titleLabel.font = [UIFont allianzSansWithSize:14];
-    self.registerButton.titleLabel.font = [UIFont allianzSansWithSize:14];
-    self.copyrightLabel.font = [UIFont allianzSansWithSize:10];
 
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.copyrightLabel.frame.origin.y + self.copyrightLabel.frame.size.height + 10);
 }
