@@ -27,7 +27,10 @@
     self.mode = BarraModoHorizontal;
     
     self.label = [[UILabel alloc] initWithFrame:self.bounds];
-    self.label.backgroundColor = [UIColor clearColor];
+    self.label.minimumScaleFactor = .5;
+    self.label.font = [UIFont systemFontOfSize:14];
+    self.label.textAlignment = NSTextAlignmentCenter;
+    self.label.backgroundColor = [UIColor colorWithWhite:1 alpha:.15];
     self.label.alpha = 0;
     [self addSubview:self.label];
 }
@@ -64,6 +67,10 @@
     _showsPercent = showsPercent;
     self.valor = self.valor;
 }
+- (void)setPercentText:(NSString *)percentText{
+    _percentText = percentText;
+    self.valor = self.valor;
+}
 
 - (void)setValor:(NSNumber *)valor{
     _valor = valor;
@@ -74,11 +81,16 @@
             self.label.frame = CGRectMake(5, 0, self.frame.size.width, self.frame.size.height);
             break;
         case BarraModoVertical:
-            self.bar.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height  * [self.valor floatValue]);
-            self.label.frame = CGRectMake(0,self.frame.size.height - 44,self.frame.size.width,39);
+            self.bar.frame = CGRectMake(0, self.frame.size.height - (self.frame.size.height  * [self.valor floatValue]), self.frame.size.width, self.frame.size.height  * [self.valor floatValue]);
+            self.label.frame = CGRectMake(0,self.frame.size.height - 25,self.frame.size.width,25);
             break;
     }
-    self.label.text = [NSString stringWithFormat:@"%2.0f%%",[self.valor floatValue]*100];
+
+    if (self.percentText) {
+        self.label.text = self.percentText;
+    }else{
+        self.label.text = [NSString stringWithFormat:@"%2.0f%%",[self.valor floatValue]*100];
+    }
     self.label.alpha = self.showsPercent?1:0;
 }
 

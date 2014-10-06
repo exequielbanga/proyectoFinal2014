@@ -13,13 +13,13 @@ typedef enum{
     BarraModoVertical,
 }BarraModo;
 
-
 @interface Barra : UIView
 
 @property(nonatomic,assign)BarraModo mode;
 @property(nonatomic,strong)UIColor  *color;
 @property(nonatomic,strong)NSNumber *valor;
 @property(nonatomic,assign)BOOL showsPercent;
+@property(nonatomic,strong)NSString *percentText;
 
 - (void)setValorAnimated:(NSNumber *)valor;
 
