@@ -10,13 +10,10 @@
 #import <UIKit/UIKit.h>
 #import "Rutina.h"
 
-@interface ResultadoRutina : NSObject
+@interface ResultadoRutina : Rutina
 
-@property(nonatomic,strong)Rutina *rutina;
 @property(nonatomic,assign)CGFloat resultado; //0..1
-
-//Diccionario con clave: ejercicio, valor: array con resultado por repetición
-@property(nonatomic,strong)NSMutableDictionary *detalleResultados;
+@property(nonatomic,strong)NSMutableArray *resultadoEjercicios;
 
 - (instancetype)initMock;
 

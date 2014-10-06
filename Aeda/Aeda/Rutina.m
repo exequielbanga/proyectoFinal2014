@@ -31,7 +31,7 @@
                 self.nombre = @"Boxeo";
                 break;
         }
-        self.detalle = @"Esta rutina es ideal para comenzar a trabajar los músculos de ambos brazos.";
+        self.detalle = @"Esta rutina es ideal para comenzar a trabajar los músculos de ambos brazos. Se recomienda realizarla como máximo dos veces a la semana.";
         NSMutableArray *ejercicios = [NSMutableArray new];
 
         Ejercicio *ej1 = [[Ejercicio alloc] initMock];

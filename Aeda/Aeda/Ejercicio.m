@@ -18,6 +18,7 @@
         self.repeticiones = [[NSArray alloc] initWithObjects:@15,@15,@12, nil];
         self.tiemposEntreRepeticiones = [[NSArray alloc] initWithObjects:@30,@30, nil];
         self.pesos = [[NSArray alloc] initWithObjects:@2,@2,@3, nil];
+        self.tiempo = 300;
     }
     return self;
 }

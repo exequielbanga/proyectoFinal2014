@@ -23,7 +23,7 @@
 }
 
 - (void)fillWithResultadoRutina:(ResultadoRutina *)resultadoRutina{
-    self.nombre.text = resultadoRutina.rutina.nombre;
+    self.nombre.text = resultadoRutina.nombre;
     [self.barra setValorAnimated:@(resultadoRutina.resultado)];
 }
 

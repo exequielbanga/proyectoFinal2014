@@ -11,7 +11,7 @@
 #import "UIColor+ALColor.h"
 #import "ResultadoRutinaTableViewCell.h"
 #import "ResultadoRutinaService.h"
-//#import "AseguradoViewController.h"
+#import "ResultadoRutinaViewController.h"
 
 #define kCellIdentifier @"SeguimientoViewControllerCell"
 
@@ -125,9 +125,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    AseguradoViewController *viewController = [[AseguradoViewController alloc] initWithNibName:nil bundle:nil];
-//    viewController.persona = self.tableData[indexPath.row];
-//    [self.navigationController pushViewController:viewController animated:YES];
+    ResultadoRutinaViewController *viewController = [[ResultadoRutinaViewController alloc] initWithNibName:nil bundle:nil];
+    viewController.resultadoRutina = self.tableData[indexPath.row];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

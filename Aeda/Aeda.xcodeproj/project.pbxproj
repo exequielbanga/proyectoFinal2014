@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		13C8E0298B964AE7BEE00B98 /* libPods-Aeda.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFC7F0D7BCE4643B151466F /* libPods-Aeda.a */; };
+		F63B690819E2B28500302B6C /* ResultadoRutinaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690719E2B28500302B6C /* ResultadoRutinaViewController.m */; };
+		F63B690B19E2B2E000302B6C /* ResultadoEjercicioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690A19E2B2E000302B6C /* ResultadoEjercicioView.m */; };
+		F63B690E19E2B6CA00302B6C /* ResultadoEjercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */; };
 		F6C2E41D19E1870900538EF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E41C19E1870900538EF7 /* main.m */; };
 		F6C2E42019E1870900538EF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E41F19E1870900538EF7 /* AppDelegate.m */; };
 		F6C2E42319E1870900538EF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E42219E1870900538EF7 /* ViewController.m */; };
@@ -82,6 +85,12 @@
 /* Begin PBXFileReference section */
 		ABFC7F0D7BCE4643B151466F /* libPods-Aeda.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Aeda.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6F2F05B40354C27A864F90A /* Pods-Aeda.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aeda.xcconfig"; path = "Pods/Pods-Aeda.xcconfig"; sourceTree = "<group>"; };
+		F63B690619E2B28500302B6C /* ResultadoRutinaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoRutinaViewController.h; sourceTree = "<group>"; };
+		F63B690719E2B28500302B6C /* ResultadoRutinaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoRutinaViewController.m; sourceTree = "<group>"; };
+		F63B690919E2B2E000302B6C /* ResultadoEjercicioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoEjercicioView.h; sourceTree = "<group>"; };
+		F63B690A19E2B2E000302B6C /* ResultadoEjercicioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoEjercicioView.m; sourceTree = "<group>"; };
+		F63B690C19E2B6CA00302B6C /* ResultadoEjercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoEjercicio.h; sourceTree = "<group>"; };
+		F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoEjercicio.m; sourceTree = "<group>"; };
 		F6C2E41719E1870900538EF7 /* Aeda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aeda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C2E41B19E1870900538EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6C2E41C19E1870900538EF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -399,6 +408,8 @@
 				F6CB387419E1CDA500CA1A7D /* Rutina.m */,
 				F6CB387619E1CDE800CA1A7D /* Ejercicio.h */,
 				F6CB387719E1CDE800CA1A7D /* Ejercicio.m */,
+				F63B690C19E2B6CA00302B6C /* ResultadoEjercicio.h */,
+				F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -483,6 +494,10 @@
 			children = (
 				F6CB387A19E1D34800CA1A7D /* SeguimientoViewController.h */,
 				F6CB387B19E1D34800CA1A7D /* SeguimientoViewController.m */,
+				F63B690619E2B28500302B6C /* ResultadoRutinaViewController.h */,
+				F63B690719E2B28500302B6C /* ResultadoRutinaViewController.m */,
+				F63B690919E2B2E000302B6C /* ResultadoEjercicioView.h */,
+				F63B690A19E2B2E000302B6C /* ResultadoEjercicioView.m */,
 			);
 			name = Seguimiento;
 			sourceTree = "<group>";
@@ -671,6 +686,8 @@
 				F6CB388019E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.m in Sources */,
 				F6C2E44819E1895B00538EF7 /* HomeMenuHeaderItem.m in Sources */,
 				F6C2E42019E1870900538EF7 /* AppDelegate.m in Sources */,
+				F63B690E19E2B6CA00302B6C /* ResultadoEjercicio.m in Sources */,
+				F63B690819E2B28500302B6C /* ResultadoRutinaViewController.m in Sources */,
 				F6C2E45F19E189C600538EF7 /* ALSegmentedControl.m in Sources */,
 				F6C2E41D19E1870900538EF7 /* main.m in Sources */,
 				F6C2E48019E18A2D00538EF7 /* ALAuthenticationViewController.m in Sources */,
@@ -679,6 +696,7 @@
 				F6C2E4A219E18CFD00538EF7 /* LoginService.m in Sources */,
 				F6CB388A19E1E22B00CA1A7D /* ResultadoRutinaService.m in Sources */,
 				F6CB387C19E1D34800CA1A7D /* SeguimientoViewController.m in Sources */,
+				F63B690B19E2B2E000302B6C /* ResultadoEjercicioView.m in Sources */,
 				F6CB388419E1D3D200CA1A7D /* Barra.m in Sources */,
 				F6C2E46819E189C600538EF7 /* ALToolbar.m in Sources */,
 				F6C2E44A19E1895B00538EF7 /* HomeViewController.m in Sources */,

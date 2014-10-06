@@ -8,23 +8,18 @@
 
 #import "ResultadoRutina.h"
 #import "Rutina.h"
-#import "Ejercicio.h"
+#import "ResultadoEjercicio.h"
 
 @implementation ResultadoRutina
 
 - (instancetype)initMock{
-    self = [self init];
+    self = [super initMock];
     if (self) {
-        self.rutina = [[Rutina alloc] initMock];
+        self.resultado = (arc4random()%100)/100.0;
         
-        self.resultado = .6 + (arc4random()%40)/100.0;
-        
-        self.detalleResultados = [NSMutableDictionary new];
-        for (Ejercicio *ejercicio in self.rutina.ejercicios) {
-            NSMutableArray *resultados = [NSMutableArray new];
-            for (NSInteger i = 0; i < ejercicio.repeticiones.count; i++) {
-                [resultados addObject:@(80+arc4random()%20)];
-            }
+        self.resultadoEjercicios = [NSMutableArray new];
+        for (NSInteger i = 0; i < self.ejercicios.count; i++) {
+            [self.resultadoEjercicios addObject:[[ResultadoEjercicio alloc]initMock]];
         }
     }
     return self;
