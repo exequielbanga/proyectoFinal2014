@@ -11,7 +11,7 @@
 #import "UIColor+ALColor.h"
 
 #define kYOffset 5
-#define kEjercicioViewHeight 200
+#define kEjercicioViewHeight 230
 
 @interface ResultadoRutinaViewController ()
 @property (nonatomic,strong) UILabel *titulo;
@@ -34,7 +34,7 @@
     [super viewDidLoad];
     self.title = @"Resultado";
     self.view.backgroundColor = [UIColor ALBlueColor];
-    self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height-20)];
     [self.view addSubview:self.scrollView];
 
     self.titulo = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.scrollView.frame.size.width, 44)];
@@ -70,7 +70,7 @@
         [self.scrollView addSubview:vista];
         [vista fillWithResultadoEjercicio:resultadoEjercicio];
     }
-    self.scrollView.contentSize = CGSizeMake(0, yOffset - kEjercicioViewHeight);
+    self.scrollView.contentSize = CGSizeMake(0, yOffset);
 }
 
 @end

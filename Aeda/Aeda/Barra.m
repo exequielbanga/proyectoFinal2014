@@ -21,7 +21,7 @@
 
 - (void)internalInit{
     self.showsPercent = YES;
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor colorWithWhite:1 alpha:.15];
     self.bar = [[UIView alloc] initWithFrame:self.bounds];
     [self addSubview:self.bar];
     self.mode = BarraModoHorizontal;
@@ -30,7 +30,6 @@
     self.label.minimumScaleFactor = .5;
     self.label.font = [UIFont systemFontOfSize:14];
     self.label.textAlignment = NSTextAlignmentCenter;
-    self.label.backgroundColor = [UIColor colorWithWhite:1 alpha:.15];
     self.label.alpha = 0;
     [self addSubview:self.label];
 }
@@ -56,9 +55,11 @@
     switch (self.mode) {
         case BarraModoHorizontal:
             self.bar.layer.cornerRadius = self.frame.size.height*kRadiusPercentage;
+            self.layer.cornerRadius = self.frame.size.height*kRadiusPercentage;
             break;
         case BarraModoVertical:
             self.bar.layer.cornerRadius = self.frame.size.width*kRadiusPercentage;
+            self.layer.cornerRadius = self.frame.size.width*kRadiusPercentage;
             break;
     }
 }
