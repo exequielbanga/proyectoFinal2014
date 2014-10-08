@@ -45,7 +45,7 @@
     CGSize size = [self.detalle sizeThatFits:CGSizeMake(self.detalle.frame.size.width, 1000)];
     self.detalle.frame = CGRectMake(self.detalle.frame.origin.x,self.detalle.frame.origin.y, self.detalle.frame.size.width, size.height);
 
-    CGFloat yOffset = kYOffset;
+    CGFloat yOffset = self.detalle.frame.origin.y + self.detalle.frame.size.height;
     for (Ejercicio *ejercicio in self.rutina.ejercicios) {
         EjercicioView *ejercicioView = [EjercicioView View];
         [ejercicioView fillWithEjercicio:ejercicio];
@@ -53,7 +53,7 @@
         yOffset = ejercicioView.frame.origin.y + ejercicioView.frame.size.height + kYOffset;
         [self.scrollView addSubview:ejercicioView];
     }
-    self.scrollView.frame = CGRectMake(self.scrollView.frame.origin.x, self.detalle.frame.origin.y + self.detalle.frame.size.height + kYOffset, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
+//    self.scrollView.frame = CGRectMake(self.scrollView.frame.origin.x, self.detalle.frame.origin.y + self.detalle.frame.size.height + kYOffset, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
     self.scrollView.contentSize = CGSizeMake(0, yOffset);
 }
 

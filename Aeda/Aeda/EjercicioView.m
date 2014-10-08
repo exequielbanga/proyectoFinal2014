@@ -56,7 +56,7 @@
         
         Barra *barra = [[Barra alloc] initWithFrame:CGRectMake(kBarraHeight + kXOffset * 2, yOffset, (self.barras.frame.size.width - 3*kXOffset - kBarraHeight)*repeticion.floatValue/maxWidth, kBarraHeight)];
         barra.showsText = NO;
-        barra.color = [UIColor greenColor];
+        barra.color = [[UIColor greenColor] colorWithAlphaComponent:.8];
         barra.mode = BarraModoHorizontal;
         [barra setValorAnimated:@1];
 
@@ -79,7 +79,7 @@
         UILabel *descripcionBarra = [[UILabel alloc] initWithFrame:CGRectMake(kXOffset * 3, yOffset, self.barras.frame.size.width - 4*kXOffset, 15)];
         descripcionBarra.font = [UIFont systemFontOfSize:14];
         descripcionBarra.backgroundColor = [UIColor clearColor];
-        descripcionBarra.textColor = [UIColor whiteColor];
+        descripcionBarra.textColor = [UIColor ALLightBlueColor];
         descripcionBarra.text = [NSString stringWithFormat:@"%d repeticiones. Peso: %dKg.",repeticion.intValue,[ejercicio.pesos[i] intValue]];
         [self.barras addSubview:descripcionBarra];
 
@@ -90,7 +90,7 @@
             NSNumber *pausa = ejercicio.tiemposEntreRepeticiones[i];
             Barra *barraPausa = [[Barra alloc] initWithFrame:CGRectMake(kBarraHeight + kXOffset * 2, yOffset, (self.barras.frame.size.width - 3*kXOffset - kBarraHeight)*pausa.floatValue/maxWidth, kBarraHeight)];
             barraPausa.showsText = NO;
-            barraPausa.color = [UIColor yellowColor];
+            barraPausa.color = [[UIColor yellowColor] colorWithAlphaComponent:.8];
             barraPausa.mode = BarraModoHorizontal;
             [barraPausa setValorAnimated:@1];
             [self.barras addSubview:barraPausa];
@@ -114,7 +114,7 @@
             UILabel *descripcionBarraPausa = [[UILabel alloc] initWithFrame:CGRectMake(kXOffset *3, yOffset, self.barras.frame.size.width - 4*kXOffset, 22)];
             descripcionBarraPausa.backgroundColor = [UIColor clearColor];
             descripcionBarraPausa.font = [UIFont systemFontOfSize:14];
-            descripcionBarraPausa.textColor = [UIColor whiteColor];
+            descripcionBarraPausa.textColor = [UIColor ALLightBlueColor];
             descripcionBarraPausa.text = [NSString stringWithFormat:@"Descanzar %d segundos.",pausa.intValue];
             yOffset = descripcionBarraPausa.frame.origin.y + descripcionBarraPausa.frame.size.height + kYOffset * 2;
             [self.barras addSubview:descripcionBarraPausa];
