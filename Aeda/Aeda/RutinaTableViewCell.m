@@ -11,6 +11,7 @@
 @interface RutinaTableViewCell()
 @property(nonatomic,strong)IBOutlet UILabel *nombre;
 @property(nonatomic,strong)IBOutlet UILabel *detalle;
+@property(nonatomic,strong)IBOutlet UILabel *hora;
 @end
 
 @implementation RutinaTableViewCell
@@ -18,6 +19,15 @@
 - (void)fillWithRutina:(Rutina *)rutina{
     self.nombre.text = rutina.nombre;
     self.detalle.text = rutina.detalleCorto;
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"hh:mm aaa"];
+    self.hora.text = [dateFormatter stringFromDate:rutina.sesion.hora];
+    self.hora.hidden = !self.showsTime;
+}
+
+- (void)setShowsTime:(BOOL)showsTime{
+    _showsTime = showsTime;
+    self.hora.hidden = !showsTime;
 }
 
 @end

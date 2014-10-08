@@ -11,6 +11,8 @@
 
 @interface RutinaTableViewCell : UITableViewCell
 
+@property (nonatomic,assign)BOOL showsTime;
+
 - (void)fillWithRutina:(Rutina *)rutina;
 
 @end

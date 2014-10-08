@@ -21,7 +21,7 @@
 
 - (void)reloadData {
     //Ordeno por sesion
-    [self.tableData sortedArrayUsingComparator:^(Rutina *rutina1,Rutina *rutina2){
+    self.tableData = [self.tableData sortedArrayUsingComparator:^(Rutina *rutina1,Rutina *rutina2){
         return [rutina1.sesion compare:rutina2.sesion];
     }];
     //Corte de control
@@ -76,6 +76,7 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RutinaTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     [cell fillWithRutina:self.sorteredTableData[self.sorteredTableData.allKeys[indexPath.section]][indexPath.row]];
+    cell.showsTime = YES;
     return cell;
 }
 
