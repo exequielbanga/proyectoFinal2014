@@ -33,6 +33,19 @@
     return self;
 }
 
+- (id)initMock{
+    self = [super init];
+    if (self) {
+        self.userId = @"001";
+        self.firstname = @"Chino";
+        self.lastname = @"Maidana";
+        self.username = @"ElChinitoGuaymayen";
+        self.email = @"chino@maidana.com";
+    }
+    return self;
+}
+
+
 - (id)initWithCoder:(NSCoder*)coder {
     self = [super init];
     if (self) {

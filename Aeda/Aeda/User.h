@@ -18,6 +18,7 @@
 @property (nonatomic, copy) NSString* email;
 
 - (id)initWithDictionary:(NSDictionary*)dictionary;
+- (id)initMock;
 
 
 @end

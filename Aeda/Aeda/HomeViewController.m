@@ -167,15 +167,15 @@
 }
 
 - (void)showFacebook {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.facebook.com/pages/Soluci%C3%B3n-para-Auto-Entrenamiento-Deportivo-Amateur/913175838711058"]];
 }
 
 - (void)showTwitter {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://twitter.com"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/EntrenamAmateur"]];
 }
 
 - (void)showYoutube {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://youtube.com"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.youtube.com/channel/UCUU7brLj0hYLtf38Z7JITKA"]];
 }
 
 - (IBAction)showMessages {

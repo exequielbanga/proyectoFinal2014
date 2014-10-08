@@ -19,12 +19,14 @@
 @implementation LoginService
 
 - (void)authenticateWithUsername:(NSString*)username password:(NSString*)password finishedBlock:(ServiceBlock)block {
-    if (!username || !password) {
-        block(nil, [NSError errorWithDomain:@"" code:400 userInfo:@{@"cause" : @"user_password_invalid"}]);
-    }
-    self.username = username;
-    self.password = password;
+//    if (!username || !password) {
+//        block(nil, [NSError errorWithDomain:@"" code:400 userInfo:@{@"cause" : @"user_password_invalid"}]);
+//    }
+//    self.username = username;
+//    self.password = password;
 //    [self startWithBlock:block];
+    [UserManager setCurrentUser:[[User alloc]initMock]];
+    block(@[[UserManager getCurrentUser]],nil);
 }
 
 - (NSString*)serviceURL{
