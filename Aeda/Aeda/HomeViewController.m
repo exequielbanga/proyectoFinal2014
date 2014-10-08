@@ -17,7 +17,7 @@
 #import "ButtonsTableViewCell.h"
 #import "SupressFunction.h"
 
-#import "RutinaViewController.h"
+#import "MisRutinasViewController.h"
 #import "SeguimientoViewController.h"
 
 #define kText @"kText"
@@ -141,7 +141,8 @@
 }
 
 - (void)showMisRutinas {
-    RutinaViewController *rutinaViewController = [[RutinaViewController alloc] initWithNibName:@"RutinaViewController" bundle:nil];
+    MisRutinasViewController *rutinaViewController = [[MisRutinasViewController alloc] initWithNibName:@"RutinaViewController" bundle:nil];
+    rutinaViewController.authDelegate = self;
     [self showViewController:rutinaViewController];
 }
 

@@ -12,6 +12,15 @@
 		F63B690819E2B28500302B6C /* ResultadoRutinaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690719E2B28500302B6C /* ResultadoRutinaViewController.m */; };
 		F63B690B19E2B2E000302B6C /* ResultadoEjercicioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690A19E2B2E000302B6C /* ResultadoEjercicioView.m */; };
 		F63B690E19E2B6CA00302B6C /* ResultadoEjercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */; };
+		F66ACDC619E4AFBC00DF52D8 /* RutinasListByDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */; };
+		F695548819E4A574009AA5A6 /* RutinaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F695548619E4A574009AA5A6 /* RutinaTableViewCell.m */; };
+		F695548919E4A574009AA5A6 /* RutinaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F695548719E4A574009AA5A6 /* RutinaTableViewCell.xib */; };
+		F695548D19E4A739009AA5A6 /* RutinaService.m in Sources */ = {isa = PBXBuildFile; fileRef = F695548C19E4A739009AA5A6 /* RutinaService.m */; };
+		F695549019E4A890009AA5A6 /* SesionRutina.m in Sources */ = {isa = PBXBuildFile; fileRef = F695548F19E4A890009AA5A6 /* SesionRutina.m */; };
+		F6A23C3419E4A2970099F0A1 /* MisRutinasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A23C3219E4A2970099F0A1 /* MisRutinasViewController.m */; };
+		F6A23C3519E4A2970099F0A1 /* MisRutinasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A23C3319E4A2970099F0A1 /* MisRutinasViewController.xib */; };
+		F6A23C3919E4A4B20099F0A1 /* RutinasListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A23C3719E4A4B20099F0A1 /* RutinasListViewController.m */; };
+		F6A23C3A19E4A4B20099F0A1 /* RutinasListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A23C3819E4A4B20099F0A1 /* RutinasListViewController.xib */; };
 		F6C2E41D19E1870900538EF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E41C19E1870900538EF7 /* main.m */; };
 		F6C2E42019E1870900538EF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E41F19E1870900538EF7 /* AppDelegate.m */; };
 		F6C2E42319E1870900538EF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E42219E1870900538EF7 /* ViewController.m */; };
@@ -94,6 +103,21 @@
 		F63B690A19E2B2E000302B6C /* ResultadoEjercicioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoEjercicioView.m; sourceTree = "<group>"; };
 		F63B690C19E2B6CA00302B6C /* ResultadoEjercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoEjercicio.h; sourceTree = "<group>"; };
 		F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoEjercicio.m; sourceTree = "<group>"; };
+		F66ACDC419E4AFBC00DF52D8 /* RutinasListByDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinasListByDayViewController.h; sourceTree = "<group>"; };
+		F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinasListByDayViewController.m; sourceTree = "<group>"; };
+		F695548519E4A574009AA5A6 /* RutinaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinaTableViewCell.h; sourceTree = "<group>"; };
+		F695548619E4A574009AA5A6 /* RutinaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinaTableViewCell.m; sourceTree = "<group>"; };
+		F695548719E4A574009AA5A6 /* RutinaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RutinaTableViewCell.xib; sourceTree = "<group>"; };
+		F695548B19E4A739009AA5A6 /* RutinaService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinaService.h; sourceTree = "<group>"; };
+		F695548C19E4A739009AA5A6 /* RutinaService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinaService.m; sourceTree = "<group>"; };
+		F695548E19E4A890009AA5A6 /* SesionRutina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SesionRutina.h; sourceTree = "<group>"; };
+		F695548F19E4A890009AA5A6 /* SesionRutina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SesionRutina.m; sourceTree = "<group>"; };
+		F6A23C3119E4A2970099F0A1 /* MisRutinasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MisRutinasViewController.h; sourceTree = "<group>"; };
+		F6A23C3219E4A2970099F0A1 /* MisRutinasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MisRutinasViewController.m; sourceTree = "<group>"; };
+		F6A23C3319E4A2970099F0A1 /* MisRutinasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MisRutinasViewController.xib; sourceTree = "<group>"; };
+		F6A23C3619E4A4B20099F0A1 /* RutinasListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinasListViewController.h; sourceTree = "<group>"; };
+		F6A23C3719E4A4B20099F0A1 /* RutinasListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinasListViewController.m; sourceTree = "<group>"; };
+		F6A23C3819E4A4B20099F0A1 /* RutinasListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RutinasListViewController.xib; sourceTree = "<group>"; };
 		F6C2E41719E1870900538EF7 /* Aeda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aeda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C2E41B19E1870900538EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6C2E41C19E1870900538EF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -231,6 +255,15 @@
 				ABFC7F0D7BCE4643B151466F /* libPods-Aeda.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F695548A19E4A710009AA5A6 /* MisRutinas */ = {
+			isa = PBXGroup;
+			children = (
+				F695548B19E4A739009AA5A6 /* RutinaService.h */,
+				F695548C19E4A739009AA5A6 /* RutinaService.m */,
+			);
+			name = MisRutinas;
 			sourceTree = "<group>";
 		};
 		F6C2E40E19E1870900538EF7 = {
@@ -409,6 +442,8 @@
 				F6CB387119E1CD9800CA1A7D /* ResultadoRutina.m */,
 				F6CB387319E1CDA500CA1A7D /* Rutina.h */,
 				F6CB387419E1CDA500CA1A7D /* Rutina.m */,
+				F695548E19E4A890009AA5A6 /* SesionRutina.h */,
+				F695548F19E4A890009AA5A6 /* SesionRutina.m */,
 				F6CB387619E1CDE800CA1A7D /* Ejercicio.h */,
 				F6CB387719E1CDE800CA1A7D /* Ejercicio.m */,
 				F63B690C19E2B6CA00302B6C /* ResultadoEjercicio.h */,
@@ -432,6 +467,7 @@
 		F6C2E49A19E18CE000538EF7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F695548A19E4A710009AA5A6 /* MisRutinas */,
 				F6CB388719E1E20B00CA1A7D /* ResultadoRutina */,
 				F6C2E4AA19E18D3C00538EF7 /* Generic */,
 				F6C2E49B19E18CE900538EF7 /* Login */,
@@ -478,6 +514,9 @@
 				F6CB387D19E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.h */,
 				F6CB387E19E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.m */,
 				F6CB387F19E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.xib */,
+				F695548519E4A574009AA5A6 /* RutinaTableViewCell.h */,
+				F695548619E4A574009AA5A6 /* RutinaTableViewCell.m */,
+				F695548719E4A574009AA5A6 /* RutinaTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -485,9 +524,17 @@
 		F6CB386A19E1CAA400CA1A7D /* MisRutinas */ = {
 			isa = PBXGroup;
 			children = (
+				F6A23C3619E4A4B20099F0A1 /* RutinasListViewController.h */,
+				F6A23C3719E4A4B20099F0A1 /* RutinasListViewController.m */,
+				F6A23C3819E4A4B20099F0A1 /* RutinasListViewController.xib */,
+				F6A23C3119E4A2970099F0A1 /* MisRutinasViewController.h */,
+				F6A23C3219E4A2970099F0A1 /* MisRutinasViewController.m */,
+				F6A23C3319E4A2970099F0A1 /* MisRutinasViewController.xib */,
 				F6CB386B19E1CADA00CA1A7D /* RutinaViewController.h */,
 				F6CB386C19E1CADA00CA1A7D /* RutinaViewController.m */,
 				F6CB386D19E1CADA00CA1A7D /* RutinaViewController.xib */,
+				F66ACDC419E4AFBC00DF52D8 /* RutinasListByDayViewController.h */,
+				F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */,
 			);
 			name = MisRutinas;
 			sourceTree = "<group>";
@@ -598,6 +645,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A23C3A19E4A4B20099F0A1 /* RutinasListViewController.xib in Resources */,
 				F6C2E4A319E18CFD00538EF7 /* LoginServiceRequest.txt in Resources */,
 				F6C2E42B19E1870900538EF7 /* LaunchScreen.xib in Resources */,
 				F6CB386F19E1CADA00CA1A7D /* RutinaViewController.xib in Resources */,
@@ -606,10 +654,12 @@
 				F6C2E49819E18CC700538EF7 /* MisDatosTableViewHeader.xib in Resources */,
 				F6C2E46019E189C600538EF7 /* ALSegmentedControl.xib in Resources */,
 				F6C2E48B19E18A4F00538EF7 /* LoginViewController.xib in Resources */,
+				F695548919E4A574009AA5A6 /* RutinaTableViewCell.xib in Resources */,
 				F6C2E4CB19E18E5700538EF7 /* TitleTextViewTableViewCell.xib in Resources */,
 				F6C2E42819E1870900538EF7 /* Images.xcassets in Resources */,
 				F6C2E44B19E1895B00538EF7 /* HomeViewController.xib in Resources */,
 				F6C2E46319E189C600538EF7 /* ALLabelForTableView.xib in Resources */,
+				F6A23C3519E4A2970099F0A1 /* MisRutinasViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,8 +725,10 @@
 				F6C2E42319E1870900538EF7 /* ViewController.m in Sources */,
 				F6C2E48119E18A2D00538EF7 /* ALNavigationViewController.m in Sources */,
 				F6C2E46619E189C600538EF7 /* ALMessagesButton.m in Sources */,
+				F695549019E4A890009AA5A6 /* SesionRutina.m in Sources */,
 				F6C2E46719E189C600538EF7 /* ALTableView.m in Sources */,
 				F6C2E4A619E18D2900538EF7 /* GenericParser.m in Sources */,
+				F66ACDC619E4AFBC00DF52D8 /* RutinasListByDayViewController.m in Sources */,
 				F6C2E47419E189E100538EF7 /* UIColor+ALColor.m in Sources */,
 				F6C2E48C19E18A4F00538EF7 /* UserManager.m in Sources */,
 				F6C2E4C719E18E5700538EF7 /* LoadingNextPageView.m in Sources */,
@@ -686,13 +738,16 @@
 				F6C2E49919E18CC700538EF7 /* MisDatosViewController.m in Sources */,
 				F6C2E4CA19E18E5700538EF7 /* TitleTextViewTableViewCell.m in Sources */,
 				F6C2E44919E1895B00538EF7 /* HomeMenuHeaderTableView.m in Sources */,
+				F6A23C3419E4A2970099F0A1 /* MisRutinasViewController.m in Sources */,
 				F62D522E19E311E800EF01FB /* ResultadoRepeticionView.m in Sources */,
 				F6C2E46419E189C600538EF7 /* ALLoggedButton.m in Sources */,
 				F6C2E46219E189C600538EF7 /* ALLabelForTableView.m in Sources */,
 				F6CB388019E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.m in Sources */,
 				F6C2E44819E1895B00538EF7 /* HomeMenuHeaderItem.m in Sources */,
 				F6C2E42019E1870900538EF7 /* AppDelegate.m in Sources */,
+				F695548D19E4A739009AA5A6 /* RutinaService.m in Sources */,
 				F63B690E19E2B6CA00302B6C /* ResultadoEjercicio.m in Sources */,
+				F695548819E4A574009AA5A6 /* RutinaTableViewCell.m in Sources */,
 				F63B690819E2B28500302B6C /* ResultadoRutinaViewController.m in Sources */,
 				F6C2E45F19E189C600538EF7 /* ALSegmentedControl.m in Sources */,
 				F6C2E41D19E1870900538EF7 /* main.m in Sources */,
@@ -707,6 +762,7 @@
 				F6C2E46819E189C600538EF7 /* ALToolbar.m in Sources */,
 				F6C2E44A19E1895B00538EF7 /* HomeViewController.m in Sources */,
 				F6C2E4C219E18E5700538EF7 /* ButtonsTableViewCell.m in Sources */,
+				F6A23C3919E4A4B20099F0A1 /* RutinasListViewController.m in Sources */,
 				F6C2E4A919E18D3500538EF7 /* RestService.m in Sources */,
 				F6C2E47219E189E100538EF7 /* NSObject+NibCreator.m in Sources */,
 			);

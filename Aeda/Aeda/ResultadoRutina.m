@@ -7,7 +7,6 @@
 //
 
 #import "ResultadoRutina.h"
-#import "Rutina.h"
 #import "ResultadoEjercicio.h"
 
 @implementation ResultadoRutina
