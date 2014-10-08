@@ -90,11 +90,11 @@
 }
 
 - (IBAction)makeRegistration {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.miallianz.com.ar"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.facebook.com/pages/Soluci%C3%B3n-para-Auto-Entrenamiento-Deportivo-Amateur/913175838711058"]];
 }
 
 - (IBAction)forgotPassword {
-    [self showLoadingMessage];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.facebook.com/pages/Soluci%C3%B3n-para-Auto-Entrenamiento-Deportivo-Amateur/913175838711058"]];
 }
 
 - (void)success

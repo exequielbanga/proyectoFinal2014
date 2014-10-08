@@ -20,6 +20,7 @@
 @property(nonatomic,strong)IBOutlet UILabel *detalle;
 @property(nonatomic,strong)IBOutlet UIView  *barras;
 @property(nonatomic,strong)IBOutlet UIButton *botonComenzar;
+@property(nonatomic,strong)Ejercicio *ejercicio;
 @end
 
 @implementation EjercicioView
@@ -30,6 +31,7 @@
 }
 
 - (void)fillWithEjercicio:(Ejercicio *)ejercicio{
+    self.ejercicio = ejercicio;
     self.titulo.text = ejercicio.nombre;
     self.detalle.text = ejercicio.detalle;
 
@@ -134,6 +136,10 @@
     self.barras.frame = CGRectMake(self.barras.frame.origin.x, self.detalle.frame.origin.y + self.detalle.frame.size.height + kYOffset, self.barras.frame.size.width, yOffset);
     
     self.botonComenzar.frame = CGRectMake(self.botonComenzar.frame.origin.x, self.barras.frame.origin.y + self.barras.frame.size.height + kYOffset, self.botonComenzar.frame.size.width, self.botonComenzar.frame.size.height);
+}
+
+- (IBAction)start{
+    [self.delegate ejercicioView:self wantStartEjercicio:self.ejercicio];
 }
 
 @end

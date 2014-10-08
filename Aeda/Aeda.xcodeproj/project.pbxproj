@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		13C8E0298B964AE7BEE00B98 /* libPods-Aeda.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFC7F0D7BCE4643B151466F /* libPods-Aeda.a */; };
+		F6010A2419E5B1BC00B076BF /* RutinaEnProgresoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6010A2219E5B1BC00B076BF /* RutinaEnProgresoViewController.m */; };
+		F6010A2519E5B1BC00B076BF /* RutinaEnProgresoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6010A2319E5B1BC00B076BF /* RutinaEnProgresoViewController.xib */; };
 		F62D522E19E311E800EF01FB /* ResultadoRepeticionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F62D522D19E311E800EF01FB /* ResultadoRepeticionView.m */; };
+		F630C12219E5C55000B6449B /* HeartRate.m in Sources */ = {isa = PBXBuildFile; fileRef = F630C12119E5C55000B6449B /* HeartRate.m */; };
 		F63B690819E2B28500302B6C /* ResultadoRutinaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690719E2B28500302B6C /* ResultadoRutinaViewController.m */; };
 		F63B690B19E2B2E000302B6C /* ResultadoEjercicioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690A19E2B2E000302B6C /* ResultadoEjercicioView.m */; };
 		F63B690E19E2B6CA00302B6C /* ResultadoEjercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */; };
@@ -101,8 +104,13 @@
 /* Begin PBXFileReference section */
 		ABFC7F0D7BCE4643B151466F /* libPods-Aeda.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Aeda.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6F2F05B40354C27A864F90A /* Pods-Aeda.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aeda.xcconfig"; path = "Pods/Pods-Aeda.xcconfig"; sourceTree = "<group>"; };
+		F6010A2119E5B1BC00B076BF /* RutinaEnProgresoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinaEnProgresoViewController.h; sourceTree = "<group>"; };
+		F6010A2219E5B1BC00B076BF /* RutinaEnProgresoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinaEnProgresoViewController.m; sourceTree = "<group>"; };
+		F6010A2319E5B1BC00B076BF /* RutinaEnProgresoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RutinaEnProgresoViewController.xib; sourceTree = "<group>"; };
 		F62D522C19E311E800EF01FB /* ResultadoRepeticionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoRepeticionView.h; sourceTree = "<group>"; };
 		F62D522D19E311E800EF01FB /* ResultadoRepeticionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoRepeticionView.m; sourceTree = "<group>"; };
+		F630C12019E5C55000B6449B /* HeartRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartRate.h; sourceTree = "<group>"; };
+		F630C12119E5C55000B6449B /* HeartRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartRate.m; sourceTree = "<group>"; };
 		F63B690619E2B28500302B6C /* ResultadoRutinaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoRutinaViewController.h; sourceTree = "<group>"; };
 		F63B690719E2B28500302B6C /* ResultadoRutinaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoRutinaViewController.m; sourceTree = "<group>"; };
 		F63B690919E2B2E000302B6C /* ResultadoEjercicioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoEjercicioView.h; sourceTree = "<group>"; };
@@ -272,6 +280,16 @@
 				ABFC7F0D7BCE4643B151466F /* libPods-Aeda.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6010A2019E5B1A400B076BF /* En progreso */ = {
+			isa = PBXGroup;
+			children = (
+				F6010A2119E5B1BC00B076BF /* RutinaEnProgresoViewController.h */,
+				F6010A2219E5B1BC00B076BF /* RutinaEnProgresoViewController.m */,
+				F6010A2319E5B1BC00B076BF /* RutinaEnProgresoViewController.xib */,
+			);
+			name = "En progreso";
 			sourceTree = "<group>";
 		};
 		F695548A19E4A710009AA5A6 /* MisRutinas */ = {
@@ -471,6 +489,8 @@
 				F6CB387719E1CDE800CA1A7D /* Ejercicio.m */,
 				F63B690C19E2B6CA00302B6C /* ResultadoEjercicio.h */,
 				F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */,
+				F630C12019E5C55000B6449B /* HeartRate.h */,
+				F630C12119E5C55000B6449B /* HeartRate.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -597,6 +617,7 @@
 		F6CF392019E56272000E03BA /* Detalle */ = {
 			isa = PBXGroup;
 			children = (
+				F6010A2019E5B1A400B076BF /* En progreso */,
 				F6CF392119E5631D000E03BA /* EjercicioView.h */,
 				F6CF392219E5631D000E03BA /* EjercicioView.m */,
 				F6CF392319E5631D000E03BA /* EjercicioView.xib */,
@@ -703,6 +724,7 @@
 				F6C2E4CB19E18E5700538EF7 /* TitleTextViewTableViewCell.xib in Resources */,
 				F6C2E42819E1870900538EF7 /* Images.xcassets in Resources */,
 				F6C2E44B19E1895B00538EF7 /* HomeViewController.xib in Resources */,
+				F6010A2519E5B1BC00B076BF /* RutinaEnProgresoViewController.xib in Resources */,
 				F6C2E46319E189C600538EF7 /* ALLabelForTableView.xib in Resources */,
 				F6A23C3519E4A2970099F0A1 /* MisRutinasViewController.xib in Resources */,
 			);
@@ -773,6 +795,7 @@
 				F695549019E4A890009AA5A6 /* SesionRutina.m in Sources */,
 				F6C2E46719E189C600538EF7 /* ALTableView.m in Sources */,
 				F6C2E4A619E18D2900538EF7 /* GenericParser.m in Sources */,
+				F6010A2419E5B1BC00B076BF /* RutinaEnProgresoViewController.m in Sources */,
 				F677408D19E4E83F0056EA16 /* RutinasHoyViewController.m in Sources */,
 				F66ACDC619E4AFBC00DF52D8 /* RutinasListByDayViewController.m in Sources */,
 				F6C2E47419E189E100538EF7 /* UIColor+ALColor.m in Sources */,
@@ -804,6 +827,7 @@
 				F6C2E48019E18A2D00538EF7 /* ALAuthenticationViewController.m in Sources */,
 				F6C2E46119E189C600538EF7 /* ALButton.m in Sources */,
 				F6CB387819E1CDE800CA1A7D /* Ejercicio.m in Sources */,
+				F630C12219E5C55000B6449B /* HeartRate.m in Sources */,
 				F6C2E4A219E18CFD00538EF7 /* LoginService.m in Sources */,
 				F6CB388A19E1E22B00CA1A7D /* ResultadoRutinaService.m in Sources */,
 				F6CB387C19E1D34800CA1A7D /* SeguimientoViewController.m in Sources */,

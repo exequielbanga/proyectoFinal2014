@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "Ejercicio.h"
 
+@class EjercicioView;
+@protocol EjercicioViewDelegate <NSObject>
+- (void)ejercicioView:(EjercicioView *)view wantStartEjercicio:(Ejercicio *)ejercicio;
+@end
+
 @interface EjercicioView : UIView
 
 @property (nonatomic, strong) IBOutlet UILabel* textLabel;
+@property (nonatomic, weak) id<EjercicioViewDelegate> delegate;
 
 + (EjercicioView*)View;
 
