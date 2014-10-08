@@ -7,18 +7,15 @@
 //
 
 #import "RutinasListViewController.h"
-#import "RutinaService.h"
 #import "RutinaTableViewCell.h"
 #import "LoadingNextPageView.h"
 #import "RutinaViewController.h"
 #import "UIColor+ALColor.h"
-#import "RestService.h"
 
 #define kCellIdentifier @"kCellIdentifierRutina"
 
 @interface RutinasListViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, weak) IBOutlet UITableView* tableView;
-@property (nonatomic, strong) RutinaService* service;
 
 @end
 
@@ -36,8 +33,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor ALLilaColor];
-    self.tableView.backgroundColor = [UIColor ALLilaColor];
+    self.view.backgroundColor = [[UIColor ALLightBlueColor] colorWithAlphaComponent:.5];
+    self.tableView.backgroundColor = [[UIColor ALLightBlueColor] colorWithAlphaComponent:.5];
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.tableView registerNib:[UINib nibWithNibName:@"RutinaTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kCellIdentifier];
@@ -98,6 +95,8 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RutinaTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     [cell fillWithRutina:self.tableData[indexPath.row]];
     cell.showsTime = NO;
     return cell;

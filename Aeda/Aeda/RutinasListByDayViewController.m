@@ -75,6 +75,8 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RutinaTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     [cell fillWithRutina:self.sorteredTableData[self.sorteredTableData.allKeys[indexPath.section]][indexPath.row]];
     cell.showsTime = YES;
     return cell;

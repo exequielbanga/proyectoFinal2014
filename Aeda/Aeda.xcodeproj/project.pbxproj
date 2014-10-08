@@ -13,6 +13,7 @@
 		F63B690B19E2B2E000302B6C /* ResultadoEjercicioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690A19E2B2E000302B6C /* ResultadoEjercicioView.m */; };
 		F63B690E19E2B6CA00302B6C /* ResultadoEjercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */; };
 		F66ACDC619E4AFBC00DF52D8 /* RutinasListByDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */; };
+		F677408D19E4E83F0056EA16 /* RutinasHoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F677408C19E4E83F0056EA16 /* RutinasHoyViewController.m */; };
 		F695548819E4A574009AA5A6 /* RutinaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F695548619E4A574009AA5A6 /* RutinaTableViewCell.m */; };
 		F695548919E4A574009AA5A6 /* RutinaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F695548719E4A574009AA5A6 /* RutinaTableViewCell.xib */; };
 		F695548D19E4A739009AA5A6 /* RutinaService.m in Sources */ = {isa = PBXBuildFile; fileRef = F695548C19E4A739009AA5A6 /* RutinaService.m */; };
@@ -105,6 +106,8 @@
 		F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoEjercicio.m; sourceTree = "<group>"; };
 		F66ACDC419E4AFBC00DF52D8 /* RutinasListByDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinasListByDayViewController.h; sourceTree = "<group>"; };
 		F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinasListByDayViewController.m; sourceTree = "<group>"; };
+		F677408B19E4E83F0056EA16 /* RutinasHoyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinasHoyViewController.h; sourceTree = "<group>"; };
+		F677408C19E4E83F0056EA16 /* RutinasHoyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinasHoyViewController.m; sourceTree = "<group>"; };
 		F695548519E4A574009AA5A6 /* RutinaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinaTableViewCell.h; sourceTree = "<group>"; };
 		F695548619E4A574009AA5A6 /* RutinaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinaTableViewCell.m; sourceTree = "<group>"; };
 		F695548719E4A574009AA5A6 /* RutinaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RutinaTableViewCell.xib; sourceTree = "<group>"; };
@@ -524,9 +527,6 @@
 		F6CB386A19E1CAA400CA1A7D /* MisRutinas */ = {
 			isa = PBXGroup;
 			children = (
-				F6A23C3619E4A4B20099F0A1 /* RutinasListViewController.h */,
-				F6A23C3719E4A4B20099F0A1 /* RutinasListViewController.m */,
-				F6A23C3819E4A4B20099F0A1 /* RutinasListViewController.xib */,
 				F6A23C3119E4A2970099F0A1 /* MisRutinasViewController.h */,
 				F6A23C3219E4A2970099F0A1 /* MisRutinasViewController.m */,
 				F6A23C3319E4A2970099F0A1 /* MisRutinasViewController.xib */,
@@ -535,6 +535,11 @@
 				F6CB386D19E1CADA00CA1A7D /* RutinaViewController.xib */,
 				F66ACDC419E4AFBC00DF52D8 /* RutinasListByDayViewController.h */,
 				F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */,
+				F677408B19E4E83F0056EA16 /* RutinasHoyViewController.h */,
+				F677408C19E4E83F0056EA16 /* RutinasHoyViewController.m */,
+				F6A23C3619E4A4B20099F0A1 /* RutinasListViewController.h */,
+				F6A23C3719E4A4B20099F0A1 /* RutinasListViewController.m */,
+				F6A23C3819E4A4B20099F0A1 /* RutinasListViewController.xib */,
 			);
 			name = MisRutinas;
 			sourceTree = "<group>";
@@ -728,6 +733,7 @@
 				F695549019E4A890009AA5A6 /* SesionRutina.m in Sources */,
 				F6C2E46719E189C600538EF7 /* ALTableView.m in Sources */,
 				F6C2E4A619E18D2900538EF7 /* GenericParser.m in Sources */,
+				F677408D19E4E83F0056EA16 /* RutinasHoyViewController.m in Sources */,
 				F66ACDC619E4AFBC00DF52D8 /* RutinasListByDayViewController.m in Sources */,
 				F6C2E47419E189E100538EF7 /* UIColor+ALColor.m in Sources */,
 				F6C2E48C19E18A4F00538EF7 /* UserManager.m in Sources */,

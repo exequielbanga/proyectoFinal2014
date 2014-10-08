@@ -25,11 +25,13 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.allButtons = @[self.entryButton, self.sentButton];
+    self.allButtons = @[self.firstButton,self.entryButton, self.sentButton];
+    [self setBorderOfButton:self.firstButton];
     [self setBorderOfButton:self.entryButton];
     [self setBorderOfButton:self.sentButton];
 
-    [self setSelectedAppereanceOfButton:self.entryButton];
+    [self setSelectedAppereanceOfButton:self.firstButton];
+    [self setNonselectedAppereanceOfButton:self.entryButton];
     [self setNonselectedAppereanceOfButton:self.sentButton];
 }
 

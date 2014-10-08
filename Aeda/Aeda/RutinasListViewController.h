@@ -7,11 +7,13 @@
 //
 
 #import "ALAuthenticationViewController.h"
+#import "RutinaService.h"
 
 @interface RutinasListViewController : ALAuthenticationViewController
 
 @property (nonatomic) BOOL isEntryListing;
 @property (nonatomic, strong) NSArray *tableData;
+@property (nonatomic, strong) RutinaService* service;
 
 - (void)reloadData;
 

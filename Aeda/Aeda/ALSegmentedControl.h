@@ -10,6 +10,7 @@
 
 @interface ALSegmentedControl : UIView
 
+@property (nonatomic, weak) IBOutlet UIButton* firstButton;
 @property (nonatomic, weak) IBOutlet UIButton* entryButton;
 @property (nonatomic, weak) IBOutlet UIButton* sentButton;
 

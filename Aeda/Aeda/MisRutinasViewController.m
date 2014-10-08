@@ -10,12 +10,14 @@
 #import "UIColor+ALColor.h"
 #import "ALSegmentedControl.h"
 #import "RutinasListByDayViewController.h"
+#import "RutinasHoyViewController.h"
 
 @interface MisRutinasViewController ()
 @property (nonatomic, strong) ALSegmentedControl* segmentedControl;
 @property (nonatomic, weak) IBOutlet UIView* segmentedSuperview;
 @property (nonatomic, weak) IBOutlet UIView* containerView;
 
+@property (nonatomic, strong) RutinasHoyViewController *rutinasHoy;
 @property (nonatomic, strong) RutinasListByDayViewController *rutinasPorDia;
 @property (nonatomic, strong) RutinasListViewController *todasLasRutinas;
 @property (nonatomic, strong) UIViewController* currentViewController;
@@ -42,10 +44,13 @@
     self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.segmentedSuperview addSubview:self.segmentedControl];
 
+    
+    [self.segmentedControl.firstButton addTarget:self action:@selector(showRutinasHoy) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.segmentedControl.entryButton addTarget:self action:@selector(showRutinasPorDia) forControlEvents:UIControlEventTouchUpInside];
     [self.segmentedControl.sentButton addTarget:self action:@selector(showTodasLasRutinas) forControlEvents:UIControlEventTouchUpInside];
 
-    [self showRutinasPorDia];
+    [self showRutinasHoy];
 }
 
 - (void)showViewController:(UIViewController*)newViewController {
@@ -63,12 +68,24 @@
     self.currentViewController = newViewController;
 }
 
+- (void)showRutinasHoy{
+    if (!self.rutinasHoy) {
+        self.rutinasHoy = [[RutinasHoyViewController alloc] initWithNibName:@"RutinasListViewController" bundle:nil];
+        self.rutinasHoy.isEntryListing = YES;
+    }
+    
+    if (self.currentViewController == self.rutinasHoy) {
+        return;
+    }
+    [self showViewController:self.rutinasHoy];
+}
+
 - (void)showRutinasPorDia {
     if (!self.rutinasPorDia) {
         self.rutinasPorDia = [[RutinasListByDayViewController alloc] initWithNibName:@"RutinasListViewController" bundle:nil];
-        self.rutinasPorDia.isEntryListing = YES;
+        self.rutinasPorDia.isEntryListing = NO;
     }
-
+    
     if (self.currentViewController == self.rutinasPorDia) {
         return;
     }

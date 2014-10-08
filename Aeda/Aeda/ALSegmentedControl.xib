@@ -11,8 +11,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ue9-FG-klr">
-                    <rect key="frame" x="0.0" y="0.0" width="160" height="44"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ue9-FG-klr">
+                    <rect key="frame" x="107" y="0.0" width="106" height="44"/>
                     <state key="normal" title="Por día">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -20,8 +20,8 @@
                         <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="wL3-xj-5oh"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJB-XZ-deK">
-                    <rect key="frame" x="160" y="0.0" width="160" height="44"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJB-XZ-deK">
+                    <rect key="frame" x="213" y="0.0" width="107" height="44"/>
                     <state key="normal" title="Todas">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -29,23 +29,24 @@
                         <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="koW-TS-TBa"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTC-Sj-Svm">
+                    <rect key="frame" x="0.0" y="0.0" width="107" height="44"/>
+                    <state key="normal" title="Hoy">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="Cic-Vu-lsN"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="ue9-FG-klr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7wV-eg-ofQ"/>
-                <constraint firstItem="yJB-XZ-deK" firstAttribute="leading" secondItem="ue9-FG-klr" secondAttribute="trailing" id="CqG-g3-gqL"/>
-                <constraint firstItem="yJB-XZ-deK" firstAttribute="width" secondItem="ue9-FG-klr" secondAttribute="width" id="F8Z-oq-0oT"/>
-                <constraint firstAttribute="trailing" secondItem="yJB-XZ-deK" secondAttribute="trailing" id="Hyx-EP-bi7"/>
-                <constraint firstAttribute="bottom" secondItem="ue9-FG-klr" secondAttribute="bottom" id="cNE-9s-N4N"/>
-                <constraint firstAttribute="bottom" secondItem="yJB-XZ-deK" secondAttribute="bottom" id="cWM-jl-nrj"/>
-                <constraint firstItem="ue9-FG-klr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kLo-qw-6eD"/>
-                <constraint firstItem="yJB-XZ-deK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uCd-FE-iGo"/>
-            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="entryButton" destination="ue9-FG-klr" id="uxp-yK-ynL"/>
+                <outlet property="firstButton" destination="yTC-Sj-Svm" id="Fhx-Sp-BSP"/>
                 <outlet property="sentButton" destination="yJB-XZ-deK" id="Zhl-Xw-y4j"/>
             </connections>
+            <point key="canvasLocation" x="355" y="304"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -19,7 +19,7 @@
     self = [self init];
     if (self) {
         self.dia = arc4random()%7;
-        self.hora = [NSDate dateWithTimeIntervalSince1970:arc4random()%86400];
+        self.hora = [NSDate dateWithTimeIntervalSince1970:28800+arc4random()%50400];
     }
     return self;
 }

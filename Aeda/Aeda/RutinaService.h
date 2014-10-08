@@ -11,5 +11,6 @@
 @interface RutinaService : RestService
 
 - (void)getRutinasWithBlock:(ServiceBlock)block;
+- (void)getRutinasHoyWithBlock:(ServiceBlock)block;
 
 @end
