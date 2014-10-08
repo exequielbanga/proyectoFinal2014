@@ -24,5 +24,19 @@
     return self;
 }
 
+- (instancetype)initWithRutina:(Rutina *)rutina{
+    self = [self init];
+    if (self) {
+        self.nombre = [rutina.nombre copy];
+        self.detalle = [rutina.detalle copy];
+        self.detalleCorto = [rutina.detalleCorto copy];
+        self.ejercicios = [rutina.ejercicios copy];
+        self.fechas = [rutina.fechas copy];
+        self.sesion = [rutina.sesion copy];
+        self.resultado = 0;
+    }
+    return self;
+}
+
 
 @end

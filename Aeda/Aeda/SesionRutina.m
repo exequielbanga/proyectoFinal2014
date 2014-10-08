@@ -33,5 +33,13 @@
     return resultado;
 }
 
+- (id)copyWithZone:(NSZone*)aZone {
+    SesionRutina* sesion = [[[self class] allocWithZone:aZone] init];
+    sesion.dia = self.dia;
+    sesion.hora = [self.hora copy];
+    
+    return sesion;
+}
+
 
 @end

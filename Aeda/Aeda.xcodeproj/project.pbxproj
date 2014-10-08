@@ -12,6 +12,9 @@
 		F63B690819E2B28500302B6C /* ResultadoRutinaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690719E2B28500302B6C /* ResultadoRutinaViewController.m */; };
 		F63B690B19E2B2E000302B6C /* ResultadoEjercicioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690A19E2B2E000302B6C /* ResultadoEjercicioView.m */; };
 		F63B690E19E2B6CA00302B6C /* ResultadoEjercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */; };
+		F63F413A19E582EC00F5E02B /* ALTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F63F413919E582EC00F5E02B /* ALTextField.m */; };
+		F63F413F19E5832600F5E02B /* ALStrokeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F63F413B19E5832600F5E02B /* ALStrokeButton.m */; };
+		F63F414019E5832600F5E02B /* ALFillButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F63F413D19E5832600F5E02B /* ALFillButton.m */; };
 		F66ACDC619E4AFBC00DF52D8 /* RutinasListByDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */; };
 		F677408D19E4E83F0056EA16 /* RutinasHoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F677408C19E4E83F0056EA16 /* RutinasHoyViewController.m */; };
 		F695548819E4A574009AA5A6 /* RutinaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F695548619E4A574009AA5A6 /* RutinaTableViewCell.m */; };
@@ -81,6 +84,8 @@
 		F6CB388419E1D3D200CA1A7D /* Barra.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB388319E1D3D200CA1A7D /* Barra.m */; };
 		F6CB388619E1D52100CA1A7D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CB388519E1D52100CA1A7D /* QuartzCore.framework */; };
 		F6CB388A19E1E22B00CA1A7D /* ResultadoRutinaService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB388919E1E22B00CA1A7D /* ResultadoRutinaService.m */; };
+		F6CF392419E5631D000E03BA /* EjercicioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CF392219E5631D000E03BA /* EjercicioView.m */; };
+		F6CF392519E5631D000E03BA /* EjercicioView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CF392319E5631D000E03BA /* EjercicioView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +109,12 @@
 		F63B690A19E2B2E000302B6C /* ResultadoEjercicioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoEjercicioView.m; sourceTree = "<group>"; };
 		F63B690C19E2B6CA00302B6C /* ResultadoEjercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoEjercicio.h; sourceTree = "<group>"; };
 		F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoEjercicio.m; sourceTree = "<group>"; };
+		F63F413819E582EC00F5E02B /* ALTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTextField.h; sourceTree = "<group>"; };
+		F63F413919E582EC00F5E02B /* ALTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALTextField.m; sourceTree = "<group>"; };
+		F63F413B19E5832600F5E02B /* ALStrokeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALStrokeButton.m; sourceTree = "<group>"; };
+		F63F413C19E5832600F5E02B /* ALFillButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFillButton.h; sourceTree = "<group>"; };
+		F63F413D19E5832600F5E02B /* ALFillButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFillButton.m; sourceTree = "<group>"; };
+		F63F413E19E5832600F5E02B /* ALStrokeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALStrokeButton.h; sourceTree = "<group>"; };
 		F66ACDC419E4AFBC00DF52D8 /* RutinasListByDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinasListByDayViewController.h; sourceTree = "<group>"; };
 		F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinasListByDayViewController.m; sourceTree = "<group>"; };
 		F677408B19E4E83F0056EA16 /* RutinasHoyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinasHoyViewController.h; sourceTree = "<group>"; };
@@ -229,6 +240,9 @@
 		F6CB388519E1D52100CA1A7D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F6CB388819E1E22B00CA1A7D /* ResultadoRutinaService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoRutinaService.h; sourceTree = "<group>"; };
 		F6CB388919E1E22B00CA1A7D /* ResultadoRutinaService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoRutinaService.m; sourceTree = "<group>"; };
+		F6CF392119E5631D000E03BA /* EjercicioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EjercicioView.h; sourceTree = "<group>"; };
+		F6CF392219E5631D000E03BA /* EjercicioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EjercicioView.m; sourceTree = "<group>"; };
+		F6CF392319E5631D000E03BA /* EjercicioView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EjercicioView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +368,12 @@
 		F6C2E44C19E189BB00538EF7 /* Controles */ = {
 			isa = PBXGroup;
 			children = (
+				F63F413B19E5832600F5E02B /* ALStrokeButton.m */,
+				F63F413C19E5832600F5E02B /* ALFillButton.h */,
+				F63F413D19E5832600F5E02B /* ALFillButton.m */,
+				F63F413E19E5832600F5E02B /* ALStrokeButton.h */,
+				F63F413819E582EC00F5E02B /* ALTextField.h */,
+				F63F413919E582EC00F5E02B /* ALTextField.m */,
 				F6C2E44D19E189C600538EF7 /* ALSegmentedControl.h */,
 				F6C2E44E19E189C600538EF7 /* ALSegmentedControl.m */,
 				F6C2E44F19E189C600538EF7 /* ALSegmentedControl.xib */,
@@ -527,19 +547,11 @@
 		F6CB386A19E1CAA400CA1A7D /* MisRutinas */ = {
 			isa = PBXGroup;
 			children = (
+				F6CF391F19E56263000E03BA /* Listas */,
+				F6CF392019E56272000E03BA /* Detalle */,
 				F6A23C3119E4A2970099F0A1 /* MisRutinasViewController.h */,
 				F6A23C3219E4A2970099F0A1 /* MisRutinasViewController.m */,
 				F6A23C3319E4A2970099F0A1 /* MisRutinasViewController.xib */,
-				F6CB386B19E1CADA00CA1A7D /* RutinaViewController.h */,
-				F6CB386C19E1CADA00CA1A7D /* RutinaViewController.m */,
-				F6CB386D19E1CADA00CA1A7D /* RutinaViewController.xib */,
-				F66ACDC419E4AFBC00DF52D8 /* RutinasListByDayViewController.h */,
-				F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */,
-				F677408B19E4E83F0056EA16 /* RutinasHoyViewController.h */,
-				F677408C19E4E83F0056EA16 /* RutinasHoyViewController.m */,
-				F6A23C3619E4A4B20099F0A1 /* RutinasListViewController.h */,
-				F6A23C3719E4A4B20099F0A1 /* RutinasListViewController.m */,
-				F6A23C3819E4A4B20099F0A1 /* RutinasListViewController.xib */,
 			);
 			name = MisRutinas;
 			sourceTree = "<group>";
@@ -566,6 +578,33 @@
 				F6CB388919E1E22B00CA1A7D /* ResultadoRutinaService.m */,
 			);
 			name = ResultadoRutina;
+			sourceTree = "<group>";
+		};
+		F6CF391F19E56263000E03BA /* Listas */ = {
+			isa = PBXGroup;
+			children = (
+				F66ACDC419E4AFBC00DF52D8 /* RutinasListByDayViewController.h */,
+				F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */,
+				F677408B19E4E83F0056EA16 /* RutinasHoyViewController.h */,
+				F677408C19E4E83F0056EA16 /* RutinasHoyViewController.m */,
+				F6A23C3619E4A4B20099F0A1 /* RutinasListViewController.h */,
+				F6A23C3719E4A4B20099F0A1 /* RutinasListViewController.m */,
+				F6A23C3819E4A4B20099F0A1 /* RutinasListViewController.xib */,
+			);
+			name = Listas;
+			sourceTree = "<group>";
+		};
+		F6CF392019E56272000E03BA /* Detalle */ = {
+			isa = PBXGroup;
+			children = (
+				F6CF392119E5631D000E03BA /* EjercicioView.h */,
+				F6CF392219E5631D000E03BA /* EjercicioView.m */,
+				F6CF392319E5631D000E03BA /* EjercicioView.xib */,
+				F6CB386B19E1CADA00CA1A7D /* RutinaViewController.h */,
+				F6CB386C19E1CADA00CA1A7D /* RutinaViewController.m */,
+				F6CB386D19E1CADA00CA1A7D /* RutinaViewController.xib */,
+			);
+			name = Detalle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -660,6 +699,7 @@
 				F6C2E46019E189C600538EF7 /* ALSegmentedControl.xib in Resources */,
 				F6C2E48B19E18A4F00538EF7 /* LoginViewController.xib in Resources */,
 				F695548919E4A574009AA5A6 /* RutinaTableViewCell.xib in Resources */,
+				F6CF392519E5631D000E03BA /* EjercicioView.xib in Resources */,
 				F6C2E4CB19E18E5700538EF7 /* TitleTextViewTableViewCell.xib in Resources */,
 				F6C2E42819E1870900538EF7 /* Images.xcassets in Resources */,
 				F6C2E44B19E1895B00538EF7 /* HomeViewController.xib in Resources */,
@@ -736,7 +776,11 @@
 				F677408D19E4E83F0056EA16 /* RutinasHoyViewController.m in Sources */,
 				F66ACDC619E4AFBC00DF52D8 /* RutinasListByDayViewController.m in Sources */,
 				F6C2E47419E189E100538EF7 /* UIColor+ALColor.m in Sources */,
+				F63F414019E5832600F5E02B /* ALFillButton.m in Sources */,
+				F63F413F19E5832600F5E02B /* ALStrokeButton.m in Sources */,
 				F6C2E48C19E18A4F00538EF7 /* UserManager.m in Sources */,
+				F63F413A19E582EC00F5E02B /* ALTextField.m in Sources */,
+				F6CF392419E5631D000E03BA /* EjercicioView.m in Sources */,
 				F6C2E4C719E18E5700538EF7 /* LoadingNextPageView.m in Sources */,
 				F6C2E4C519E18E5700538EF7 /* ImageLabelTableViewCell.m in Sources */,
 				F6C2E47319E189E100538EF7 /* UIColor+ALAdditions.m in Sources */,

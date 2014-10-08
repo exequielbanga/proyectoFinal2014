@@ -133,8 +133,15 @@
     }
 }
 
+- (UIColor *)color{
+    if (_color) {
+        return _color;
+    }
+    return [UIColor colorWithRed:1-[self.valor floatValue] green:[self.valor floatValue] blue:0 alpha:1];
+}
+
 - (void)updateViews{
-    self.bar.backgroundColor = [UIColor colorWithRed:1-[self.valor floatValue] green:[self.valor floatValue] blue:0 alpha:1];
+    self.bar.backgroundColor = self.color;
     switch (self.mode) {
         case BarraModoHorizontal:
             self.bar.frame = CGRectMake(0, 0, self.frame.size.width * [self.valor floatValue], self.frame.size.height);

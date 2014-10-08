@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "SesionRutina.h"
 
-@interface Rutina : NSObject
+@interface Rutina : NSObject<NSCopying>
+
 @property(nonatomic,strong)NSString *nombre;
 @property(nonatomic,strong)NSString *detalle;
 @property(nonatomic,strong)NSString *detalleCorto;

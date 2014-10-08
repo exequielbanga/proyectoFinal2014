@@ -7,10 +7,10 @@
 //
 
 #import "ALViewController.h"
+#import "Rutina.h"
 
 @interface RutinaViewController : ALViewController
 
-//Cambiar NSObject por el modelo Rutina
-@property(nonatomic,strong)NSObject *rutina;
+@property(nonatomic,assign)Rutina *rutina;
 
 @end

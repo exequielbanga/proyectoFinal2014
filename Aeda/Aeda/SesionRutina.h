@@ -18,7 +18,7 @@ typedef enum{
     SesionRutinaDiaDomingo,
 }SesionRutinaDia;
 
-@interface SesionRutina : NSObject
+@interface SesionRutina : NSObject<NSCopying>
 
 @property(nonatomic,assign)SesionRutinaDia dia;
 @property(nonatomic,strong)NSDate *hora;

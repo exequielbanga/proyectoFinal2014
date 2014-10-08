@@ -15,6 +15,7 @@
 @property(nonatomic,assign)CGFloat resultado; //0..1
 @property(nonatomic,strong)NSMutableArray *resultadoEjercicios;
 
+- (instancetype)initWithRutina:(Rutina *)rutina;
 - (instancetype)initMock;
 
 @end

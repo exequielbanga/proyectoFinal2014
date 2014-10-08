@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #define kTolerancia .2;
 
-@interface Ejercicio : NSObject
+@interface Ejercicio : NSObject<NSCopying>
 @property(nonatomic,strong)NSString         *nombre;
 @property(nonatomic,strong)NSString         *detalle;
 @property(nonatomic,assign)NSTimeInterval   tiempo;

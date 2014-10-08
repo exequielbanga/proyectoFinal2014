@@ -54,4 +54,16 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone*)aZone {
+    Rutina* rutina = [[[self class] allocWithZone:aZone] init];
+    rutina.nombre = [self.nombre copy];
+    rutina.detalle = [self.detalle copy];
+    rutina.detalleCorto = [self.detalleCorto copy];
+    rutina.ejercicios = [self.ejercicios copy];
+    rutina.fechas = [self.fechas copy];
+    rutina.sesion = [self.sesion copy];
+
+    return rutina;
+}
+
 @end
