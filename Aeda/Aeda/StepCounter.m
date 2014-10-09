@@ -22,7 +22,6 @@
 
 @property(nonatomic,assign)NSUInteger currentMin;
 @property(nonatomic,assign)NSUInteger countChanges;
-@property(nonatomic,strong)NSDate *lastCountTime;
 
 
 @end
@@ -73,8 +72,8 @@
 - (void)start{
     self.shouldSample = YES;
     [self updateSampleRate];
+
     self.timer = [NSTimer scheduledTimerWithTimeInterval:self.samplingTimeInterval target:self selector:@selector(takeSample) userInfo:nil repeats:YES];
-//    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(mock) userInfo:nil repeats:YES];
     [self takeSample];
 }
 
@@ -120,11 +119,10 @@
                 }
             }
             
-            if(change && [self.lastCountTime timeIntervalSinceNow]>1){
+            if(change){
                 self.countChanges++;
                 if (self.countChanges % 2) {
                     self.countReps++;
-                    self.lastCountTime = [NSDate date];
                     [self.delegate stepCounterDidRecogniceStep:self];
                 }
                 
