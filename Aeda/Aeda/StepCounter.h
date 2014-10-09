@@ -15,6 +15,9 @@
 
 @interface StepCounter : NSObject
 @property(nonatomic,strong)id<StepCounterDelegate>delegate;
+@property(nonatomic,assign)NSTimeInterval samplingTimeInterval;
+@property(nonatomic,assign)NSUInteger countReps;
+
 + (instancetype)sharedStepCounter;
 
 - (void)start;
