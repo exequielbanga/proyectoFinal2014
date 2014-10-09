@@ -22,6 +22,7 @@
 
 @property(nonatomic,assign)NSUInteger currentMin;
 @property(nonatomic,assign)NSUInteger countChanges;
+@property(nonatomic,strong)NSDate *lastCountTime;
 
 
 @end
@@ -119,10 +120,11 @@
                 }
             }
             
-            if(change){
+            if(change && [self.lastCountTime timeIntervalSinceNow]>1){
                 self.countChanges++;
                 if (self.countChanges % 2) {
                     self.countReps++;
+                    self.lastCountTime = [NSDate date];
                     [self.delegate stepCounterDidRecogniceStep:self];
                 }
                 

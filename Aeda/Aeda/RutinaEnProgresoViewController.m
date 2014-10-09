@@ -10,17 +10,21 @@
 #import "HeartRate.h"
 #import "StepCounter.h"
 #import "HeartRate.h"
+#import "ResultadoEjercicio.h"
 
-@interface RutinaEnProgresoViewController ()<StepCounterDelegate>
+@interface RutinaEnProgresoViewController ()<StepCounterDelegate,UIAlertViewDelegate>
 @property(nonatomic,strong)IBOutlet UILabel *nombreEjercicio;
 @property(nonatomic,strong)IBOutlet UILabel *countReps;
 @property(nonatomic,strong)IBOutlet UILabel *ppm;
 @property(nonatomic,strong)IBOutlet UIImageView *corazon;
-
+@property(nonatomic,strong)IBOutlet UIImageView *ejercicioCompletadoView;
 @property(nonatomic,strong)IBOutlet UILabel *countdownLabel;
+@property(nonatomic,strong)IBOutlet UIButton *pauseStartButton;
+
 
 @property(nonatomic,assign)BOOL animandoCorazon;
 @property(nonatomic,assign)BOOL pausa;
+@property(nonatomic,assign)BOOL ejercicioCompletado;
 
 @end
 
@@ -48,19 +52,30 @@
 
 #pragma mark - Setters and Getters
 
+- (void)setEjercicioCompletado:(BOOL)ejercicioCompletado{
+    _ejercicioCompletado = ejercicioCompletado;
+    self.ejercicioCompletadoView.hidden = !ejercicioCompletado;
+}
+
 - (void)setRutina:(ResultadoRutina *)rutina{
     _rutina = rutina;
+    [self pausa];
     [self updateViews];
 }
 
 - (void)setEjercicioActual:(Ejercicio *)ejercicioActual{
     _ejercicioActual = ejercicioActual;
+    [self pausa];
     [self updateViews];
 }
 
 #pragma mark - Views
 - (void)updateViews{
     self.nombreEjercicio.text = self.ejercicioActual.nombre;
+    self.ejercicioCompletado = NO;
+    
+    ResultadoEjercicio *resultadoEjercicio = [self resultadoEjercicioDe:self.ejercicioActual];
+    self.ejercicioCompletado = resultadoEjercicio.completado;
 }
 
 - (void)animarCorazon{
@@ -120,35 +135,83 @@
     self.countReps.text = [NSString stringWithFormat:@"%lu",(unsigned long)stepCounter.countReps];
 }
 
-#pragma mark - Actions
+#pragma mark - Logic
+- (ResultadoEjercicio *)resultadoEjercicioDe:(Ejercicio *)ejercicio{
+    for (ResultadoEjercicio *resultadoEjercicio in self.rutina.resultadoEjercicios) {
+        if ([resultadoEjercicio.nombre isEqualToString:ejercicio.nombre]) {
+            return resultadoEjercicio;
+        }
+    }
+    return nil;
+}
+
+- (void)generarResultadoEjercicio{
+    ResultadoEjercicio *resultado = [[ResultadoEjercicio alloc] initWithEjercicio:self.ejercicioActual];
+    //Lógica
+    resultado.completado = YES;
+    [resultado.resultadoRepeticiones addObject:@([[StepCounter sharedStepCounter] countReps])];
+    //
+    for (NSInteger i = 0; i < self.rutina.resultadoEjercicios.count; i++) {
+        ResultadoEjercicio *resultadoEjercicio = self.rutina.resultadoEjercicios[i];
+        if ([resultadoEjercicio.nombre isEqualToString:self.ejercicioActual.nombre]) {
+            [self.rutina.resultadoEjercicios replaceObjectAtIndex:i withObject:resultado];
+            break;
+        }
+    }
+}
 
 - (void)countdownFinish{
     [[StepCounter sharedStepCounter] start];
 }
 
-- (IBAction)play:(UIButton *)button{
-    [button removeTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
-    [button addTarget:self action:@selector(pause:) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+- (void)comenzarEjercicio{
+    [self.pauseStartButton removeTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
+    [self.pauseStartButton addTarget:self action:@selector(pause:) forControlEvents:UIControlEventTouchUpInside];
+    [self.pauseStartButton setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
     self.countdownLabel.text = @"4";
     [self startCountdown];
+}
+
+#pragma mark - Actions
+- (IBAction)play:(UIButton *)button{
+    if ([[self resultadoEjercicioDe:self.ejercicioActual] completado]) {
+        [[[UIAlertView alloc] initWithTitle:@"Ejercicio ya completado" message:@"¿Desea realizar el ejercicio de nuevo? Perderá los resultados del mismo." delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Si", nil] show];
+    }else{
+        [self comenzarEjercicio];
+    }
 }
 
 - (IBAction)pause:(UIButton *)button{
     [button removeTarget:self action:@selector(pause:) forControlEvents:UIControlEventTouchUpInside];
     [button addTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"start"] forState:UIControlStateNormal];
+    [self generarResultadoEjercicio];
     [[StepCounter sharedStepCounter] stop];
+    [self updateViews];
 }
 
 - (IBAction)ff{
-    
+    NSUInteger index = [self.rutina.ejercicios indexOfObject:self.ejercicioActual];
+    if (index < (self.rutina.ejercicios.count-1) && index != NSNotFound) {
+        self.ejercicioActual = self.rutina.ejercicios[index+1];
+    }
 }
 
 - (IBAction)rv{
-    
+    NSUInteger index = [self.rutina.ejercicios indexOfObject:self.ejercicioActual];
+    if (index > 0 && index != NSNotFound) {
+        self.ejercicioActual = self.rutina.ejercicios[index-1];
+    }
 }
 
+#pragma mark - Actions
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex != alertView.cancelButtonIndex) {
+        [[self resultadoEjercicioDe:self.ejercicioActual] setCompletado:NO];
+        [self updateViews];
 
+        [self comenzarEjercicio];
+    }
+}
 
 @end

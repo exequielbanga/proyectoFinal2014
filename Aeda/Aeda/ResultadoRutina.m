@@ -11,6 +11,15 @@
 
 @implementation ResultadoRutina
 
+
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.resultadoEjercicios = [NSMutableArray new];
+    }
+    return self;
+}
+
 - (instancetype)initMock{
     self = [super initMock];
     if (self) {
@@ -34,6 +43,11 @@
         self.fechas = [rutina.fechas copy];
         self.sesion = [rutina.sesion copy];
         self.resultado = 0;
+        
+        for (Ejercicio *ejercicio in self.ejercicios) {
+            ResultadoEjercicio *resultadoEjercicio = [[ResultadoEjercicio alloc] initWithEjercicio:ejercicio];
+            [self.resultadoEjercicios addObject:resultadoEjercicio];
+        }
     }
     return self;
 }

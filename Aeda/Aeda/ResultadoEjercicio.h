@@ -12,8 +12,12 @@
 
 @property(nonatomic,assign)NSTimeInterval   resultadoTiempo;
 
-@property(nonatomic,strong)NSArray          *resultadoRepeticiones;
-@property(nonatomic,strong)NSArray          *resultadoTiemposEntreRepeticiones;
-@property(nonatomic,strong)NSArray          *resultadoPesos;
+@property(nonatomic,strong)NSMutableArray          *resultadoRepeticiones;
+@property(nonatomic,strong)NSMutableArray          *resultadoTiemposEntreRepeticiones;
+@property(nonatomic,strong)NSMutableArray          *resultadoPesos;
+
+@property(nonatomic,assign)BOOL completado;
+
+- (instancetype)initWithEjercicio:(Ejercicio *)ejercicio;
 
 @end

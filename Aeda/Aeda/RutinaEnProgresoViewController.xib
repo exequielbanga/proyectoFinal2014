@@ -10,7 +10,9 @@
                 <outlet property="corazon" destination="SCW-Fy-sw7" id="VCT-Qh-DJf"/>
                 <outlet property="countReps" destination="rie-Gk-ozs" id="KF5-1i-y43"/>
                 <outlet property="countdownLabel" destination="1mw-vc-IAy" id="dZP-l7-8EG"/>
+                <outlet property="ejercicioCompletadoView" destination="sDM-cI-jzZ" id="hfl-4S-5FC"/>
                 <outlet property="nombreEjercicio" destination="q4m-9I-Gfe" id="pbh-za-UHX"/>
+                <outlet property="pauseStartButton" destination="oWZ-rU-8DE" id="fpI-xz-LMj"/>
                 <outlet property="ppm" destination="YcT-EH-8FU" id="32b-mc-M61"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -80,6 +82,10 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Completado" translatesAutoresizingMaskIntoConstraints="NO" id="sDM-cI-jzZ">
+                    <rect key="frame" x="96" y="214" width="128" height="113"/>
+                    <color key="backgroundColor" red="0.0" green="0.2156862745" blue="0.50588235290000005" alpha="0.96999999999999997" colorSpace="calibratedRGB"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.2156862745" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -87,6 +93,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Completado" width="261" height="253"/>
         <image name="Corazon" width="600" height="556"/>
         <image name="ff" width="994" height="991"/>
         <image name="rv" width="994" height="991"/>
