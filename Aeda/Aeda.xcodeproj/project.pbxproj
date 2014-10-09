@@ -28,6 +28,9 @@
 		F6A23C3519E4A2970099F0A1 /* MisRutinasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A23C3319E4A2970099F0A1 /* MisRutinasViewController.xib */; };
 		F6A23C3919E4A4B20099F0A1 /* RutinasListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A23C3719E4A4B20099F0A1 /* RutinasListViewController.m */; };
 		F6A23C3A19E4A4B20099F0A1 /* RutinasListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A23C3819E4A4B20099F0A1 /* RutinasListViewController.xib */; };
+		F6A95FA319E5F86400F44500 /* StepCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A95FA219E5F86400F44500 /* StepCounter.m */; };
+		F6A95FA519E5F93D00F44500 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A95FA419E5F93D00F44500 /* CoreMotion.framework */; };
+		F6A95FA819E5F9DC00F44500 /* GiroscopeAndAccelerometerData.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A95FA619E5F9DC00F44500 /* GiroscopeAndAccelerometerData.m */; };
 		F6C2E41D19E1870900538EF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E41C19E1870900538EF7 /* main.m */; };
 		F6C2E42019E1870900538EF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E41F19E1870900538EF7 /* AppDelegate.m */; };
 		F6C2E42319E1870900538EF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E42219E1870900538EF7 /* ViewController.m */; };
@@ -140,6 +143,11 @@
 		F6A23C3619E4A4B20099F0A1 /* RutinasListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinasListViewController.h; sourceTree = "<group>"; };
 		F6A23C3719E4A4B20099F0A1 /* RutinasListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinasListViewController.m; sourceTree = "<group>"; };
 		F6A23C3819E4A4B20099F0A1 /* RutinasListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RutinasListViewController.xib; sourceTree = "<group>"; };
+		F6A95FA119E5F86400F44500 /* StepCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepCounter.h; sourceTree = "<group>"; };
+		F6A95FA219E5F86400F44500 /* StepCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepCounter.m; sourceTree = "<group>"; };
+		F6A95FA419E5F93D00F44500 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		F6A95FA619E5F9DC00F44500 /* GiroscopeAndAccelerometerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiroscopeAndAccelerometerData.m; sourceTree = "<group>"; };
+		F6A95FA719E5F9DC00F44500 /* GiroscopeAndAccelerometerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiroscopeAndAccelerometerData.h; sourceTree = "<group>"; };
 		F6C2E41719E1870900538EF7 /* Aeda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aeda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C2E41B19E1870900538EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6C2E41C19E1870900538EF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -258,6 +266,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A95FA519E5F93D00F44500 /* CoreMotion.framework in Frameworks */,
 				F6CB388619E1D52100CA1A7D /* QuartzCore.framework in Frameworks */,
 				13C8E0298B964AE7BEE00B98 /* libPods-Aeda.a in Frameworks */,
 			);
@@ -276,6 +285,7 @@
 		819C8FC2E0954297A6D991D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F6A95FA419E5F93D00F44500 /* CoreMotion.framework */,
 				F6CB388519E1D52100CA1A7D /* QuartzCore.framework */,
 				ABFC7F0D7BCE4643B151466F /* libPods-Aeda.a */,
 			);
@@ -299,6 +309,19 @@
 				F695548C19E4A739009AA5A6 /* RutinaService.m */,
 			);
 			name = MisRutinas;
+			sourceTree = "<group>";
+		};
+		F6A95FA019E5F82800F44500 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				F6A95FA619E5F9DC00F44500 /* GiroscopeAndAccelerometerData.m */,
+				F6A95FA719E5F9DC00F44500 /* GiroscopeAndAccelerometerData.h */,
+				F630C12019E5C55000B6449B /* HeartRate.h */,
+				F630C12119E5C55000B6449B /* HeartRate.m */,
+				F6A95FA119E5F86400F44500 /* StepCounter.h */,
+				F6A95FA219E5F86400F44500 /* StepCounter.m */,
+			);
+			name = Physics;
 			sourceTree = "<group>";
 		};
 		F6C2E40E19E1870900538EF7 = {
@@ -474,6 +497,7 @@
 		F6C2E48D19E18A5400538EF7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F6A95FA019E5F82800F44500 /* Physics */,
 				F6C2E49A19E18CE000538EF7 /* Services */,
 				F6C2E4AB19E18D9200538EF7 /* Persona.h */,
 				F6C2E4AC19E18D9200538EF7 /* Persona.m */,
@@ -489,8 +513,6 @@
 				F6CB387719E1CDE800CA1A7D /* Ejercicio.m */,
 				F63B690C19E2B6CA00302B6C /* ResultadoEjercicio.h */,
 				F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */,
-				F630C12019E5C55000B6449B /* HeartRate.h */,
-				F630C12119E5C55000B6449B /* HeartRate.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -809,6 +831,7 @@
 				F6C2E47319E189E100538EF7 /* UIColor+ALAdditions.m in Sources */,
 				F6CB387519E1CDA500CA1A7D /* Rutina.m in Sources */,
 				F6C2E49919E18CC700538EF7 /* MisDatosViewController.m in Sources */,
+				F6A95FA319E5F86400F44500 /* StepCounter.m in Sources */,
 				F6C2E4CA19E18E5700538EF7 /* TitleTextViewTableViewCell.m in Sources */,
 				F6C2E44919E1895B00538EF7 /* HomeMenuHeaderTableView.m in Sources */,
 				F6A23C3419E4A2970099F0A1 /* MisRutinasViewController.m in Sources */,
@@ -821,6 +844,7 @@
 				F695548D19E4A739009AA5A6 /* RutinaService.m in Sources */,
 				F63B690E19E2B6CA00302B6C /* ResultadoEjercicio.m in Sources */,
 				F695548819E4A574009AA5A6 /* RutinaTableViewCell.m in Sources */,
+				F6A95FA819E5F9DC00F44500 /* GiroscopeAndAccelerometerData.m in Sources */,
 				F63B690819E2B28500302B6C /* ResultadoRutinaViewController.m in Sources */,
 				F6C2E45F19E189C600538EF7 /* ALSegmentedControl.m in Sources */,
 				F6C2E41D19E1870900538EF7 /* main.m in Sources */,
