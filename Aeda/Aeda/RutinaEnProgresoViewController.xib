@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="corazon" destination="SCW-Fy-sw7" id="VCT-Qh-DJf"/>
                 <outlet property="countReps" destination="rie-Gk-ozs" id="KF5-1i-y43"/>
+                <outlet property="countdownLabel" destination="1mw-vc-IAy" id="dZP-l7-8EG"/>
                 <outlet property="nombreEjercicio" destination="q4m-9I-Gfe" id="pbh-za-UHX"/>
                 <outlet property="ppm" destination="YcT-EH-8FU" id="32b-mc-M61"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -71,6 +72,12 @@
                     <rect key="frame" x="143" y="421" width="38" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mw-vc-IAy">
+                    <rect key="frame" x="8" y="203" width="304" height="144"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="120"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

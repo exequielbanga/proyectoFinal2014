@@ -73,7 +73,7 @@
     self.shouldSample = YES;
     [self updateSampleRate];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:self.samplingTimeInterval target:self selector:@selector(takeSample) userInfo:nil repeats:YES];
-    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(mock) userInfo:nil repeats:YES];
+//    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(mock) userInfo:nil repeats:YES];
     [self takeSample];
 }
 

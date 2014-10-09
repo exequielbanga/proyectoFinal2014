@@ -17,6 +17,8 @@
 @property(nonatomic,strong)IBOutlet UILabel *ppm;
 @property(nonatomic,strong)IBOutlet UIImageView *corazon;
 
+@property(nonatomic,strong)IBOutlet UILabel *countdownLabel;
+
 @property(nonatomic,assign)BOOL animandoCorazon;
 @property(nonatomic,assign)BOOL pausa;
 
@@ -83,29 +85,60 @@
     }
 }
 
+- (void)startCountdown{
+    self.view.userInteractionEnabled = NO;
+    self.countReps.hidden = YES;
+    self.countdownLabel.text = [NSString stringWithFormat:@"%d",self.countdownLabel.text.intValue - 1];
+    if (self.countdownLabel.text.intValue == 0) {
+        self.countdownLabel.text = @"¡Ya!";
+    }
+    self.countdownLabel.transform = CGAffineTransformMakeScale(3, 3);
+    self.countdownLabel.alpha = 1;
+
+    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        self.countdownLabel.transform = CGAffineTransformMakeScale(.1, .1);
+        self.countdownLabel.alpha = 0;
+    } completion:^(BOOL completition){
+        if ([self.countdownLabel.text isEqualToString:@"¡Ya!"]) {
+            self.view.userInteractionEnabled = YES;
+            self.countReps.hidden = NO;
+            [self countdownFinish];
+        }else{
+            [self startCountdown];
+        }
+    }];
+}
+
+
 #pragma - mark HeartRate
 - (void)updateHeartRate{
-    self.ppm.text = [NSString stringWithFormat:@"%lu",[[HeartRate sharedHeartRate] rate]];
+    self.ppm.text = [NSString stringWithFormat:@"%lu",(unsigned long)[[HeartRate sharedHeartRate] rate]];
 }
 
 #pragma - mark StepCounterDelegate
 - (void)stepCounterDidRecogniceStep:(StepCounter *)stepCounter{
-    self.countReps.text = [NSString stringWithFormat:@"%lu",stepCounter.countReps];
+    self.countReps.text = [NSString stringWithFormat:@"%lu",(unsigned long)stepCounter.countReps];
 }
 
 #pragma mark - Actions
+
+- (void)countdownFinish{
+    [[StepCounter sharedStepCounter] start];
+}
 
 - (IBAction)play:(UIButton *)button{
     [button removeTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
     [button addTarget:self action:@selector(pause:) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
-    [[StepCounter sharedStepCounter] start];
+    self.countdownLabel.text = @"4";
+    [self startCountdown];
 }
 
 - (IBAction)pause:(UIButton *)button{
     [button removeTarget:self action:@selector(pause:) forControlEvents:UIControlEventTouchUpInside];
     [button addTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"start"] forState:UIControlStateNormal];
+    [[StepCounter sharedStepCounter] stop];
 }
 
 - (IBAction)ff{
