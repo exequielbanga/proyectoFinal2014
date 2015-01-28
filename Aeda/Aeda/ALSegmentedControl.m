@@ -62,4 +62,10 @@
     aButton.layer.borderColor = [UIColor grayColor].CGColor;
 }
 
+- (void)showTwoButtons{
+    self.sentButton.hidden = YES;
+    self.firstButton.frame = CGRectMake(0, 0, self.frame.size.width/2, self.frame.size.height);
+    self.entryButton.frame = CGRectMake(self.frame.size.width/2, 0, self.frame.size.width/2, self.frame.size.height);
+}
+
 @end

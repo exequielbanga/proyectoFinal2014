@@ -92,6 +92,9 @@
 		F6CB388A19E1E22B00CA1A7D /* ResultadoRutinaService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB388919E1E22B00CA1A7D /* ResultadoRutinaService.m */; };
 		F6CF392419E5631D000E03BA /* EjercicioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CF392219E5631D000E03BA /* EjercicioView.m */; };
 		F6CF392519E5631D000E03BA /* EjercicioView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CF392319E5631D000E03BA /* EjercicioView.xib */; };
+		F6F8985B19E81E3A007B5E1B /* EstadoPersonaView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F8985A19E81E3A007B5E1B /* EstadoPersonaView.m */; };
+		F6F8985D19E81E53007B5E1B /* EstadoPersonaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F8985C19E81E53007B5E1B /* EstadoPersonaView.xib */; };
+		F6F8986019E82373007B5E1B /* EstadoPersona.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F8985F19E82373007B5E1B /* EstadoPersona.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -259,6 +262,11 @@
 		F6CF392119E5631D000E03BA /* EjercicioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EjercicioView.h; sourceTree = "<group>"; };
 		F6CF392219E5631D000E03BA /* EjercicioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EjercicioView.m; sourceTree = "<group>"; };
 		F6CF392319E5631D000E03BA /* EjercicioView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EjercicioView.xib; sourceTree = "<group>"; };
+		F6F8985919E81E3A007B5E1B /* EstadoPersonaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstadoPersonaView.h; sourceTree = "<group>"; };
+		F6F8985A19E81E3A007B5E1B /* EstadoPersonaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstadoPersonaView.m; sourceTree = "<group>"; };
+		F6F8985C19E81E53007B5E1B /* EstadoPersonaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EstadoPersonaView.xib; sourceTree = "<group>"; };
+		F6F8985E19E82373007B5E1B /* EstadoPersona.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstadoPersona.h; sourceTree = "<group>"; };
+		F6F8985F19E82373007B5E1B /* EstadoPersona.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstadoPersona.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -513,6 +521,8 @@
 				F6CB387719E1CDE800CA1A7D /* Ejercicio.m */,
 				F63B690C19E2B6CA00302B6C /* ResultadoEjercicio.h */,
 				F63B690D19E2B6CA00302B6C /* ResultadoEjercicio.m */,
+				F6F8985E19E82373007B5E1B /* EstadoPersona.h */,
+				F6F8985F19E82373007B5E1B /* EstadoPersona.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -601,14 +611,8 @@
 		F6CB387919E1D31A00CA1A7D /* Seguimiento */ = {
 			isa = PBXGroup;
 			children = (
-				F6CB387A19E1D34800CA1A7D /* SeguimientoViewController.h */,
-				F6CB387B19E1D34800CA1A7D /* SeguimientoViewController.m */,
-				F63B690619E2B28500302B6C /* ResultadoRutinaViewController.h */,
-				F63B690719E2B28500302B6C /* ResultadoRutinaViewController.m */,
-				F63B690919E2B2E000302B6C /* ResultadoEjercicioView.h */,
-				F63B690A19E2B2E000302B6C /* ResultadoEjercicioView.m */,
-				F62D522C19E311E800EF01FB /* ResultadoRepeticionView.h */,
-				F62D522D19E311E800EF01FB /* ResultadoRepeticionView.m */,
+				F6F8985719E81DEC007B5E1B /* Listado */,
+				F6F8985819E81DFF007B5E1B /* Detalle */,
 			);
 			name = Seguimiento;
 			sourceTree = "<group>";
@@ -646,6 +650,31 @@
 				F6CB386B19E1CADA00CA1A7D /* RutinaViewController.h */,
 				F6CB386C19E1CADA00CA1A7D /* RutinaViewController.m */,
 				F6CB386D19E1CADA00CA1A7D /* RutinaViewController.xib */,
+			);
+			name = Detalle;
+			sourceTree = "<group>";
+		};
+		F6F8985719E81DEC007B5E1B /* Listado */ = {
+			isa = PBXGroup;
+			children = (
+				F6CB387A19E1D34800CA1A7D /* SeguimientoViewController.h */,
+				F6CB387B19E1D34800CA1A7D /* SeguimientoViewController.m */,
+				F6F8985919E81E3A007B5E1B /* EstadoPersonaView.h */,
+				F6F8985A19E81E3A007B5E1B /* EstadoPersonaView.m */,
+				F6F8985C19E81E53007B5E1B /* EstadoPersonaView.xib */,
+			);
+			name = Listado;
+			sourceTree = "<group>";
+		};
+		F6F8985819E81DFF007B5E1B /* Detalle */ = {
+			isa = PBXGroup;
+			children = (
+				F63B690619E2B28500302B6C /* ResultadoRutinaViewController.h */,
+				F63B690719E2B28500302B6C /* ResultadoRutinaViewController.m */,
+				F63B690919E2B2E000302B6C /* ResultadoEjercicioView.h */,
+				F63B690A19E2B2E000302B6C /* ResultadoEjercicioView.m */,
+				F62D522C19E311E800EF01FB /* ResultadoRepeticionView.h */,
+				F62D522D19E311E800EF01FB /* ResultadoRepeticionView.m */,
 			);
 			name = Detalle;
 			sourceTree = "<group>";
@@ -735,6 +764,7 @@
 				F6A23C3A19E4A4B20099F0A1 /* RutinasListViewController.xib in Resources */,
 				F6C2E4A319E18CFD00538EF7 /* LoginServiceRequest.txt in Resources */,
 				F6C2E42B19E1870900538EF7 /* LaunchScreen.xib in Resources */,
+				F6F8985D19E81E53007B5E1B /* EstadoPersonaView.xib in Resources */,
 				F6CB386F19E1CADA00CA1A7D /* RutinaViewController.xib in Resources */,
 				F6C2E4C619E18E5700538EF7 /* ImageLabelTableViewCell.xib in Resources */,
 				F6CB388119E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.xib in Resources */,
@@ -803,6 +833,7 @@
 				F6C2E49719E18CC700538EF7 /* MisDatosTableViewHeader.m in Sources */,
 				F6CB386E19E1CADA00CA1A7D /* RutinaViewController.m in Sources */,
 				F6C2E4AD19E18D9200538EF7 /* Persona.m in Sources */,
+				F6F8986019E82373007B5E1B /* EstadoPersona.m in Sources */,
 				F6C2E49019E18A6500538EF7 /* User.m in Sources */,
 				F6C2E47519E189E100538EF7 /* UIFont+ALFonts.m in Sources */,
 				F6C2E4D119E18EAA00538EF7 /* OrderedDictionary.m in Sources */,
@@ -854,6 +885,7 @@
 				F630C12219E5C55000B6449B /* HeartRate.m in Sources */,
 				F6C2E4A219E18CFD00538EF7 /* LoginService.m in Sources */,
 				F6CB388A19E1E22B00CA1A7D /* ResultadoRutinaService.m in Sources */,
+				F6F8985B19E81E3A007B5E1B /* EstadoPersonaView.m in Sources */,
 				F6CB387C19E1D34800CA1A7D /* SeguimientoViewController.m in Sources */,
 				F63B690B19E2B2E000302B6C /* ResultadoEjercicioView.m in Sources */,
 				F6CB388419E1D3D200CA1A7D /* Barra.m in Sources */,

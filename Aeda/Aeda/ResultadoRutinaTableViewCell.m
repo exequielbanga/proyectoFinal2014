@@ -22,10 +22,21 @@
     return self;
 }
 
-- (void)fillWithResultadoRutina:(ResultadoRutina *)resultadoRutina{
-    self.nombre.text = resultadoRutina.nombre;
-    [self.barra setValorAnimated:@(resultadoRutina.resultado)];
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    self.barra.showsText = NO;
 }
 
+- (void)fillWithResultadoRutina:(ResultadoRutina *)resultadoRutina{
+    if (self.showDate) {
+        NSDateFormatter *formatter = [NSDateFormatter new];
+        formatter.dateFormat = @"dd/MM/YYYY";
+        self.nombre.text = [formatter stringFromDate:resultadoRutina.fecha];
+    }else{
+        self.nombre.text = resultadoRutina.nombre;
+    }
+    
+    [self.barra setValorAnimated:@(resultadoRutina.resultado)];
+}
 
 @end

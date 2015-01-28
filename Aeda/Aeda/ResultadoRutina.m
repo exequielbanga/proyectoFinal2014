@@ -24,7 +24,7 @@
     self = [super initMock];
     if (self) {
         self.resultado = (arc4random()%100)/100.0;
-        
+        self.fecha = [NSDate dateWithTimeIntervalSinceNow:-arc4random()%(86400*30)];
         self.resultadoEjercicios = [NSMutableArray new];
         for (NSInteger i = 0; i < self.ejercicios.count; i++) {
             [self.resultadoEjercicios addObject:[[ResultadoEjercicio alloc]initMock]];
@@ -50,6 +50,22 @@
         }
     }
     return self;
+}
+
+- (NSComparisonResult)compare:(ResultadoRutina *)otraRutina{
+    NSComparisonResult result;
+    switch ([self.fecha compare:otraRutina.fecha]) {
+        case NSOrderedAscending:
+            result = NSOrderedDescending;
+            break;
+        case NSOrderedDescending:
+            result = NSOrderedAscending;
+            break;
+        default:
+            result = NSOrderedSame;
+            break;
+    }
+    return result;
 }
 
 

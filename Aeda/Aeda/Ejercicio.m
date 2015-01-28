@@ -14,7 +14,7 @@
     self = [self init];
     if (self) {
         self.nombre = @"Bíceps Mancuerna";
-        self.detalle = @"Agarrá una pesa y hacete macho. Luego, una vez vencido el temor al fracaso, comenzarás a realizar el ejercicio como los grandes maestros de las mancuernas. Una y otra vez hasta que te sangren los músculos.";
+        self.detalle = @"Descripción de biceps mancuerna. En este lugar se llena la descripcion del ejercicio para que el usuario pueda realizarlo correctamente. Se indican todos los pasos necesarios.";
         self.repeticiones = [[NSArray alloc] initWithObjects:@15,@15,@12, nil];
         self.tiemposEntreRepeticiones = [[NSArray alloc] initWithObjects:@30,@30, nil];
         self.pesos = [[NSArray alloc] initWithObjects:@2,@2,@3, nil];

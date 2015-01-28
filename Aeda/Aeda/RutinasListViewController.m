@@ -104,7 +104,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
     RutinaViewController* rutinaViewController = [[RutinaViewController alloc] initWithNibName:nil bundle:nil];
     [rutinaViewController setRutina:self.tableData[indexPath.row]];
     [self.navigationController pushViewController:rutinaViewController animated:YES];

@@ -12,6 +12,8 @@
 #import "SNNeuralNet.h"
 #import <CoreMotion/CoreMotion.h>
 
+#define kBufferSize 10
+
 @interface CollectDataViewController ()
 
 @property(nonatomic,strong)CMMotionManager *motionManager;
@@ -22,8 +24,11 @@
 @property(nonatomic,assign)NSTimeInterval samplingTimeInterval;
 @property(nonatomic,strong)SNNeuralNet *net;
 @property(nonatomic,assign)NSUInteger currentMin;
+@property(nonatomic,assign)NSUInteger countChanges;
+@property(nonatomic,assign)NSUInteger countReps;
 @property(nonatomic,strong)IBOutlet UISegmentedControl *segmented;
 @property(nonatomic,assign)BOOL recording;
+@property(nonatomic,strong)NSMutableArray *dataBuffer;
 @end
 
 @implementation CollectDataViewController
@@ -49,6 +54,49 @@
         GiroscopeAndAccelerometerData *newData = [GiroscopeAndAccelerometerData new];
         newData.acceleration = self.motionManager.accelerometerData.acceleration;
         newData.rotation = self.motionManager.gyroData.rotationRate;
+        
+        dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            
+            if (self.dataBuffer.count == kBufferSize) {
+                self.dataBuffer.removeLastObject;
+            }
+            
+            if (newData.acceleration.y != 0){ // Agregué este filtro porque si el buffer tiene ceros, no te das cuenta cuando se cambia de signo
+                [self.dataBuffer insertObject:@(newData.acceleration.y) atIndex:0];
+            }
+            
+            BOOL change = NO;
+            if (self.dataBuffer.count == kBufferSize) {
+                NSMutableArray *negativos = [NSMutableArray new];
+                for (NSNumber *numero in self.dataBuffer) {
+                    if ([numero floatValue]<0) {
+                        [negativos addObject:numero];
+                    }
+                }
+                if (negativos.count >= (self.dataBuffer.count*.3) && negativos.count <= (self.dataBuffer.count*.7)) {//Por ejemplo, si la cantidad de negativos está entre el 30% y el 70%
+                    change = YES;
+                }
+            }
+            
+            if(change){
+                self.countChanges++;
+                if (self.countChanges % 2) {
+                    self.countReps++;
+                    NSLog(@"CHANGE %lu", (unsigned long)self.countReps);
+                }
+                
+                self.dataBuffer.removeAllObjects;
+            }
+            
+            
+            
+            
+        });
+        
+        
+        
+        
         [[(Movement *)[self.data lastObject] data] addObject:newData];
     }
 }
@@ -72,8 +120,12 @@
     [self.button setTargetForEndTouch:self selector:@selector(endPressingButton)];
     self.shouldSample = NO;
     self.data = [NSMutableArray new];
+    self.dataBuffer = [NSMutableArray new];
+    self.countReps = 0;
+    self.countChanges = 0;
     [self loadMotionManager];
     [self startProccessingData];
+    
 }
 
 - (void)startPressingButton{
@@ -88,6 +140,7 @@
     [self.timer invalidate];
     self.shouldSample = NO;
     [self.tableView reloadData];
+    self.countReps = 0;
 }
 
 - (IBAction)send{
@@ -111,7 +164,7 @@
     [[UIActivityViewController alloc] initWithActivityItems:shareData
                                       applicationActivities:nil];
     [self presentViewController:activityViewController animated:YES completion:^{}];
-
+    
 }
 
 - (IBAction)deleteLast{
@@ -156,21 +209,21 @@
     int columnasEntrada = (int)[[(Movement *)self.data[0] data] count];
     int filas = (int)self.data.count;
     SNTrainingRecord *netData = (SNTrainingRecord*)malloc(sizeof(double*)*2*filas);
-
+    
     
     for (Movement *movimiento in self.data) {
         SNTrainingRecord *movement = (netData+[self.data indexOfObject:movimiento]);
         
         movement->input = rotation?[movimiento rotationScalars]:[movimiento accelerationScalars];
         double output = ([self.data indexOfObject:movimiento])<(self.data.count/2)?1.0:0.0;
-
+        
         movement->output = &output;
         
     }
-        self.net = [[SNNeuralNet alloc] initWithInputs:columnasEntrada hiddenLayers:@[@(columnasEntrada)] outputs:1];
-        [self.net train:netData numRecords:filas];
-//        self.net.maxIterations = 20000;  // maximum training iterations
-        self.net.minError = 0.01;       // error threshold to reach
+    self.net = [[SNNeuralNet alloc] initWithInputs:columnasEntrada hiddenLayers:@[@(columnasEntrada)] outputs:1];
+    [self.net train:netData numRecords:filas];
+    //        self.net.maxIterations = 20000;  // maximum training iterations
+    self.net.minError = 0.01;       // error threshold to reach
     if (self.net.isTrained) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lerned Baby ;)" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
@@ -183,12 +236,12 @@
 
 - (IBAction)recognice{
     BOOL rotation = NO;
-
+    
     if (self.selectedMovement && self.net) {
         if (self.segmented.selectedSegmentIndex == 0) {
             rotation = YES;
         }
-
+        
         [self normalizeNewData];
         double *input = rotation?[self.selectedMovement rotationScalars]:[self.selectedMovement accelerationScalars];
         double *output = [self.net runInput:input];
@@ -199,7 +252,7 @@
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Result: %.5f",output[0]] message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
-
+        
     }else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't start recognition" message:@"Please select a movement first, and be sure that the net has already learned" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];

@@ -14,8 +14,11 @@
 
 @property(nonatomic,assign)CGFloat resultado; //0..1
 @property(nonatomic,strong)NSMutableArray *resultadoEjercicios;
+@property(nonatomic,strong)NSDate *fecha;
 
 - (instancetype)initWithRutina:(Rutina *)rutina;
 - (instancetype)initMock;
+
+- (NSComparisonResult)compare:(ResultadoRutina *)otraRutina;
 
 @end

@@ -18,4 +18,6 @@
 
 - (IBAction)buttonTouched:(id)sender;
 
+- (void)showTwoButtons;
+
 @end

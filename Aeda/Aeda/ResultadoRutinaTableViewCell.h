@@ -10,6 +10,7 @@
 #import "ResultadoRutina.h"
 
 @interface ResultadoRutinaTableViewCell : UITableViewCell
+@property(nonatomic,assign)BOOL showDate;
 
 - (void)fillWithResultadoRutina:(ResultadoRutina *)resultadoRutina;
 
