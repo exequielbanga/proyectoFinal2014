@@ -2,8 +2,8 @@
 //  RestService.h
 //  Allianz
 //
-//  Created by Matías Ginart on 8/14/14.
-//  Copyright (c) 2014 Matías Ginart. All rights reserved.
+//  Created by Exequiel Banga on 5/11/14.
+//  Copyright (c) 2014 Exequiel Banga. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,18 +14,22 @@ typedef enum  {
     RestMethodPUT
 } RestMethod;
 
-typedef void (^ServiceBlock)(NSObject *response, NSError * error);
+typedef void (^ServiceBlock)(NSArray *response, NSError * error);
 
 @interface RestService : NSObject
 
-// El path del servicio en question (cuestion)
 @property (nonatomic, strong) NSString* path;
 @property (nonatomic, strong) NSDictionary* queryParams;
 @property (nonatomic, strong) NSDictionary* bodyParams;
 @property (nonatomic) BOOL isRunning;
+@property (nonatomic, strong) NSString* specificUri;
 
 - (void)requestWithServiceBlock:(ServiceBlock)serviceBlock;
 
 - (void)invalidate;
+
+- (BOOL)shouldUpdateCache;//Sobreescribir con la lógica de actualización de caché (Tiempo, llamar a otro servicio, etc)
+
+- (BOOL)isAuthenticated;
 
 @end

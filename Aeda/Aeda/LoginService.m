@@ -12,50 +12,39 @@
 #import "User.h"
 
 @interface LoginService()
-@property (nonatomic, copy) NSString* username;
-@property (nonatomic, copy) NSString* password;
 @end
 
 @implementation LoginService
 
-- (void)authenticateWithUsername:(NSString*)username password:(NSString*)password finishedBlock:(ServiceBlock)block {
-//    if (!username || !password) {
-//        block(nil, [NSError errorWithDomain:@"" code:400 userInfo:@{@"cause" : @"user_password_invalid"}]);
-//    }
-//    self.username = username;
-//    self.password = password;
-//    [self startWithBlock:block];
-    [UserManager setCurrentUser:[[User alloc]initMock]];
-    block(@[[UserManager getCurrentUser]],nil);
+- (RestMethod)method {
+    return RestMethodPOST;
 }
 
-- (NSString*)serviceURL{
-    return @"https://wbs.allianzonline.com.ar:9443/Infra/CSMService/Externo/Operaciones/OpCSMServiceExtReqABCS";
+- (BOOL)isAuthenticated{
+    return NO;
 }
 
 - (Class)parserClass {
     return [LoginParser class];
 }
 
-- (void)changeMessage:(NSMutableString*)message {
-    [message replaceOccurrencesOfString:@"@1@" withString:self.username options:NSCaseInsensitiveSearch range:NSMakeRange(0, message.length)];
-    [message replaceOccurrencesOfString:@"@2@" withString:self.password options:NSCaseInsensitiveSearch range:NSMakeRange(0, message.length)];
-}
+- (void)authenticateWithUsername:(NSString*)username password:(NSString*)password finishedBlock:(ServiceBlock)block {
+    if (!username || !password) {
+        block(nil, [NSError errorWithDomain:@"" code:400 userInfo:@{@"cause" : @"user_password_invalid"}]);
+    }
+    self.path = @"Usuarios/login.json";
+    
+    self.bodyParams = @{
+    @"data[Usuario][username]":username,
+    @"data[Usuario][password]":password
+    };
 
-- (void)parseData:(NSString *)data {
-//    [super parseData:data];
-//    if ([self.response isKindOfClass:[NSArray class]] && [(NSArray*)self.response count] > 0) {
-//        NSArray* array = (NSArray*)self.response;
-//        User* user = array[0];
-//        user.password = self.password;
-//    }
+    [self requestWithServiceBlock:block];
 }
-
 
 - (void)logoutWithFinishedBlock:(ServiceBlock)block{
     [UserManager setCurrentUser:nil];
     block(nil,nil);
 }
-
 
 @end

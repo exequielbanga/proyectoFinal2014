@@ -2,23 +2,25 @@
 //  RestService.m
 //  Allianz
 //
-//  Created by Matías Ginart on 8/14/14.
-//  Copyright (c) 2014 Matías Ginart. All rights reserved.
+//  Created by Exequiel Banga on 5/11/14.
+//  Copyright (c) 2014 Exequiel Banga. All rights reserved.
 //
 
 #import "RestService.h"
 #import "AFNetworking.h"
-#import "UserManager.h"
+#import "GenericParser.h"
 
-//#define kURI @"http://argba-cctest:8080/api-stateless"
-#define kURI @"http://contactcenter.miallianz.com.ar:9091/api-stateless"
+#define kURI @"http://181.47.73.190/aeda/aeda_new/aeda/"
+#define kCacheRootPath @"/"
 
 @interface RestService()
 @property (nonatomic, strong) AFHTTPRequestOperation* requestOperation;
+@property (nonatomic, strong) GenericParser *parser;
 @end
 
 @implementation RestService
 
+#pragma mark - Init
 
 - (id)init {
     self = [super init];
@@ -28,26 +30,27 @@
     return self;
 }
 
-#pragma mark - To inherit
-
-// El metodo rest: GET, POST, PUT, DELETE
-- (RestMethod)method {
-    return RestMethodGET;
-}
-
+#pragma mark - Logic
 // Se llamara a este metodo cuando todo haya terminado con code 2xx
 - (NSObject*)requestSuccessWithResponseObject:(id)responseObject {
-    return nil;
+    self.parser = [[[self parserClass] alloc] init];
+    [self.parser parse:responseObject];
+
+    if (self.parser.error) {
+        return self.parser.error;
+    }else{
+        return self.parser.resultObjects;
+    }
 }
 
 // El username en caso de ser una llamada autenticada
 - (NSString*)username {
-    return [[UserManager getCurrentUser] username];
+    return nil;
 }
 
 // El password en caso de ser una llamada autenticada
 - (NSString*)password {
-    return [[UserManager getCurrentUser] password];
+    return nil;
 }
 
 // YES si es autenticada, NO en caso contrario
@@ -58,12 +61,18 @@
 #pragma mark - Private
 
 - (void)requestWithServiceBlock:(ServiceBlock)serviceBlock {
-    if ([self method] == RestMethodGET) {
-        [self makeGetWithServiceBlock:serviceBlock];
-    } else if([self method] == RestMethodPOST) {
-        [self makePostWithServiceBlock:serviceBlock];
-    } else {
-        [self makePutWithServiceBlock:serviceBlock];
+    //Si hay datos cacheados los devuelve
+    if ([self hasChaceForService]) {
+        serviceBlock([NSKeyedUnarchiver unarchiveObjectWithFile:[self cachePath]],nil);
+    }
+    if (![self hasChaceForService] || [self shouldUpdateCache]) {
+        if ([self method] == RestMethodGET) {//Realiza la llamada
+            [self makeGetWithServiceBlock:serviceBlock];
+        } else if([self method] == RestMethodPOST) {
+            [self makePostWithServiceBlock:serviceBlock];
+        } else {
+            [self makePutWithServiceBlock:serviceBlock];
+        }
     }
 }
 
@@ -72,27 +81,25 @@
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
 
     if ([self isAuthenticated]) {
-        User* currentUser = [UserManager getCurrentUser];
-        [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[currentUser username]  password:[currentUser password]];
+//        User* currentUser = [UserManager getCurrentUser];
+//        [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[currentUser username]  password:[currentUser password]];
     }
 
-    NSString* path = [NSString stringWithFormat:@"%@%@", kURI, self.path];
-    NSLog(@"----------");
-    NSLog(@"Service Method: GET");
-    NSLog(@"Path: %@", path);
-    NSLog(@"Query params: %@", self.queryParams);
-    NSLog(@"----------");
+    NSString* path = [NSString stringWithFormat:@"%@%@", (self.specificUri == nil)? kURI : self.specificUri, self.path];
     self.isRunning = YES;
     self.requestOperation = [manager GET:path parameters:self.queryParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.isRunning = NO;
-        NSObject* returnObject = [self requestSuccessWithResponseObject:responseObject];
+        NSArray* returnObject = (NSArray *)[self requestSuccessWithResponseObject:responseObject];
+        if (returnObject) {
+            [self saveCache:returnObject];
+        }
         if (serviceBlock) {
             serviceBlock(returnObject, nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         self.isRunning = NO;
-        // No es porque cancelamos el request
-        if (serviceBlock && error.code != -999) {
+        // No es porque cancelamos el request, y si no hay cache
+        if (serviceBlock && error.code != -999 && ![self hasChaceForService]) {
             serviceBlock(nil, error);
         }
     }];
@@ -103,8 +110,8 @@
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
     
     if ([self isAuthenticated]) {
-        User* currentUser = [UserManager getCurrentUser];
-        [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[currentUser username]  password:[currentUser password]];
+//        User* currentUser = [UserManager getCurrentUser];
+//        [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[currentUser username]  password:[currentUser password]];
     }
 
     self.isRunning = YES;
@@ -112,7 +119,10 @@
 
     self.requestOperation = [manager POST:path parameters:self.bodyParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.isRunning = NO;
-        NSObject* returnObject = [self requestSuccessWithResponseObject:responseObject];
+        NSArray* returnObject = (NSArray *)[self requestSuccessWithResponseObject:responseObject];
+        if (returnObject) {
+            [self saveCache:returnObject];
+        }
         if (serviceBlock) {
             serviceBlock(returnObject, nil);
         }
@@ -130,8 +140,8 @@
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
     
     if ([self isAuthenticated]) {
-        User* currentUser = [UserManager getCurrentUser];
-        [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[currentUser username]  password:[currentUser password]];
+//        User* currentUser = [UserManager getCurrentUser];
+//        [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[currentUser username]  password:[currentUser password]];
     }
     
     self.isRunning = YES;
@@ -139,7 +149,7 @@
     
     self.requestOperation = [manager PUT:path parameters:self.bodyParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.isRunning = NO;
-        NSObject* returnObject = [self requestSuccessWithResponseObject:responseObject];
+        NSArray* returnObject = (NSArray *)[self requestSuccessWithResponseObject:responseObject];
         if (serviceBlock) {
             serviceBlock(returnObject, nil);
         }
@@ -159,6 +169,39 @@
 
 - (void)dealloc {
     [self invalidate];
+}
+
+#pragma mark - Cache
+-(BOOL)hasChaceForService{
+    return [[NSFileManager defaultManager] fileExistsAtPath:[self cachePath]];
+}
+
+- (NSString *)cachePath{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = paths[0];
+    
+    return [documentsDirectory stringByAppendingFormat:@"%@%@-cache.dat",kCacheRootPath,[self.path stringByReplacingOccurrencesOfString:@"/" withString:@"-"]];
+}
+
+- (void)saveCache:(NSArray<NSCoding>*)object{
+    @synchronized([self class]){
+        [NSKeyedArchiver archiveRootObject:object toFile:[self cachePath]];
+    }
+}
+
+#pragma mark - To inherit
+
+- (Class)parserClass{
+    return [GenericParser class];
+}
+
+// El metodo rest: GET, POST, PUT, DELETE
+- (RestMethod)method {
+    return RestMethodGET;
+}
+
+- (BOOL)shouldUpdateCache{
+    return YES;
 }
 
 @end

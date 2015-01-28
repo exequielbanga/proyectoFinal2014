@@ -1,12 +1,12 @@
 //
 //  GenericParser.m
 //
-//  Created by Exequiel Banga on 13/06/11.
+//  Created by Exequiel Banga on 5/11/14.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import "GenericParser.h"
-#import "TBXML+NSDictionary.h"
+#import "Utils.h"
 
 @implementation GenericParser
 
@@ -18,13 +18,12 @@
     return self;
 }
 
-- (void)parse:(NSString *)data {
-    NSDictionary *dictionaryData = [self dictionaryFromXMLString:data];
-    NSError *error = [self errorFromDictionary:dictionaryData];
+- (void)parse:(id)responseObject {
+    NSError *error = [self errorFromResponse:responseObject];
     if (error) {
         self.error = error;
     }else{
-        [self parseResponse:dictionaryData];
+        [self parseResponse:responseObject];
     }
 }
 
@@ -38,30 +37,26 @@
     return nil;
 }
 
-- (void)parseResponse:(NSDictionary *)dictionary{
-    NSArray* allObjectsDictionaries = [dictionary valueForKeyPath:[self keyPathToResponse]];
-    
+- (void)parseResponse:(id)response{
+    NSArray* allObjectsDictionaries;
+    if ([response isKindOfClass:[NSDictionary class]]) {
+        allObjectsDictionaries = [Utils arrayFromObject:[(NSDictionary *)response valueForKeyPath:[self keyPathToResponse]]];
+    }else{
+        allObjectsDictionaries = (NSArray *)response;
+    }
     for (NSDictionary* objectData in allObjectsDictionaries) {
         [self.resultObjects addObject:[[[self responseObjectsClass] alloc] initWithDictionary:objectData]];
     }
 }
 
-- (NSError *)errorFromDictionary:(NSDictionary *)dictionary{
-    NSDictionary *fault = [dictionary valueForKeyPath:@"soapenv:Envelope.soapenv:Body.soapenv:Fault"];
-    if (fault) {
-        NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:fault];
-        userInfo[NSLocalizedFailureReasonErrorKey] = userInfo[@"detail"][@"con:fault"][@"con:reason"];
-        userInfo[NSLocalizedDescriptionKey] = userInfo[@"faultstring"];
-        
-        NSInteger errorCode = [[[userInfo[@"detail"][@"con:fault"][@"con:errorCode"]componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""]integerValue];
-        
-        self.error = [NSError errorWithDomain:@"Error" code:errorCode userInfo:userInfo];
+- (NSError *)errorFromResponse:(id)responseObject{
+    if ([responseObject isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *fault = [(NSDictionary *)responseObject valueForKeyPath:@"path.to.error"];
+        if (fault) {
+            // setear el error
+        }
     }
     return self.error;
-}
-
-- (NSDictionary *)dictionaryFromXMLString:(NSString *)xmlString{
-    return [TBXML dictionaryWithXMLData:[xmlString dataUsingEncoding:NSUTF8StringEncoding] error:nil];
 }
 
 @end

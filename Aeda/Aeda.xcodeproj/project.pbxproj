@@ -19,6 +19,7 @@
 		F63F413F19E5832600F5E02B /* ALStrokeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F63F413B19E5832600F5E02B /* ALStrokeButton.m */; };
 		F63F414019E5832600F5E02B /* ALFillButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F63F413D19E5832600F5E02B /* ALFillButton.m */; };
 		F66ACDC619E4AFBC00DF52D8 /* RutinasListByDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */; };
+		F66E60851A799C7000792487 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = F66E60841A799C7000792487 /* Utils.m */; };
 		F677408D19E4E83F0056EA16 /* RutinasHoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F677408C19E4E83F0056EA16 /* RutinasHoyViewController.m */; };
 		F695548819E4A574009AA5A6 /* RutinaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F695548619E4A574009AA5A6 /* RutinaTableViewCell.m */; };
 		F695548919E4A574009AA5A6 /* RutinaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F695548719E4A574009AA5A6 /* RutinaTableViewCell.xib */; };
@@ -131,6 +132,8 @@
 		F63F413E19E5832600F5E02B /* ALStrokeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALStrokeButton.h; sourceTree = "<group>"; };
 		F66ACDC419E4AFBC00DF52D8 /* RutinasListByDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinasListByDayViewController.h; sourceTree = "<group>"; };
 		F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinasListByDayViewController.m; sourceTree = "<group>"; };
+		F66E60831A799C7000792487 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		F66E60841A799C7000792487 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		F677408B19E4E83F0056EA16 /* RutinasHoyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinasHoyViewController.h; sourceTree = "<group>"; };
 		F677408C19E4E83F0056EA16 /* RutinasHoyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinasHoyViewController.m; sourceTree = "<group>"; };
 		F695548519E4A574009AA5A6 /* RutinaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinaTableViewCell.h; sourceTree = "<group>"; };
@@ -565,6 +568,8 @@
 		F6C2E4AA19E18D3C00538EF7 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				F66E60831A799C7000792487 /* Utils.h */,
+				F66E60841A799C7000792487 /* Utils.m */,
 				F6C2E4A719E18D3500538EF7 /* RestService.h */,
 				F6C2E4A819E18D3500538EF7 /* RestService.m */,
 				F6C2E4A419E18D2900538EF7 /* GenericParser.h */,
@@ -831,6 +836,7 @@
 			files = (
 				F6CB387219E1CD9800CA1A7D /* ResultadoRutina.m in Sources */,
 				F6C2E49719E18CC700538EF7 /* MisDatosTableViewHeader.m in Sources */,
+				F66E60851A799C7000792487 /* Utils.m in Sources */,
 				F6CB386E19E1CADA00CA1A7D /* RutinaViewController.m in Sources */,
 				F6C2E4AD19E18D9200538EF7 /* Persona.m in Sources */,
 				F6F8986019E82373007B5E1B /* EstadoPersona.m in Sources */,

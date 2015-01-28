@@ -20,14 +20,14 @@
 }
 
 - (NSError *)errorFromDictionary:(NSDictionary *)dictionary {
-    NSError* errorToReturn = [super errorFromDictionary:dictionary];
+    NSError* errorToReturn = [super errorFromResponse:dictionary];
     if (!errorToReturn) {
         NSDictionary* errorData = dictionary[@"soapenv:Envelope"][@"soapenv:Body"][@"opc:AuthenticateResponseEBM"];
         if (errorData) {
             NSString* possibleErrorCode = errorData[@"ebm:ErrorCode"][@"text"];
             NSString* possibleErrorMessage = errorData[@"ebm:ReturnMessage"][@"text"];
             if (possibleErrorCode && possibleErrorMessage) {
-                errorToReturn = [NSError errorWithDomain:@"Error" code:400 userInfo:@{kErrorCode : possibleErrorCode, kErrorValue: possibleErrorMessage}];
+                errorToReturn = [NSError errorWithDomain:@"Error" code:400 userInfo:@{@"errorCode" : possibleErrorCode, @"errorValue": possibleErrorMessage}];
             }
         }
     }

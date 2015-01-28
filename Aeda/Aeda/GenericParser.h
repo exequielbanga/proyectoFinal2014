@@ -1,14 +1,11 @@
 //
 //  GenericParser.h
 //
-//  Created by Exequiel Banga on 13/06/11.
+//  Created by Exequiel Banga on 5/11/14.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
-#define kErrorCode @"ErrorCode"
-#define kErrorValue @"ErrorValue"
 
 @interface GenericParser : NSObject
 
@@ -16,8 +13,7 @@
 @property(nonatomic, strong) NSError *error;
 
 - (void)parse:(NSString *)string;
-- (NSDictionary *)dictionaryFromXMLString:(NSString *)xmlString;
-- (NSError *)errorFromDictionary:(NSDictionary *)dictionary;
+- (NSError *)errorFromResponse:(id)responseObject;
 
 //To overwrite in subclasses
 - (NSString *)keyPathToResponse;
