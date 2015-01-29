@@ -20,6 +20,7 @@
 		F63F414019E5832600F5E02B /* ALFillButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F63F413D19E5832600F5E02B /* ALFillButton.m */; };
 		F66ACDC619E4AFBC00DF52D8 /* RutinasListByDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */; };
 		F66E60851A799C7000792487 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = F66E60841A799C7000792487 /* Utils.m */; };
+		F66E60891A79C38D00792487 /* MisDatosService.m in Sources */ = {isa = PBXBuildFile; fileRef = F66E60881A79C38D00792487 /* MisDatosService.m */; };
 		F677408D19E4E83F0056EA16 /* RutinasHoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F677408C19E4E83F0056EA16 /* RutinasHoyViewController.m */; };
 		F695548819E4A574009AA5A6 /* RutinaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F695548619E4A574009AA5A6 /* RutinaTableViewCell.m */; };
 		F695548919E4A574009AA5A6 /* RutinaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F695548719E4A574009AA5A6 /* RutinaTableViewCell.xib */; };
@@ -134,6 +135,8 @@
 		F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinasListByDayViewController.m; sourceTree = "<group>"; };
 		F66E60831A799C7000792487 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		F66E60841A799C7000792487 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		F66E60871A79C38D00792487 /* MisDatosService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MisDatosService.h; sourceTree = "<group>"; };
+		F66E60881A79C38D00792487 /* MisDatosService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MisDatosService.m; sourceTree = "<group>"; };
 		F677408B19E4E83F0056EA16 /* RutinasHoyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinasHoyViewController.h; sourceTree = "<group>"; };
 		F677408C19E4E83F0056EA16 /* RutinasHoyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinasHoyViewController.m; sourceTree = "<group>"; };
 		F695548519E4A574009AA5A6 /* RutinaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinaTableViewCell.h; sourceTree = "<group>"; };
@@ -311,6 +314,15 @@
 				F6010A2319E5B1BC00B076BF /* RutinaEnProgresoViewController.xib */,
 			);
 			name = "En progreso";
+			sourceTree = "<group>";
+		};
+		F66E60861A79C33D00792487 /* MisDatos */ = {
+			isa = PBXGroup;
+			children = (
+				F66E60871A79C38D00792487 /* MisDatosService.h */,
+				F66E60881A79C38D00792487 /* MisDatosService.m */,
+			);
+			name = MisDatos;
 			sourceTree = "<group>";
 		};
 		F695548A19E4A710009AA5A6 /* MisRutinas */ = {
@@ -545,6 +557,7 @@
 		F6C2E49A19E18CE000538EF7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F66E60861A79C33D00792487 /* MisDatos */,
 				F695548A19E4A710009AA5A6 /* MisRutinas */,
 				F6CB388719E1E20B00CA1A7D /* ResultadoRutina */,
 				F6C2E4AA19E18D3C00538EF7 /* Generic */,
@@ -839,6 +852,7 @@
 				F66E60851A799C7000792487 /* Utils.m in Sources */,
 				F6CB386E19E1CADA00CA1A7D /* RutinaViewController.m in Sources */,
 				F6C2E4AD19E18D9200538EF7 /* Persona.m in Sources */,
+				F66E60891A79C38D00792487 /* MisDatosService.m in Sources */,
 				F6F8986019E82373007B5E1B /* EstadoPersona.m in Sources */,
 				F6C2E49019E18A6500538EF7 /* User.m in Sources */,
 				F6C2E47519E189E100538EF7 /* UIFont+ALFonts.m in Sources */,

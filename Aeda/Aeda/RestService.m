@@ -78,8 +78,9 @@
 
 - (void)makeGetWithServiceBlock:(ServiceBlock)serviceBlock {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
 
+    manager.requestSerializer  = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     if ([self isAuthenticated]) {
 //        User* currentUser = [UserManager getCurrentUser];
 //        [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[currentUser username]  password:[currentUser password]];
@@ -87,9 +88,15 @@
 
     NSString* path = [NSString stringWithFormat:@"%@%@", (self.specificUri == nil)? kURI : self.specificUri, self.path];
     self.isRunning = YES;
+    
+//    self.requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
+
     self.requestOperation = [manager GET:path parameters:self.queryParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.isRunning = NO;
-        NSArray* returnObject = (NSArray *)[self requestSuccessWithResponseObject:responseObject];
+        
+        NSString *responseString = [responseObject isKindOfClass:[NSString class]]?responseObject: [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSArray* returnObject = (NSArray *)[self requestSuccessWithResponseObject:responseString];
         if (returnObject) {
             [self saveCache:returnObject];
         }

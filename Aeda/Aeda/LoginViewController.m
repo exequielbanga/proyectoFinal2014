@@ -80,10 +80,9 @@
         if (error) {
 //            [self showError:[error userInfo][kErrorValue]];
         } else {
-            User* anUser = ((NSArray*)response)[0];
-            [UserManager setCurrentUser:anUser];
+//            User* anUser = ((NSArray*)response)[0];
+//            [UserManager setCurrentUser:anUser];
             [self success];
-            [[NSNotificationCenter defaultCenter]postNotificationName:kMensajesLeidosNotification object:nil];
         }
     }];
 

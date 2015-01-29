@@ -25,7 +25,7 @@
 }
 
 - (Class)parserClass {
-    return [LoginParser class];
+    return nil;
 }
 
 - (void)authenticateWithUsername:(NSString*)username password:(NSString*)password finishedBlock:(ServiceBlock)block {

@@ -14,6 +14,7 @@
 #import "UIFont+ALFonts.h"
 #import "ALButton.h"
 #import "LoginService.h"
+#import "MisDatosService.h"
 
 #define kCellIdentifier @"MisDatosCell"
 #define kDataTitle @"kDataTitle"
@@ -60,6 +61,10 @@
 
 - (void)callService{
     [self showLoadingMessage];
+    [[MisDatosService new]getMisDatosWithBlock:^(NSArray *response,NSError *error){
+        [self hideLoadingMessage];
+        
+    }];
 }
 
 - (void)userLoged{
