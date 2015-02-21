@@ -63,9 +63,8 @@
 - (void)callService{
     [self showLoadingMessage];
     [[MisDatosService new]getMisDatosWithBlock:^(NSArray *response,NSError *error){
-        User *user = response[0];
+        self.persona = (User *)response[0];
         [self hideLoadingMessage];
-        
     }];
 }
 
@@ -78,33 +77,31 @@
     return @"...";
 }
 
+- (void)addField:(NSString *)fieldName value:(NSString *)value section:(NSMutableArray *)section{
+    if (value && ![value isEqual:[NSNull null]] && value.length) {
+        [section addObject:@{kDataTitle:fieldName,kDataValue:value}];
+    }else{
+        [section addObject:@{kDataTitle:fieldName,kDataValue:[self emptyFieldDescription]}];
+    }
+
+}
+
 - (void)fillTableData{
     self.tableData = [MutableOrderedDictionary new];
     
     NSMutableArray *datosPrincipales = [NSMutableArray new];
     
-    if (self.persona.nombre) {
-        [datosPrincipales addObject:@{kDataTitle:@"Nombre",kDataValue:self.persona.nombre}];
-    }else{
-        [datosPrincipales addObject:@{kDataTitle:@"Nombre",kDataValue:[self emptyFieldDescription]}];
-    }
-    if (self.persona.apellido) {
-        [datosPrincipales  addObject:@{kDataTitle:@"Apellido",kDataValue:self.persona.apellido}];
-    }else{
-        [datosPrincipales addObject:@{kDataTitle:@"Apellido",kDataValue:[self emptyFieldDescription]}];
-    }
-    if (self.persona.fechaNacimiento) {
-        NSDateFormatter *formatter = [NSDateFormatter new];
-        formatter.dateFormat = @"dd/MM/YYYY";
-        [datosPrincipales  addObject:@{kDataTitle:@"Fecha De Nacimiento",kDataValue:[formatter stringFromDate:self.persona.fechaNacimiento]}];
-    }else{
-        [datosPrincipales addObject:@{kDataTitle:@"Fecha De Nacimiento",kDataValue:[self emptyFieldDescription]}];
-    }
-    
-    [self.tableData setObject:datosPrincipales forKey:@"Datos Principales"];    
+    [self addField:@"Nombre" value:self.persona.nombre section:datosPrincipales];
+    [self addField:@"Apellido" value:self.persona.apellido section:datosPrincipales];
+    [self addField:@"Email" value:self.persona.email section:datosPrincipales];
+    [self addField:@"Fecha de nacimiento" value:self.persona.fecha_nacimiento section:datosPrincipales];
+    [self addField:@"Peso" value:self.persona.peso section:datosPrincipales];
+    [self addField:@"Sexo" value:self.persona.sexo section:datosPrincipales];
+    [self.tableData setObject:datosPrincipales forKey:@"Datos Principales"];
+    [self.tableView reloadData];
 }
 
-- (void)setPersona:(Persona *)persona{
+- (void)setPersona:(User*)persona{
     _persona = persona;
     [self fillTableData];
 }

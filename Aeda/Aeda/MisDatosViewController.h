@@ -7,13 +7,13 @@
 //
 
 #import "ALAuthenticationViewController.h"
-#import "Persona.h"
+#import "User.h"
 
 @class MutableOrderedDictionary;
 
 @interface MisDatosViewController : ALAuthenticationViewController
 
-@property(nonatomic,strong) Persona *persona;
+@property(nonatomic,strong) User *persona;
 
 //To Subclasses
 @property(nonatomic,strong)UITableView *tableView;

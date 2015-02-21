@@ -73,7 +73,6 @@
 		F6C2E4A319E18CFD00538EF7 /* LoginServiceRequest.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6C2E4A019E18CFD00538EF7 /* LoginServiceRequest.txt */; };
 		F6C2E4A619E18D2900538EF7 /* GenericParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E4A519E18D2900538EF7 /* GenericParser.m */; };
 		F6C2E4A919E18D3500538EF7 /* RestService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E4A819E18D3500538EF7 /* RestService.m */; };
-		F6C2E4AD19E18D9200538EF7 /* Persona.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E4AC19E18D9200538EF7 /* Persona.m */; };
 		F6C2E4C219E18E5700538EF7 /* ButtonsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E4B019E18E5700538EF7 /* ButtonsTableViewCell.m */; };
 		F6C2E4C519E18E5700538EF7 /* ImageLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C2E4B519E18E5700538EF7 /* ImageLabelTableViewCell.m */; };
 		F6C2E4C619E18E5700538EF7 /* ImageLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C2E4B619E18E5700538EF7 /* ImageLabelTableViewCell.xib */; };
@@ -233,8 +232,6 @@
 		F6C2E4A519E18D2900538EF7 /* GenericParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericParser.m; sourceTree = "<group>"; };
 		F6C2E4A719E18D3500538EF7 /* RestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestService.h; sourceTree = "<group>"; };
 		F6C2E4A819E18D3500538EF7 /* RestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestService.m; sourceTree = "<group>"; };
-		F6C2E4AB19E18D9200538EF7 /* Persona.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persona.h; sourceTree = "<group>"; };
-		F6C2E4AC19E18D9200538EF7 /* Persona.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persona.m; sourceTree = "<group>"; };
 		F6C2E4AF19E18E5700538EF7 /* ButtonsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonsTableViewCell.h; sourceTree = "<group>"; };
 		F6C2E4B019E18E5700538EF7 /* ButtonsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonsTableViewCell.m; sourceTree = "<group>"; };
 		F6C2E4B419E18E5700538EF7 /* ImageLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLabelTableViewCell.h; sourceTree = "<group>"; };
@@ -532,8 +529,6 @@
 				F6DAFB931A98DBAA0097331F /* AEDAModel.m */,
 				F6A95FA019E5F82800F44500 /* Physics */,
 				F6C2E49A19E18CE000538EF7 /* Services */,
-				F6C2E4AB19E18D9200538EF7 /* Persona.h */,
-				F6C2E4AC19E18D9200538EF7 /* Persona.m */,
 				F6C2E48E19E18A6500538EF7 /* User.h */,
 				F6C2E48F19E18A6500538EF7 /* User.m */,
 				F6CB387019E1CD9800CA1A7D /* ResultadoRutina.h */,
@@ -861,7 +856,6 @@
 				F6C2E49719E18CC700538EF7 /* MisDatosTableViewHeader.m in Sources */,
 				F66E60851A799C7000792487 /* Utils.m in Sources */,
 				F6CB386E19E1CADA00CA1A7D /* RutinaViewController.m in Sources */,
-				F6C2E4AD19E18D9200538EF7 /* Persona.m in Sources */,
 				F66E60891A79C38D00792487 /* MisDatosService.m in Sources */,
 				F6F8986019E82373007B5E1B /* EstadoPersona.m in Sources */,
 				F6C2E49019E18A6500538EF7 /* User.m in Sources */,
