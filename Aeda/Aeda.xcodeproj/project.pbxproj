@@ -18,6 +18,8 @@
 		F63F413A19E582EC00F5E02B /* ALTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F63F413919E582EC00F5E02B /* ALTextField.m */; };
 		F63F413F19E5832600F5E02B /* ALStrokeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F63F413B19E5832600F5E02B /* ALStrokeButton.m */; };
 		F63F414019E5832600F5E02B /* ALFillButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F63F413D19E5832600F5E02B /* ALFillButton.m */; };
+		F6472F751A990B7700BE92BF /* RutinaServicePosta.m in Sources */ = {isa = PBXBuildFile; fileRef = F6472F741A990B7700BE92BF /* RutinaServicePosta.m */; };
+		F6472F781A990BFA00BE92BF /* RutinaParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F6472F771A990BFA00BE92BF /* RutinaParser.m */; };
 		F66ACDC619E4AFBC00DF52D8 /* RutinasListByDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */; };
 		F66E60851A799C7000792487 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = F66E60841A799C7000792487 /* Utils.m */; };
 		F66E60891A79C38D00792487 /* MisDatosService.m in Sources */ = {isa = PBXBuildFile; fileRef = F66E60881A79C38D00792487 /* MisDatosService.m */; };
@@ -132,6 +134,10 @@
 		F63F413C19E5832600F5E02B /* ALFillButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFillButton.h; sourceTree = "<group>"; };
 		F63F413D19E5832600F5E02B /* ALFillButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFillButton.m; sourceTree = "<group>"; };
 		F63F413E19E5832600F5E02B /* ALStrokeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALStrokeButton.h; sourceTree = "<group>"; };
+		F6472F731A990B7700BE92BF /* RutinaServicePosta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinaServicePosta.h; sourceTree = "<group>"; };
+		F6472F741A990B7700BE92BF /* RutinaServicePosta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinaServicePosta.m; sourceTree = "<group>"; };
+		F6472F761A990BFA00BE92BF /* RutinaParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinaParser.h; sourceTree = "<group>"; };
+		F6472F771A990BFA00BE92BF /* RutinaParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinaParser.m; sourceTree = "<group>"; };
 		F66ACDC419E4AFBC00DF52D8 /* RutinasListByDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinasListByDayViewController.h; sourceTree = "<group>"; };
 		F66ACDC519E4AFBC00DF52D8 /* RutinasListByDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinasListByDayViewController.m; sourceTree = "<group>"; };
 		F66E60831A799C7000792487 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -317,6 +323,17 @@
 				F6010A2319E5B1BC00B076BF /* RutinaEnProgresoViewController.xib */,
 			);
 			name = "En progreso";
+			sourceTree = "<group>";
+		};
+		F6472F721A990B3700BE92BF /* Rutina */ = {
+			isa = PBXGroup;
+			children = (
+				F6472F731A990B7700BE92BF /* RutinaServicePosta.h */,
+				F6472F741A990B7700BE92BF /* RutinaServicePosta.m */,
+				F6472F761A990BFA00BE92BF /* RutinaParser.h */,
+				F6472F771A990BFA00BE92BF /* RutinaParser.m */,
+			);
+			name = Rutina;
 			sourceTree = "<group>";
 		};
 		F66E60861A79C33D00792487 /* MisDatos */ = {
@@ -562,6 +579,7 @@
 		F6C2E49A19E18CE000538EF7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F6472F721A990B3700BE92BF /* Rutina */,
 				F66E60861A79C33D00792487 /* MisDatos */,
 				F695548A19E4A710009AA5A6 /* MisRutinas */,
 				F6CB388719E1E20B00CA1A7D /* ResultadoRutina */,
@@ -877,6 +895,7 @@
 				F66ACDC619E4AFBC00DF52D8 /* RutinasListByDayViewController.m in Sources */,
 				F6C2E47419E189E100538EF7 /* UIColor+ALColor.m in Sources */,
 				F63F414019E5832600F5E02B /* ALFillButton.m in Sources */,
+				F6472F781A990BFA00BE92BF /* RutinaParser.m in Sources */,
 				F63F413F19E5832600F5E02B /* ALStrokeButton.m in Sources */,
 				F6C2E48C19E18A4F00538EF7 /* UserManager.m in Sources */,
 				F6DAFB941A98DBAA0097331F /* AEDAModel.m in Sources */,
@@ -902,6 +921,7 @@
 				F63B690E19E2B6CA00302B6C /* ResultadoEjercicio.m in Sources */,
 				F695548819E4A574009AA5A6 /* RutinaTableViewCell.m in Sources */,
 				F6A95FA819E5F9DC00F44500 /* GiroscopeAndAccelerometerData.m in Sources */,
+				F6472F751A990B7700BE92BF /* RutinaServicePosta.m in Sources */,
 				F63B690819E2B28500302B6C /* ResultadoRutinaViewController.m in Sources */,
 				F6C2E45F19E189C600538EF7 /* ALSegmentedControl.m in Sources */,
 				F6C2E41D19E1870900538EF7 /* main.m in Sources */,

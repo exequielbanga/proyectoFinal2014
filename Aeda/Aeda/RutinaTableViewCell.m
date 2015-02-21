@@ -19,9 +19,7 @@
 - (void)fillWithRutina:(Rutina *)rutina{
     self.nombre.text = rutina.nombre;
     self.detalle.text = rutina.detalleCorto;
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    [dateFormatter setDateFormat:@"hh:mm aaa"];
-    self.hora.text = [dateFormatter stringFromDate:rutina.sesion.hora];
+//    self.hora.text = rutina.sesion.hora;
     self.hora.hidden = !self.showsTime;
 }
 

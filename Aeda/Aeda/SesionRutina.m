@@ -10,8 +10,12 @@
 
 @implementation SesionRutina
 
-- (instancetype)initWithDictionary{
+- (instancetype)initWithSesionRutinaDia:(SesionRutinaDia)dia hora:(NSString *)hora{
     self = [self init];
+    if (self) {
+        self.dia = dia;
+        self.hora = hora;
+    }
     return self;
 }
 

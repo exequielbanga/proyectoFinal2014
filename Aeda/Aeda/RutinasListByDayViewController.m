@@ -21,17 +21,17 @@
 
 - (void)reloadData {
     //Ordeno por sesion
-    self.tableData = [self.tableData sortedArrayUsingComparator:^(Rutina *rutina1,Rutina *rutina2){
-        return [rutina1.sesion compare:rutina2.sesion];
-    }];
-    //Corte de control
-    self.sorteredTableData = [MutableOrderedDictionary new];
-    for (Rutina *rutina in self.tableData) {
-        if(!self.sorteredTableData[@(rutina.sesion.dia)]){
-            [self.sorteredTableData setObject:[NSMutableArray new] forKey:@(rutina.sesion.dia)];
-        }
-        [self.sorteredTableData[@(rutina.sesion.dia)] addObject:rutina];
-    }
+//    self.tableData = [self.tableData sortedArrayUsingComparator:^(Rutina *rutina1,Rutina *rutina2){
+//        return [rutina1.sesion compare:rutina2.sesion];
+//    }];
+//    //Corte de control
+//    self.sorteredTableData = [MutableOrderedDictionary new];
+//    for (Rutina *rutina in self.tableData) {
+//        if(!self.sorteredTableData[@(rutina.sesion.dia)]){
+//            [self.sorteredTableData setObject:[NSMutableArray new] forKey:@(rutina.sesion.dia)];
+//        }
+//        [self.sorteredTableData[@(rutina.sesion.dia)] addObject:rutina];
+//    }
     
     [super reloadData];
 }

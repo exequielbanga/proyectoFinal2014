@@ -36,6 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor ALLilaColor];
     self.containerView.backgroundColor = [UIColor ALLilaColor];
 

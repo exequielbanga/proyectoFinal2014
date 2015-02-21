@@ -8,15 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "SesionRutina.h"
+#import "AEDAModel.h"
 
-@interface Rutina : NSObject<NSCopying>
+@interface Rutina : AEDAModel
 
 @property(nonatomic,strong)NSString *nombre;
+@property(nonatomic,strong)NSString *rutinaId;
 @property(nonatomic,strong)NSString *detalle;
 @property(nonatomic,strong)NSString *detalleCorto;
 @property(nonatomic,strong)NSArray  *ejercicios;
-@property(nonatomic,strong)NSArray  *fechas;
-@property(nonatomic,strong)SesionRutina *sesion;
+@property(nonatomic,strong)NSMutableArray *usuarioRutinas;
+
+- (void)setUsuarioRutina:(NSDictionary *)dictionary;
 
 - (instancetype)initMock;
 

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AEDAModel.h"
 
 typedef enum{
     SesionRutinaDiaLunes = 0,
@@ -16,14 +17,16 @@ typedef enum{
     SesionRutinaDiaViernes,
     SesionRutinaDiaSabado,
     SesionRutinaDiaDomingo,
+    SesionRutinaDiaNada,
 }SesionRutinaDia;
 
-@interface SesionRutina : NSObject<NSCopying>
+@interface SesionRutina : AEDAModel
 
 @property(nonatomic,assign)SesionRutinaDia dia;
-@property(nonatomic,strong)NSDate *hora;
+@property(nonatomic,strong)NSString *hora;
 
-- (instancetype)initWithDictionary;
+- (instancetype)initWithSesionRutinaDia:(SesionRutinaDia)dia hora:(NSString *)hora;
+
 - (instancetype)initMock;
 
 - (NSComparisonResult)compare:(SesionRutina *)otraRutina;
