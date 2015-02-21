@@ -22,8 +22,9 @@
     // Debemos o no llamar al servicio?
     if (!self.tableData.count) {
         [self showLoadingMessage];
-        
-        [self.service getRutinasHoyWithBlock:^(NSObject *response, NSError *error) {
+
+#warning TODO
+        [self.service getRutinasWithBlock:^(NSObject *response, NSError *error) {
             [self hideLoadingMessage];
             if (error) {
                 [self showError:@"No se pueden obtener las rutinas en este momento. Reintente más tarde"];

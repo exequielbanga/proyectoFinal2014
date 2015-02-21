@@ -18,6 +18,14 @@
              };
 }
 
+- (void)setDetalle:(NSString *)detalle{
+    if (![detalle isKindOfClass:[NSString class]]) {
+        _detalle = @"";
+    }else{
+        _detalle = detalle;
+    }
+}
+
 - (NSString *)detalleCorto{
     return self.detalle;
 }

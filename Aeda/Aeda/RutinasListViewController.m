@@ -26,7 +26,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.service = [[RutinaService alloc] init];
+        self.service = [[RutinaServicePosta alloc] init];
     }
     return self;
 }
@@ -40,11 +40,14 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"RutinaTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kCellIdentifier];
 }
 
+- (void)userLoged{
+    [self callService];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
     if (!self.isMovingToParentViewController) {
-        [self callService];
     }
 }
 
