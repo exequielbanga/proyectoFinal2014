@@ -19,22 +19,52 @@
 
 @implementation RutinasListByDayViewController
 
+- (void)callService {
+    // Debemos o no llamar al servicio?
+    if (!self.tableData.count) {
+        [self showLoadingMessage];
+            [self.service getRutinasWithBlock:^(NSObject *response, NSError *error) {
+            [self hideLoadingMessage];
+            if (error) {
+                [self showError:@"No se pueden obtener las rutinas en este momento. Reintente más tarde"];
+            } else {
+                NSMutableArray *rutinas = [NSMutableArray new];
+                for (Rutina *rutina in (NSArray *)response) {
+                    for (SesionRutina *sesion in rutina.usuarioRutinas) {
+                        Rutina *nuevaRutina = [Rutina new];
+                        nuevaRutina.nombre = rutina.nombre;
+                        nuevaRutina.detalle = rutina.detalle;
+                        nuevaRutina.rutinaId = rutina.rutinaId;
+                        
+                        nuevaRutina.usuarioRutinas = [NSMutableArray arrayWithObject:sesion];
+                        [rutinas addObject:nuevaRutina];
+                    }
+                }
+                
+                self.tableData = rutinas;
+                [self reloadData];
+            }
+        }];
+    }
+}
+
 - (void)reloadData {
     //Ordeno por sesion
-//    self.tableData = [self.tableData sortedArrayUsingComparator:^(Rutina *rutina1,Rutina *rutina2){
-//        return [rutina1.sesion compare:rutina2.sesion];
-//    }];
-//    //Corte de control
-//    self.sorteredTableData = [MutableOrderedDictionary new];
-//    for (Rutina *rutina in self.tableData) {
-//        if(!self.sorteredTableData[@(rutina.sesion.dia)]){
-//            [self.sorteredTableData setObject:[NSMutableArray new] forKey:@(rutina.sesion.dia)];
-//        }
-//        [self.sorteredTableData[@(rutina.sesion.dia)] addObject:rutina];
-//    }
+    self.tableData = [self.tableData sortedArrayUsingComparator:^(Rutina *rutina1,Rutina *rutina2){
+        return [rutina1.usuarioRutinas[0] compare:rutina2.usuarioRutinas[0]];
+    }];
+    //Corte de control
+    self.sorteredTableData = [MutableOrderedDictionary new];
+    for (Rutina *rutina in self.tableData) {
+        if(!self.sorteredTableData[@([rutina.usuarioRutinas[0] dia])]){
+            [self.sorteredTableData setObject:[NSMutableArray new] forKey:@([rutina.usuarioRutinas[0] dia])];
+        }
+        [self.sorteredTableData[@([rutina.usuarioRutinas[0] dia])] addObject:rutina];
+    }
     
     [super reloadData];
 }
+
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     NSString *title;

@@ -19,7 +19,7 @@
 - (void)fillWithRutina:(Rutina *)rutina{
     self.nombre.text = rutina.nombre;
     self.detalle.text = rutina.detalleCorto;
-//    self.hora.text = rutina.sesion.hora;
+    self.hora.text = [rutina.usuarioRutinas[0] hora];
     self.hora.hidden = !self.showsTime;
 }
 
