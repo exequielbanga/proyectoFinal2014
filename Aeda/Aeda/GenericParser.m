@@ -40,7 +40,11 @@
 - (void)parseResponse:(id)response{
     NSArray* allObjectsDictionaries;
     if ([response isKindOfClass:[NSDictionary class]]) {
-        allObjectsDictionaries = [Utils arrayFromObject:[(NSDictionary *)response valueForKeyPath:[self keyPathToResponse]]];
+        if (self.keyPathToResponse) {
+            allObjectsDictionaries = [Utils arrayFromObject:[(NSDictionary *)response valueForKeyPath:[self keyPathToResponse]]];
+        }else{
+            allObjectsDictionaries = [Utils arrayFromObject:response];
+        }
     }else{
         allObjectsDictionaries = (NSArray *)response;
     }

@@ -95,9 +95,9 @@
     self.requestOperation = [manager GET:path parameters:self.queryParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.isRunning = NO;
         
-        NSString *responseString = [responseObject isKindOfClass:[NSString class]]?responseObject: [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        NSString *responseString = [responseObject isKindOfClass:[NSString class]]?responseObject: [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         
-        NSArray* returnObject = (NSArray *)[self requestSuccessWithResponseObject:responseString];
+        NSArray* returnObject = (NSArray *)[self requestSuccessWithResponseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil]];
         if (returnObject) {
             [self saveCache:returnObject];
         }
@@ -193,9 +193,9 @@
 }
 
 - (void)saveCache:(NSArray<NSCoding>*)object{
-    @synchronized([self class]){
-        [NSKeyedArchiver archiveRootObject:object toFile:[self cachePath]];
-    }
+//    @synchronized([self class]){
+//        [NSKeyedArchiver archiveRootObject:object toFile:[self cachePath]];
+//    }
 }
 
 #pragma mark - To inherit

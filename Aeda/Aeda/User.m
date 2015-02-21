@@ -14,7 +14,9 @@
 @implementation User
 
 - (NSDictionary *)mappingDictionary{
-    return nil;
+    return @{
+             @"id": @"userId"
+             };
 }
 
 @end

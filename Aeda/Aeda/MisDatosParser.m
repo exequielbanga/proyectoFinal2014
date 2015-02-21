@@ -12,7 +12,7 @@
 @implementation MisDatosParser
 
 - (NSString *)keyPathToResponse{
-    return nil;
+    return @"content.Usuario";
 }
 
 - (Class)responseObjectsClass{

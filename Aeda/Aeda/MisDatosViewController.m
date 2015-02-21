@@ -15,6 +15,7 @@
 #import "ALButton.h"
 #import "LoginService.h"
 #import "MisDatosService.h"
+#import "User.h"
 
 #define kCellIdentifier @"MisDatosCell"
 #define kDataTitle @"kDataTitle"
@@ -62,6 +63,7 @@
 - (void)callService{
     [self showLoadingMessage];
     [[MisDatosService new]getMisDatosWithBlock:^(NSArray *response,NSError *error){
+        User *user = response[0];
         [self hideLoadingMessage];
         
     }];
