@@ -26,11 +26,6 @@
 - (void)getMisDatosWithBlock:(ServiceBlock)block {
     self.path = @"MisDatos.json";
     
-//    self.bodyParams = @{
-//                        @"data[Usuario][username]":username,
-//                        @"data[Usuario][password]":password
-//                        };
-    
     [self requestWithServiceBlock:block];
 }
 
