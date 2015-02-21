@@ -25,14 +25,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.allButtons = @[self.firstButton,self.entryButton, self.sentButton];
-    [self setBorderOfButton:self.firstButton];
+    self.allButtons = @[self.entryButton, self.sentButton];
     [self setBorderOfButton:self.entryButton];
     [self setBorderOfButton:self.sentButton];
 
-    [self setSelectedAppereanceOfButton:self.firstButton];
     [self setNonselectedAppereanceOfButton:self.entryButton];
-    [self setNonselectedAppereanceOfButton:self.sentButton];
+    [self setSelectedAppereanceOfButton:self.sentButton];
 }
 
 - (IBAction)buttonTouched:(id)sender {
@@ -63,9 +61,6 @@
 }
 
 - (void)showTwoButtons{
-    self.sentButton.hidden = YES;
-    self.firstButton.frame = CGRectMake(0, 0, self.frame.size.width/2, self.frame.size.height);
-    self.entryButton.frame = CGRectMake(self.frame.size.width/2, 0, self.frame.size.width/2, self.frame.size.height);
 }
 
 @end

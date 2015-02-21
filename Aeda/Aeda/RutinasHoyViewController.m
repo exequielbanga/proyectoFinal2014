@@ -23,7 +23,6 @@
     if (!self.tableData.count) {
         [self showLoadingMessage];
 
-#warning TODO
         [self.service getRutinasWithBlock:^(NSObject *response, NSError *error) {
             [self hideLoadingMessage];
             if (error) {

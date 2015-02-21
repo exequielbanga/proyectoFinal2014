@@ -62,7 +62,6 @@
 - (void)createTableHeader{
     EstadoPersonaView *view = [EstadoPersonaView view];
     [view fillWithEstadoPersona:self.estado];
-    [view.segmentedControl.firstButton addTarget:self action:@selector(setPorDia) forControlEvents:UIControlEventTouchUpInside];
     [view.segmentedControl.entryButton addTarget:self action:@selector(setPorRutina) forControlEvents:UIControlEventTouchUpInside];
     
     self.tableView.tableHeaderView = view;

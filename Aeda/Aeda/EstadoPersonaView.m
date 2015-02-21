@@ -33,7 +33,6 @@
     self.imagen.frame = CGRectMake(self.imagen.frame.origin.x, self.resistencia.frame.origin.y, self.imagen.frame.size.width, self.imagen.self.frame.size.height);
     self.segmentedControl = [ALSegmentedControl view];
     [self.segmentedControl showTwoButtons];
-    [self.segmentedControl.firstButton setTitle:@"Por día" forState:UIControlStateNormal];
     [self.segmentedControl.entryButton setTitle:@"Por rutina" forState:UIControlStateNormal];
     [self addSubview:self.segmentedControl];
 }
