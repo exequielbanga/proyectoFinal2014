@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Aeda/RestService.m"
-            timestampString = "444189264.510871"
+            filePath = "Aeda/MisDatosViewController.m"
+            timestampString = "446224781.796952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "-makePostWithServiceBlock:"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-userLoged"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,91 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Aeda/RestService.m"
-            timestampString = "444188997.815049"
+            filePath = "Aeda/AEDAModel.m"
+            timestampString = "446225484.762124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "-makeGetWithServiceBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Aeda/RestService.m"
-            timestampString = "444189014.178476"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "-makeGetWithServiceBlock:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[RestService makeGetWithServiceBlock:]_block_invoke"
-                  moduleName = "Aeda"
-                  urlString = "file:///Users/Exe/Documents/Facultad/Proyecto/iOS/Aeda/Aeda/RestService.m"
-                  timestampString = "444189430.241392"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
-                  offsetFromSymbolStart = "315">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[RestService makeGetWithServiceBlock:]_block_invoke"
-                  moduleName = "Aeda"
-                  urlString = "file:///Users/Exe/Documents/Facultad/Proyecto/iOS/Aeda/Aeda/RestService.m"
-                  timestampString = "444189430.241593"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
-                  offsetFromSymbolStart = "359">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Aeda/RestService.m"
-            timestampString = "444189385.143845"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "-makeGetWithServiceBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Aeda/RestService.m"
-            timestampString = "444189266.457784"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "-makePostWithServiceBlock:"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "-initWithDictionary:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

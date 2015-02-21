@@ -94,6 +94,8 @@
 		F6CB388A19E1E22B00CA1A7D /* ResultadoRutinaService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB388919E1E22B00CA1A7D /* ResultadoRutinaService.m */; };
 		F6CF392419E5631D000E03BA /* EjercicioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CF392219E5631D000E03BA /* EjercicioView.m */; };
 		F6CF392519E5631D000E03BA /* EjercicioView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CF392319E5631D000E03BA /* EjercicioView.xib */; };
+		F6DAFB911A98DAFF0097331F /* MisDatosParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAFB901A98DAFF0097331F /* MisDatosParser.m */; };
+		F6DAFB941A98DBAA0097331F /* AEDAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAFB931A98DBAA0097331F /* AEDAModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F6F8985B19E81E3A007B5E1B /* EstadoPersonaView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F8985A19E81E3A007B5E1B /* EstadoPersonaView.m */; };
 		F6F8985D19E81E53007B5E1B /* EstadoPersonaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F8985C19E81E53007B5E1B /* EstadoPersonaView.xib */; };
 		F6F8986019E82373007B5E1B /* EstadoPersona.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F8985F19E82373007B5E1B /* EstadoPersona.m */; };
@@ -245,7 +247,6 @@
 		F6C2E4BE19E18E5700538EF7 /* TitleTextViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleTextViewTableViewCell.xib; sourceTree = "<group>"; };
 		F6C2E4CE19E18EAA00538EF7 /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
 		F6C2E4CF19E18EAA00538EF7 /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
-		F6C2E4D019E18EAA00538EF7 /* SupressFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupressFunction.h; sourceTree = "<group>"; };
 		F6CB386B19E1CADA00CA1A7D /* RutinaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinaViewController.h; sourceTree = "<group>"; };
 		F6CB386C19E1CADA00CA1A7D /* RutinaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinaViewController.m; sourceTree = "<group>"; };
 		F6CB386D19E1CADA00CA1A7D /* RutinaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RutinaViewController.xib; sourceTree = "<group>"; };
@@ -268,6 +269,11 @@
 		F6CF392119E5631D000E03BA /* EjercicioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EjercicioView.h; sourceTree = "<group>"; };
 		F6CF392219E5631D000E03BA /* EjercicioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EjercicioView.m; sourceTree = "<group>"; };
 		F6CF392319E5631D000E03BA /* EjercicioView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EjercicioView.xib; sourceTree = "<group>"; };
+		F6DAFB8F1A98DAFF0097331F /* MisDatosParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MisDatosParser.h; sourceTree = "<group>"; };
+		F6DAFB901A98DAFF0097331F /* MisDatosParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MisDatosParser.m; sourceTree = "<group>"; };
+		F6DAFB921A98DBAA0097331F /* AEDAModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEDAModel.h; sourceTree = "<group>"; };
+		F6DAFB931A98DBAA0097331F /* AEDAModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEDAModel.m; sourceTree = "<group>"; };
+		F6DAFB951A98DCD60097331F /* AEDAPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEDAPrefix.pch; sourceTree = "<group>"; };
 		F6F8985919E81E3A007B5E1B /* EstadoPersonaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstadoPersonaView.h; sourceTree = "<group>"; };
 		F6F8985A19E81E3A007B5E1B /* EstadoPersonaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstadoPersonaView.m; sourceTree = "<group>"; };
 		F6F8985C19E81E53007B5E1B /* EstadoPersonaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EstadoPersonaView.xib; sourceTree = "<group>"; };
@@ -321,6 +327,8 @@
 			children = (
 				F66E60871A79C38D00792487 /* MisDatosService.h */,
 				F66E60881A79C38D00792487 /* MisDatosService.m */,
+				F6DAFB8F1A98DAFF0097331F /* MisDatosParser.h */,
+				F6DAFB901A98DAFF0097331F /* MisDatosParser.m */,
 			);
 			name = MisDatos;
 			sourceTree = "<group>";
@@ -391,9 +399,9 @@
 			children = (
 				F6C2E4CE19E18EAA00538EF7 /* OrderedDictionary.h */,
 				F6C2E4CF19E18EAA00538EF7 /* OrderedDictionary.m */,
-				F6C2E4D019E18EAA00538EF7 /* SupressFunction.h */,
 				F6C2E41B19E1870900538EF7 /* Info.plist */,
 				F6C2E41C19E1870900538EF7 /* main.m */,
+				F6DAFB951A98DCD60097331F /* AEDAPrefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -520,6 +528,8 @@
 		F6C2E48D19E18A5400538EF7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F6DAFB921A98DBAA0097331F /* AEDAModel.h */,
+				F6DAFB931A98DBAA0097331F /* AEDAModel.m */,
 				F6A95FA019E5F82800F44500 /* Physics */,
 				F6C2E49A19E18CE000538EF7 /* Services */,
 				F6C2E4AB19E18D9200538EF7 /* Persona.h */,
@@ -875,6 +885,7 @@
 				F63F414019E5832600F5E02B /* ALFillButton.m in Sources */,
 				F63F413F19E5832600F5E02B /* ALStrokeButton.m in Sources */,
 				F6C2E48C19E18A4F00538EF7 /* UserManager.m in Sources */,
+				F6DAFB941A98DBAA0097331F /* AEDAModel.m in Sources */,
 				F63F413A19E582EC00F5E02B /* ALTextField.m in Sources */,
 				F6CF392419E5631D000E03BA /* EjercicioView.m in Sources */,
 				F6C2E4C719E18E5700538EF7 /* LoadingNextPageView.m in Sources */,
@@ -889,6 +900,7 @@
 				F62D522E19E311E800EF01FB /* ResultadoRepeticionView.m in Sources */,
 				F6C2E46419E189C600538EF7 /* ALLoggedButton.m in Sources */,
 				F6C2E46219E189C600538EF7 /* ALLabelForTableView.m in Sources */,
+				F6DAFB911A98DAFF0097331F /* MisDatosParser.m in Sources */,
 				F6CB388019E1D3B500CA1A7D /* ResultadoRutinaTableViewCell.m in Sources */,
 				F6C2E44819E1895B00538EF7 /* HomeMenuHeaderItem.m in Sources */,
 				F6C2E42019E1870900538EF7 /* AppDelegate.m in Sources */,
@@ -971,6 +983,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = Aeda/AEDAPrefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1011,6 +1024,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = Aeda/AEDAPrefix.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

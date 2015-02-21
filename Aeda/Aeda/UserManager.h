@@ -11,6 +11,9 @@
 
 @interface UserManager : NSObject
 
++ (void)setLogged:(BOOL)logged;
++ (BOOL)logged;
+
 + (void)setCurrentUser:(User*)anUser;
 
 + (User*)getCurrentUser;

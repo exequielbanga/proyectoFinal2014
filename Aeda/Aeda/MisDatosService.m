@@ -7,6 +7,7 @@
 //
 
 #import "MisDatosService.h"
+#import "MisDatosParser.h"
 
 @implementation MisDatosService
 
@@ -19,7 +20,7 @@
 }
 
 - (Class)parserClass {
-    return nil;
+    return [MisDatosParser class];
 }
 
 - (void)getMisDatosWithBlock:(ServiceBlock)block {

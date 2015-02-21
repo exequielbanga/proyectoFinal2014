@@ -13,6 +13,15 @@
 @implementation UserManager
 
 User* currentUser;
+BOOL logged;
++ (void)setLogged:(BOOL)_logged{
+    logged = _logged;
+}
+
++ (BOOL)logged{
+    return logged;
+}
+
 
 + (NSString*)filePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

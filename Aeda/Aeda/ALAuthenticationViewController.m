@@ -18,7 +18,7 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    if ([UserManager getCurrentUser]) {
+    if ([UserManager logged]) {
         [self userLoged];
     }else if (!self.login) {
         [self showLoginWithAnimation:YES];

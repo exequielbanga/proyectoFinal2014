@@ -15,7 +15,6 @@
 #import "LoginViewController.h"
 #import "UserManager.h"
 #import "ButtonsTableViewCell.h"
-#import "SupressFunction.h"
 
 #import "MisRutinasViewController.h"
 #import "SeguimientoViewController.h"
@@ -261,7 +260,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary* dataDictionary = self.dataArray[indexPath.row];
     SEL selector = NSSelectorFromString(dataDictionary[kSelectorName]);
-    SuppressPerformSelectorLeakWarning([self performSelector:selector]);
+    NoLeakWarning([self performSelector:selector]);
 }
 
 #pragma mark - authentication ViewController delegate

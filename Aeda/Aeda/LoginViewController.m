@@ -80,8 +80,7 @@
         if (error) {
 //            [self showError:[error userInfo][kErrorValue]];
         } else {
-//            User* anUser = ((NSArray*)response)[0];
-//            [UserManager setCurrentUser:anUser];
+            [UserManager setLogged:YES];
             [self success];
         }
     }];

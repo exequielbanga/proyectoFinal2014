@@ -1,0 +1,24 @@
+//
+//  AEDAPrefix.pch
+//  Aeda
+//
+//  Created by Jonathan Banga on 21/2/15.
+//  Copyright (c) 2015 Solbest. All rights reserved.
+//
+
+#ifndef Aeda_AEDAPrefix_pch
+#define Aeda_AEDAPrefix_pch
+
+#define NoLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
+
+#define TOTOMOCHO 2
+
+#endif
+
+

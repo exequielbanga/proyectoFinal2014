@@ -10,7 +10,8 @@
 #import "AFNetworking.h"
 #import "GenericParser.h"
 
-#define kURI @"http://181.47.73.190/aeda/aeda_new/aeda/"
+//#define kURI @"http://181.47.73.190/aeda/aeda_new/aeda/"
+#define kURI @"http://t9000277.ferozo.com/aeda/"
 #define kCacheRootPath @"/"
 
 @interface RestService()
@@ -180,7 +181,8 @@
 
 #pragma mark - Cache
 -(BOOL)hasChaceForService{
-    return [[NSFileManager defaultManager] fileExistsAtPath:[self cachePath]];
+    return NO;
+//    return [[NSFileManager defaultManager] fileExistsAtPath:[self cachePath]];
 }
 
 - (NSString *)cachePath{
