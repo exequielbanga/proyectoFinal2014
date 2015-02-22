@@ -95,6 +95,7 @@
 		F6CB388A19E1E22B00CA1A7D /* ResultadoRutinaService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB388919E1E22B00CA1A7D /* ResultadoRutinaService.m */; };
 		F6CF392419E5631D000E03BA /* EjercicioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CF392219E5631D000E03BA /* EjercicioView.m */; };
 		F6CF392519E5631D000E03BA /* EjercicioView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CF392319E5631D000E03BA /* EjercicioView.xib */; };
+		F6D3AB221A9A4EE60060AD35 /* ResultadoRutinaParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D3AB211A9A4EE60060AD35 /* ResultadoRutinaParser.m */; };
 		F6DAFB911A98DAFF0097331F /* MisDatosParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAFB901A98DAFF0097331F /* MisDatosParser.m */; };
 		F6DAFB941A98DBAA0097331F /* AEDAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAFB931A98DBAA0097331F /* AEDAModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F6F8985B19E81E3A007B5E1B /* EstadoPersonaView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F8985A19E81E3A007B5E1B /* EstadoPersonaView.m */; };
@@ -272,6 +273,8 @@
 		F6CF392119E5631D000E03BA /* EjercicioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EjercicioView.h; sourceTree = "<group>"; };
 		F6CF392219E5631D000E03BA /* EjercicioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EjercicioView.m; sourceTree = "<group>"; };
 		F6CF392319E5631D000E03BA /* EjercicioView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EjercicioView.xib; sourceTree = "<group>"; };
+		F6D3AB201A9A4EE60060AD35 /* ResultadoRutinaParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoRutinaParser.h; sourceTree = "<group>"; };
+		F6D3AB211A9A4EE60060AD35 /* ResultadoRutinaParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoRutinaParser.m; sourceTree = "<group>"; };
 		F6DAFB8F1A98DAFF0097331F /* MisDatosParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MisDatosParser.h; sourceTree = "<group>"; };
 		F6DAFB901A98DAFF0097331F /* MisDatosParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MisDatosParser.m; sourceTree = "<group>"; };
 		F6DAFB921A98DBAA0097331F /* AEDAModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEDAModel.h; sourceTree = "<group>"; };
@@ -663,6 +666,8 @@
 			children = (
 				F6CB388819E1E22B00CA1A7D /* ResultadoRutinaService.h */,
 				F6CB388919E1E22B00CA1A7D /* ResultadoRutinaService.m */,
+				F6D3AB201A9A4EE60060AD35 /* ResultadoRutinaParser.h */,
+				F6D3AB211A9A4EE60060AD35 /* ResultadoRutinaParser.m */,
 			);
 			name = ResultadoRutina;
 			sourceTree = "<group>";
@@ -875,6 +880,7 @@
 				F66E60851A799C7000792487 /* Utils.m in Sources */,
 				F6CB386E19E1CADA00CA1A7D /* RutinaViewController.m in Sources */,
 				F66E60891A79C38D00792487 /* MisDatosService.m in Sources */,
+				F6D3AB221A9A4EE60060AD35 /* ResultadoRutinaParser.m in Sources */,
 				F6F8986019E82373007B5E1B /* EstadoPersona.m in Sources */,
 				F6C2E49019E18A6500538EF7 /* User.m in Sources */,
 				F6C2E47519E189E100538EF7 /* UIFont+ALFonts.m in Sources */,

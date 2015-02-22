@@ -7,12 +7,21 @@
 //
 
 #import "ResultadoRutinaService.h"
-#import "ResultadoRutina.h"
+#import "ResultadoRutinaParser.h"
 
 @implementation ResultadoRutinaService
 
+- (RestMethod)method {
+    return RestMethodGET;
+}
+
+- (Class)parserClass {
+    return [ResultadoRutinaParser class];
+}
+
 - (void)getResultadoRutinasWithBlock:(ServiceBlock)block{
-    block([NSArray arrayWithObjects:[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock],[[ResultadoRutina alloc]initMock], nil],nil);
+    self.path = @"HistorialEjercicios.json";
+    [self requestWithServiceBlock:block];
 }
 
 @end

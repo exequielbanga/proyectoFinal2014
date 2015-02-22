@@ -11,6 +11,10 @@
 
 @implementation ResultadoRutina
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary{
+    self = [super initWithDictionary:dictionary];
+    return self;
+}
 
 - (instancetype)init{
     self = [super init];
@@ -40,6 +44,7 @@
         self.detalle = [rutina.detalle copy];
         self.detalleCorto = [rutina.detalleCorto copy];
         self.ejercicios = [rutina.ejercicios copy];
+        self.usuarioRutinas = [rutina.usuarioRutinas copy];
 //        self.fechas = [rutina.fechas copy];
 //        self.sesion = [rutina.sesion copy];
         self.resultado = 0;

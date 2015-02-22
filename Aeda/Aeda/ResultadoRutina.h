@@ -17,7 +17,6 @@
 @property(nonatomic,strong)NSDate *fecha;
 
 - (instancetype)initWithRutina:(Rutina *)rutina;
-- (instancetype)initMock;
 
 - (NSComparisonResult)compare:(ResultadoRutina *)otraRutina;
 
