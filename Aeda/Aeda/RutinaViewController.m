@@ -12,6 +12,7 @@
 #import "EjercicioView.h"
 #import "RutinaEnProgresoViewController.h"
 #import "EjerciciosRutinaService.h"
+#import "UIColor+ALColor.h"
 
 #define kYOffset 5
 #define kXOffset 5
@@ -42,8 +43,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor ALBlueColor]];
     self.title = @"";
-    [self updateViews];
 }
 
 - (void)setRutina:(Rutina *)rutina{
@@ -55,18 +56,22 @@
 }
 
 - (void)updateViews{
+    self.scrollView.frame = self.view.bounds;
+    
     self.titulo.text = self.rutina.nombre;
+    self.titulo.frame = CGRectMake(self.titulo.frame.origin.x, self.titulo.frame.origin.y, self.scrollView.frame.size.width - self.titulo.frame.origin.x*2, self.titulo.frame.size.height);
+    
     self.detalle.text = self.rutina.detalle;
     
-    CGSize size = [self.detalle sizeThatFits:CGSizeMake(self.detalle.frame.size.width, 1000)];
-    self.detalle.frame = CGRectMake(self.detalle.frame.origin.x,self.detalle.frame.origin.y, self.detalle.frame.size.width, size.height);
+    CGSize size = [self.detalle sizeThatFits:CGSizeMake(self.scrollView.frame.size.width - self.detalle.frame.origin.x*2, 1000)];
+    self.detalle.frame = CGRectMake(self.detalle.frame.origin.x,self.detalle.frame.origin.y, self.scrollView.frame.size.width - self.detalle.frame.origin.x*2, size.height);
 
     CGFloat yOffset = self.detalle.frame.origin.y + self.detalle.frame.size.height;
     for (Ejercicio *ejercicio in self.rutina.ejercicios) {
         EjercicioView *ejercicioView = [EjercicioView View];
         ejercicioView.delegate = self;
         [ejercicioView fillWithEjercicio:ejercicio];
-        ejercicioView.frame = CGRectMake(kXOffset, yOffset, ejercicioView.frame.size.width, ejercicioView.frame.size.height);
+        ejercicioView.frame = CGRectMake(kXOffset, yOffset, self.scrollView.frame.size.width - kXOffset*2, ejercicioView.frame.size.height);
         yOffset = ejercicioView.frame.origin.y + ejercicioView.frame.size.height + kYOffset;
         [self.scrollView addSubview:ejercicioView];
     }

@@ -33,8 +33,7 @@
         self.detalleCorto = [rutina.detalleCorto copy];
         self.ejercicios = [rutina.ejercicios copy];
         self.usuarioRutinas = [rutina.usuarioRutinas copy];
-//        self.fechas = [rutina.fechas copy];
-//        self.sesion = [rutina.sesion copy];
+        self.usuarioRutinas = [rutina.usuarioRutinas copy];
         self.resultado = 0;
         
         for (Ejercicio *ejercicio in self.ejercicios) {
