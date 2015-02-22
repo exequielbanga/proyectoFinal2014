@@ -69,6 +69,7 @@
     CGFloat yOffset = self.detalle.frame.origin.y + self.detalle.frame.size.height;
     for (Ejercicio *ejercicio in self.rutina.ejercicios) {
         EjercicioView *ejercicioView = [EjercicioView View];
+        ejercicioView.frame = CGRectMake(ejercicioView.frame.origin.x, ejercicioView.frame.origin.y, self.scrollView.frame.size.width, ejercicioView.frame.size.height);
         ejercicioView.delegate = self;
         [ejercicioView fillWithEjercicio:ejercicio];
         ejercicioView.frame = CGRectMake(kXOffset, yOffset, self.scrollView.frame.size.width - kXOffset*2, ejercicioView.frame.size.height);

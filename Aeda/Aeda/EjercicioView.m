@@ -142,4 +142,15 @@
     [self.delegate ejercicioView:self wantStartEjercicio:self.ejercicio];
 }
 
+- (void)setFrame:(CGRect)frame{
+    [super setFrame:frame];
+    self.titulo.frame = CGRectMake(self.titulo.frame.origin.x, self.titulo.frame.origin.y, self.frame.size.width - self.titulo.frame.origin.x*2, self.titulo.frame.size.height);
+
+    self.detalle.frame = CGRectMake(self.detalle.frame.origin.x, self.detalle.frame.origin.y, self.frame.size.width - self.detalle.frame.origin.x*2, self.detalle.frame.size.height);
+
+    self.barras.frame = CGRectMake(self.barras.frame.origin.x, self.barras.frame.origin.y, self.frame.size.width - self.barras.frame.origin.x*2, self.barras.frame.size.height);
+
+    self.botonComenzar.center = CGPointMake(self.frame.size.width/2, self.botonComenzar.center.y);
+}
+
 @end
