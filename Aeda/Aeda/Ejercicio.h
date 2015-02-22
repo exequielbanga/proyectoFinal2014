@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AEDAModel.h"
+
 #define kTolerancia .2;
 
-@interface Ejercicio : NSObject<NSCopying>
+@interface Ejercicio : AEDAModel
 @property(nonatomic,strong)NSString         *nombre;
 @property(nonatomic,strong)NSString         *detalle;
 @property(nonatomic,assign)NSTimeInterval   tiempo;
@@ -20,6 +22,6 @@
 //Un array con los pesos para cada repetición
 @property(nonatomic,strong)NSArray          *pesos;
 
-- (instancetype)initMock;
+- (void)setEjercicioRutina:(NSDictionary *)ejercicioRutina;
 
 @end

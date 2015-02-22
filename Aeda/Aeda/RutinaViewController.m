@@ -11,6 +11,7 @@
 #import "ResultadoEjercicio.h"
 #import "EjercicioView.h"
 #import "RutinaEnProgresoViewController.h"
+#import "EjerciciosRutinaService.h"
 
 #define kYOffset 5
 #define kXOffset 5
@@ -24,6 +25,20 @@
 @end
 
 @implementation RutinaViewController
+
+- (void)userLoged{
+    [super userLoged];
+    [self callService];
+}
+
+- (void)callService{
+    [[EjerciciosRutinaService new] getEjerciciosForRutina:self.rutina WithBlock:^(NSArray *response,NSError *error){
+        if (!error) {
+            self.rutina.ejercicios = response;
+            [self updateViews];
+        }
+    }];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

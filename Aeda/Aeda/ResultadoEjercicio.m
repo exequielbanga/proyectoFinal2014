@@ -21,17 +21,6 @@
     return self;
 }
 
-- (instancetype)initMock{
-    self = [super initMock];
-    if (self) {
-        self.resultadoTiempo = 323;
-        self.resultadoRepeticiones = [[NSMutableArray alloc] initWithObjects:@15,@12,@8, nil];
-        self.resultadoTiemposEntreRepeticiones = [[NSMutableArray alloc] initWithObjects:@34,@49, nil];
-        self.resultadoPesos = [[NSMutableArray alloc] initWithObjects:@2,@2,@3, nil];
-    }
-    return self;
-}
-
 - (instancetype)initWithEjercicio:(Ejercicio *)ejercicio{
     self = [self init];
     if (self) {

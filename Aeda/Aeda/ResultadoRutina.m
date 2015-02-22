@@ -24,22 +24,10 @@
     return self;
 }
 
-- (instancetype)initMock{
-    self = [super initMock];
-    if (self) {
-        self.resultado = (arc4random()%100)/100.0;
-        self.fecha = [NSDate dateWithTimeIntervalSinceNow:-arc4random()%(86400*30)];
-        self.resultadoEjercicios = [NSMutableArray new];
-        for (NSInteger i = 0; i < self.ejercicios.count; i++) {
-            [self.resultadoEjercicios addObject:[[ResultadoEjercicio alloc]initMock]];
-        }
-    }
-    return self;
-}
-
 - (instancetype)initWithRutina:(Rutina *)rutina{
     self = [self init];
     if (self) {
+        self.rutinaId = [rutina.rutinaId copy];
         self.nombre = [rutina.nombre copy];
         self.detalle = [rutina.detalle copy];
         self.detalleCorto = [rutina.detalleCorto copy];

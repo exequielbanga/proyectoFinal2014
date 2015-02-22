@@ -10,29 +10,25 @@
 
 @implementation Ejercicio
 
-- (instancetype)initMock{
-    self = [self init];
-    if (self) {
-        self.nombre = @"Bíceps Mancuerna";
-        self.detalle = @"Descripción de biceps mancuerna. En este lugar se llena la descripcion del ejercicio para que el usuario pueda realizarlo correctamente. Se indican todos los pasos necesarios.";
-        self.repeticiones = [[NSArray alloc] initWithObjects:@15,@15,@12, nil];
-        self.tiemposEntreRepeticiones = [[NSArray alloc] initWithObjects:@30,@30, nil];
-        self.pesos = [[NSArray alloc] initWithObjects:@2,@2,@3, nil];
-        self.tiempo = 300;
-    }
-    return self;
+- (NSDictionary *)mappingDictionary{
+    return @{
+             @"descripcion":@"detalle",
+             };
 }
 
-- (id)copyWithZone:(NSZone*)aZone {
-    Ejercicio* ejercicio = [[[self class] allocWithZone:aZone] init];
-    ejercicio.nombre = [self.nombre copy];
-    ejercicio.detalle = [self.detalle copy];
-    ejercicio.repeticiones = [self.repeticiones copy];
-    ejercicio.tiemposEntreRepeticiones = [self.tiemposEntreRepeticiones copy];
-    ejercicio.pesos = [self.pesos copy];
-    ejercicio.tiempo = self.tiempo;
-    
-    return ejercicio;
+- (void)setEjercicioRutina:(NSDictionary *)ejercicioRutina{
+    NSMutableArray *repeticiones = [NSMutableArray arrayWithCapacity:[ejercicioRutina[@"series"]integerValue]];
+    for (NSInteger i = 0; i < [ejercicioRutina[@"series"]integerValue]; i++) {
+        [repeticiones addObject:@([ejercicioRutina[@"repeticiones"]integerValue])];
+    }
+    self.repeticiones = [NSArray arrayWithArray:repeticiones];
+
+    NSMutableArray *pausas = [NSMutableArray arrayWithCapacity:[ejercicioRutina[@"series"]integerValue]];
+    for (NSInteger i = 0; i < [ejercicioRutina[@"series"]integerValue]; i++) {
+        [pausas addObject:@([ejercicioRutina[@"tiempo_pausa"]integerValue])];
+    }
+    self.tiemposEntreRepeticiones = [NSArray arrayWithArray:pausas];
 }
+
 
 @end

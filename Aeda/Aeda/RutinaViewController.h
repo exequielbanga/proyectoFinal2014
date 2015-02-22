@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Solbest. All rights reserved.
 //
 
-#import "ALViewController.h"
+#import "ALAuthenticationViewController.h"
 #import "Rutina.h"
 
-@interface RutinaViewController : ALViewController
+@interface RutinaViewController : ALAuthenticationViewController
 
 @property(nonatomic,assign)Rutina *rutina;
 

@@ -21,6 +21,4 @@
 
 - (void)setUsuarioRutina:(NSDictionary *)dictionary;
 
-- (instancetype)initMock;
-
 @end

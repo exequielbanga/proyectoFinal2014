@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "GenericParser.h"
 
-//#define kURI @"http://192.168.0.11/aeda/aeda_new/aeda/"
+//#define kURI @"http://181.47.73.190/aeda/aeda_new/aeda/"
 #define kURI @"http://t9000277.ferozo.com/aeda/"
 #define kCacheRootPath @"/"
 
@@ -82,20 +82,17 @@
 
     manager.requestSerializer  = [AFHTTPRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    if ([self isAuthenticated]) {
-//        User* currentUser = [UserManager getCurrentUser];
-//        [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[currentUser username]  password:[currentUser password]];
-    }
 
     NSString* path = [NSString stringWithFormat:@"%@%@", (self.specificUri == nil)? kURI : self.specificUri, self.path];
     self.isRunning = YES;
     
-//    self.requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
-
     self.requestOperation = [manager GET:path parameters:self.queryParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.isRunning = NO;
         
         NSArray* returnObject = (NSArray *)[self requestSuccessWithResponseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil]];
+        
+        NSString *responseString = [responseObject isKindOfClass:[NSString class]]?responseObject: [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",responseString);
         if (returnObject) {
             [self saveCache:returnObject];
         }

@@ -8,7 +8,6 @@
 
 #import "RutinasHoyViewController.h"
 #import "RutinaTableViewCell.h"
-#import "RutinaService.h"
 
 #define kCellIdentifier @"kCellIdentifierRutina"
 

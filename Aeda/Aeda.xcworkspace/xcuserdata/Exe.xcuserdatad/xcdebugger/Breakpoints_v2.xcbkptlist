@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Aeda/ResultadoRutina.m"
-            timestampString = "446320570.397116"
+            filePath = "Aeda/RutinaViewController.m"
+            timestampString = "446336277.698786"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "-initWithDictionary:"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-updateViews"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

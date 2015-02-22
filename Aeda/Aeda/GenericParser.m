@@ -19,6 +19,9 @@
 }
 
 - (void)parse:(id)responseObject {
+    if (![responseObject isKindOfClass:[NSDictionary class]] && ![responseObject isKindOfClass:[NSArray class]]) {
+        self.error = [NSError errorWithDomain:@"Could not parse" code:0 userInfo:nil];
+    }
     NSError *error = [self errorFromResponse:responseObject];
     if (error) {
         self.error = error;
