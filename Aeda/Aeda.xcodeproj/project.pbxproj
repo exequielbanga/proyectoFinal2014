@@ -27,6 +27,7 @@
 		F695548819E4A574009AA5A6 /* RutinaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F695548619E4A574009AA5A6 /* RutinaTableViewCell.m */; };
 		F695548919E4A574009AA5A6 /* RutinaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F695548719E4A574009AA5A6 /* RutinaTableViewCell.xib */; };
 		F695549019E4A890009AA5A6 /* SesionRutina.m in Sources */ = {isa = PBXBuildFile; fileRef = F695548F19E4A890009AA5A6 /* SesionRutina.m */; };
+		F69C719F1A9D193C001B53FE /* RutinaEnProgreso.m in Sources */ = {isa = PBXBuildFile; fileRef = F69C719E1A9D193C001B53FE /* RutinaEnProgreso.m */; };
 		F6A23C3419E4A2970099F0A1 /* MisRutinasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A23C3219E4A2970099F0A1 /* MisRutinasViewController.m */; };
 		F6A23C3519E4A2970099F0A1 /* MisRutinasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A23C3319E4A2970099F0A1 /* MisRutinasViewController.xib */; };
 		F6A23C3919E4A4B20099F0A1 /* RutinasListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A23C3719E4A4B20099F0A1 /* RutinasListViewController.m */; };
@@ -154,6 +155,8 @@
 		F695548719E4A574009AA5A6 /* RutinaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RutinaTableViewCell.xib; sourceTree = "<group>"; };
 		F695548E19E4A890009AA5A6 /* SesionRutina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SesionRutina.h; sourceTree = "<group>"; };
 		F695548F19E4A890009AA5A6 /* SesionRutina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SesionRutina.m; sourceTree = "<group>"; };
+		F69C719D1A9D193C001B53FE /* RutinaEnProgreso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RutinaEnProgreso.h; sourceTree = "<group>"; };
+		F69C719E1A9D193C001B53FE /* RutinaEnProgreso.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RutinaEnProgreso.m; sourceTree = "<group>"; };
 		F6A23C3119E4A2970099F0A1 /* MisRutinasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MisRutinasViewController.h; sourceTree = "<group>"; };
 		F6A23C3219E4A2970099F0A1 /* MisRutinasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MisRutinasViewController.m; sourceTree = "<group>"; };
 		F6A23C3319E4A2970099F0A1 /* MisRutinasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MisRutinasViewController.xib; sourceTree = "<group>"; };
@@ -549,6 +552,8 @@
 				F6C2E49A19E18CE000538EF7 /* Services */,
 				F6C2E48E19E18A6500538EF7 /* User.h */,
 				F6C2E48F19E18A6500538EF7 /* User.m */,
+				F69C719D1A9D193C001B53FE /* RutinaEnProgreso.h */,
+				F69C719E1A9D193C001B53FE /* RutinaEnProgreso.m */,
 				F6CB387019E1CD9800CA1A7D /* ResultadoRutina.h */,
 				F6CB387119E1CD9800CA1A7D /* ResultadoRutina.m */,
 				F6CB387319E1CDA500CA1A7D /* Rutina.h */,
@@ -912,6 +917,7 @@
 				F66ACDC619E4AFBC00DF52D8 /* RutinasListByDayViewController.m in Sources */,
 				F6C2E47419E189E100538EF7 /* UIColor+ALColor.m in Sources */,
 				F63F414019E5832600F5E02B /* ALFillButton.m in Sources */,
+				F69C719F1A9D193C001B53FE /* RutinaEnProgreso.m in Sources */,
 				F6472F781A990BFA00BE92BF /* RutinaParser.m in Sources */,
 				F63F413F19E5832600F5E02B /* ALStrokeButton.m in Sources */,
 				F6C2E48C19E18A4F00538EF7 /* UserManager.m in Sources */,

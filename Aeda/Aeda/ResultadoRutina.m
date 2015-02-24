@@ -11,15 +11,25 @@
 
 @implementation ResultadoRutina
 
+- (NSDictionary *)mappingDictionary{
+    NSMutableDictionary *dictionary = [NSMutableDictionary new];
+    [dictionary addEntriesFromDictionary:[super mappingDictionary]];
+    [dictionary addEntriesFromDictionary:@{
+                                           @"Ejercicios":@"ejerciciosFromArray"
+                                           }];
+    return dictionary;
+}
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary{
     self = [super initWithDictionary:dictionary];
+    
     return self;
 }
 
 - (instancetype)init{
     self = [super init];
     if (self) {
-        self.resultadoEjercicios = [NSMutableArray new];
+        self.ejercicios = [NSMutableArray new];
     }
     return self;
 }
@@ -36,10 +46,11 @@
         self.usuarioRutinas = [rutina.usuarioRutinas copy];
         self.resultado = 0;
         
-        for (Ejercicio *ejercicio in self.ejercicios) {
-            ResultadoEjercicio *resultadoEjercicio = [[ResultadoEjercicio alloc] initWithEjercicio:ejercicio];
-            [self.resultadoEjercicios addObject:resultadoEjercicio];
-        }
+//        for (Ejercicio *ejercicio in self.ejercicios) {
+//            ResultadoEjercicio *resultadoEjercicio = [[ResultadoEjercicio alloc] initWithEjercicio:ejercicio];
+//            [self.ejercicios addObject:resultadoEjercicio];
+//        }
+        self.ejercicios = [[rutina ejercicios]copy];
     }
     return self;
 }
@@ -60,5 +71,11 @@
     return result;
 }
 
+- (void)setEjerciciosFromArray:(NSArray *)array{
+    self.ejercicios = [NSMutableArray new];
+    for (NSDictionary *dict in array) {
+        [self.ejercicios addObject:[[Ejercicio alloc]initWithDictionary:dict]];
+    }
+}
 
 @end

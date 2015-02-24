@@ -58,7 +58,7 @@
     self.ejercicioCompletadoView.hidden = !ejercicioCompletado;
 }
 
-- (void)setRutina:(ResultadoRutina *)rutina{
+- (void)setRutina:(RutinaEnProgreso *)rutina{
     _rutina = rutina;
     [self pausa];
     [self updateViews];
@@ -177,7 +177,7 @@
 
 - (ResultadoEjercicio *)resultadoEjercicioDe:(Ejercicio *)ejercicio{
     for (ResultadoEjercicio *resultadoEjercicio in self.rutina.resultadoEjercicios) {
-        if ([resultadoEjercicio.nombre isEqualToString:ejercicio.nombre]) {
+        if ([resultadoEjercicio.idEjercicio isEqualToString:ejercicio.idEjercicio]) {
             return resultadoEjercicio;
         }
     }
@@ -188,11 +188,11 @@
     ResultadoEjercicio *resultado = [[ResultadoEjercicio alloc] initWithEjercicio:self.ejercicioActual];
     //Lógica
     resultado.completado = YES;
-    [resultado.resultadoRepeticiones addObject:@([[StepCounter sharedStepCounter] countReps])];
+    resultado.repeticiones = @([[StepCounter sharedStepCounter] countReps]);
     //
     for (NSInteger i = 0; i < self.rutina.resultadoEjercicios.count; i++) {
         ResultadoEjercicio *resultadoEjercicio = self.rutina.resultadoEjercicios[i];
-        if ([resultadoEjercicio.nombre isEqualToString:self.ejercicioActual.nombre]) {
+        if ([resultadoEjercicio.idEjercicio isEqualToString:self.ejercicioActual.idEjercicio]) {
             [self.rutina.resultadoEjercicios replaceObjectAtIndex:i withObject:resultado];
             break;
         }

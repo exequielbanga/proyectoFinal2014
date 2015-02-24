@@ -7,12 +7,15 @@
 //
 
 #import "Ejercicio.h"
+#import "ResultadoEjercicio.h"
 
 @implementation Ejercicio
 
 - (NSDictionary *)mappingDictionary{
     return @{
              @"descripcion":@"detalle",
+             @"id":@"idEjercicio",
+             @"HistorialEjercicios":@"historialEjerciciosFromArray",
              };
 }
 
@@ -30,5 +33,20 @@
     self.tiemposEntreRepeticiones = [NSArray arrayWithArray:pausas];
 }
 
+- (void)setHistorialEjerciciosFromArray:(NSArray *)array{
+    self.historialEjercicios = [NSMutableArray new];
+    for (NSDictionary *dict in array) {
+        ResultadoEjercicio *resultado = [[ResultadoEjercicio alloc]initWithDictionary:dict];
+        resultado.idEjercicio = self.idEjercicio;
+        [self.historialEjercicios addObject:resultado];
+    }
+}
+
+- (void)setIdEjercicio:(NSString *)idEjercicio{
+    _idEjercicio = idEjercicio;
+    for (ResultadoEjercicio *resultado in self.historialEjercicios) {
+        resultado.idEjercicio = self.idEjercicio;
+    }
+}
 
 @end

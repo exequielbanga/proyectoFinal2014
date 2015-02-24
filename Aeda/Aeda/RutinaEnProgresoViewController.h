@@ -7,10 +7,10 @@
 //
 
 #import "ALViewController.h"
-#import "ResultadoRutina.h"
+#import "RutinaEnProgreso.h"
 #import "Ejercicio.h"
 
 @interface RutinaEnProgresoViewController : ALViewController
-@property(nonatomic,strong)ResultadoRutina *rutina;
+@property(nonatomic,strong)RutinaEnProgreso *rutina;
 @property(nonatomic,strong)Ejercicio *ejercicioActual;
 @end

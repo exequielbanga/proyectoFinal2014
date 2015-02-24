@@ -22,7 +22,7 @@
 @property(nonatomic,strong)IBOutlet UILabel *detalle;
 @property(nonatomic,strong)IBOutlet UIScrollView *scrollView;
 
-@property(nonatomic,strong)ResultadoRutina *resultadoRutina;
+@property(nonatomic,strong)RutinaEnProgreso *rutinaEnProgreso;
 @end
 
 @implementation RutinaViewController
@@ -35,7 +35,7 @@
 - (void)callService{
     [[EjerciciosRutinaService new] getEjerciciosForRutina:self.rutina WithBlock:^(NSArray *response,NSError *error){
         if (!error) {
-            self.rutina.ejercicios = response;
+            self.rutina.ejercicios = [NSMutableArray arrayWithArray:response];
             [self updateViews];
         }
     }];
@@ -48,11 +48,11 @@
 }
 
 - (void)setRutina:(Rutina *)rutina{
-    self.resultadoRutina = [[ResultadoRutina alloc] initWithRutina:rutina];
+    self.rutinaEnProgreso = [[RutinaEnProgreso alloc] initWithRutina:rutina];
     [self updateViews];
 }
 - (Rutina *)rutina{
-    return self.resultadoRutina;
+    return self.rutinaEnProgreso;
 }
 
 - (void)updateViews{
@@ -81,7 +81,7 @@
 
 - (void)ejercicioView:(EjercicioView *)view wantStartEjercicio:(Ejercicio *)ejercicio{
     RutinaEnProgresoViewController *viewController = [[RutinaEnProgresoViewController alloc]initWithNibName:@"RutinaEnProgresoViewController" bundle:nil];
-    viewController.rutina = self.resultadoRutina;
+    viewController.rutina = self.rutinaEnProgreso;
     viewController.ejercicioActual = ejercicio;
     [self.navigationController pushViewController:viewController animated:YES];
 }

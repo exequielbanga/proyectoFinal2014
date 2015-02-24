@@ -20,7 +20,7 @@
 }
 
 - (void)getResultadoRutinasWithBlock:(ServiceBlock)block{
-    self.path = @"HistorialEjercicios.json";
+    self.path = @"HistorialEjercicioUsuario.json";
     [self requestWithServiceBlock:block];
 }
 

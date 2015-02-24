@@ -64,7 +64,7 @@
     
     [self.vistasResultadosEjercicios removeAllObjects];
     CGFloat yOffset = self.detalle.frame.origin.y + self.detalle.frame.size.height + kYOffset;
-    for (ResultadoEjercicio *resultadoEjercicio in self.resultadoRutina.resultadoEjercicios) {
+    for (ResultadoEjercicio *resultadoEjercicio in self.resultadoRutina.ejercicios) {
         ResultadoEjercicioView *vista = [[ResultadoEjercicioView alloc] initWithFrame:CGRectMake(0, yOffset, self.scrollView.frame.size.width, kEjercicioViewHeight)];
         yOffset = vista.frame.origin.y + vista.frame.size.height + kYOffset;
         [self.vistasResultadosEjercicios addObject:vista];

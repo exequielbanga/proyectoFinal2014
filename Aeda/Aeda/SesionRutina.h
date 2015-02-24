@@ -27,8 +27,6 @@ typedef enum{
 
 - (instancetype)initWithSesionRutinaDia:(SesionRutinaDia)dia hora:(NSString *)hora;
 
-- (instancetype)initMock;
-
 - (NSComparisonResult)compare:(SesionRutina *)otraRutina;
 
 @end

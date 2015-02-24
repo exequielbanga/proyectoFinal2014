@@ -12,12 +12,16 @@
 #define kTolerancia .2;
 
 @interface Ejercicio : AEDAModel
+@property(nonatomic,strong)NSString         *idEjercicio;
 @property(nonatomic,strong)NSString         *nombre;
 @property(nonatomic,strong)NSString         *detalle;
 @property(nonatomic,assign)NSTimeInterval   tiempo;
 
 @property(nonatomic,strong)NSArray          *repeticiones;
 @property(nonatomic,strong)NSArray          *tiemposEntreRepeticiones;
+
+@property(nonatomic,strong)NSMutableArray   *historialEjercicios;
+
 
 //Un array con los pesos para cada repetición
 @property(nonatomic,strong)NSArray          *pesos;

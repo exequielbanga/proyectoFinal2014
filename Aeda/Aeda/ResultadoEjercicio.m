@@ -10,26 +10,20 @@
 
 @implementation ResultadoEjercicio
 
-- (instancetype)init{
-    self = [super init];
-    if (self) {
-        self.completado = NO;
-        self.resultadoRepeticiones = [NSMutableArray new];
-        self.resultadoTiemposEntreRepeticiones = [NSMutableArray new];
-        self.resultadoPesos = [NSMutableArray new];
-    }
-    return self;
+- (NSDictionary *)mappingDictionary{
+    return @{
+             @"id":@"idEjercicio",
+             @"fecha_inicio":@"fecha",
+             @"tiempo_ejercicio":@"tiempoEjercicio",
+             @"tiempo_pausa":@"tiempoPausa",
+             };
 }
 
 - (instancetype)initWithEjercicio:(Ejercicio *)ejercicio{
     self = [self init];
     if (self) {
-        self.nombre = [ejercicio.nombre copy];
-        self.detalle = [ejercicio.detalle copy];
-        self.tiempo = ejercicio.tiempo;
-        self.repeticiones = [ejercicio.repeticiones copy];
-        self.tiemposEntreRepeticiones = [ejercicio.tiemposEntreRepeticiones copy];
-        self.pesos = [ejercicio.pesos copy];
+        self.ejercicio = ejercicio;
+        self.idEjercicio = [ejercicio.idEjercicio copy];
     }
     return self;
 }
