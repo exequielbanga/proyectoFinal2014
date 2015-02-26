@@ -8,6 +8,7 @@
 
 #import "ResultadoRutinaViewController.h"
 #import "ResultadoEjercicioView.h"
+#import "ResultadoSerie.h"
 #import "UIColor+ALColor.h"
 
 #define kYOffset 5
@@ -64,7 +65,10 @@
     
     [self.vistasResultadosEjercicios removeAllObjects];
     CGFloat yOffset = self.detalle.frame.origin.y + self.detalle.frame.size.height + kYOffset;
-    for (ResultadoEjercicio *resultadoEjercicio in self.resultadoRutina.ejercicios) {
+    for (Ejercicio *ejercicio in self.resultadoRutina.ejercicios) {
+        
+        ResultadoEjercicio *resultadoEjercicio = [[ResultadoEjercicio alloc] initWithEjercicio:ejercicio];
+        
         ResultadoEjercicioView *vista = [[ResultadoEjercicioView alloc] initWithFrame:CGRectMake(0, yOffset, self.scrollView.frame.size.width, kEjercicioViewHeight)];
         yOffset = vista.frame.origin.y + vista.frame.size.height + kYOffset;
         [self.vistasResultadosEjercicios addObject:vista];

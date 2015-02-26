@@ -7,23 +7,54 @@
 //
 
 #import "ResultadoEjercicio.h"
+#import "ResultadoSerie.h"
+
 
 @implementation ResultadoEjercicio
 
-- (NSDictionary *)mappingDictionary{
-    return @{
-             @"id":@"idEjercicio",
-             @"fecha_inicio":@"fecha",
-             @"tiempo_ejercicio":@"tiempoEjercicio",
-             @"tiempo_pausa":@"tiempoPausa",
-             };
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.completado = NO;
+        self.resultadoRepeticiones = [NSMutableArray new];
+        self.resultadoTiemposEntreRepeticiones = [NSMutableArray new];
+        self.resultadoPesos = [NSMutableArray new];
+    }
+    return self;
 }
+
+//- (instancetype)initMock{
+//    self = [super initMock];
+//    if (self) {
+//        self.resultadoTiempo = 323;
+//        self.resultadoRepeticiones = [[NSMutableArray alloc] initWithObjects:@15,@12,@8, nil];
+//        self.resultadoTiemposEntreRepeticiones = [[NSMutableArray alloc] initWithObjects:@34,@49, nil];
+//        self.resultadoPesos = [[NSMutableArray alloc] initWithObjects:@2,@2,@3, nil];
+//    }
+//    return self;
+//}
 
 - (instancetype)initWithEjercicio:(Ejercicio *)ejercicio{
     self = [self init];
     if (self) {
-        self.ejercicio = ejercicio;
-        self.idEjercicio = [ejercicio.idEjercicio copy];
+        self.nombre = [ejercicio.nombre copy];
+        self.detalle = [ejercicio.detalle copy];
+        self.tiempo = ejercicio.tiempo;
+        self.repeticiones = [ejercicio.repeticiones copy];
+        self.tiemposEntreRepeticiones = [ejercicio.tiemposEntreRepeticiones copy];
+        self.pesos = [ejercicio.pesos copy];
+        
+
+        self.resultadoRepeticiones = [NSMutableArray new];
+        self.resultadoTiemposEntreRepeticiones = [NSMutableArray new];
+        self.resultadoPesos = [NSMutableArray new];
+        
+        for (ResultadoSerie *resultadoSerie in  ejercicio.historialEjercicios) {
+            [self.resultadoRepeticiones addObject:resultadoSerie.repeticiones];
+            [self.resultadoTiemposEntreRepeticiones addObject:resultadoSerie.tiempoPausa];
+            [self.resultadoPesos addObject:@(10)];
+        }
+        
     }
     return self;
 }

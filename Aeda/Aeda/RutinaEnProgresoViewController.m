@@ -10,7 +10,7 @@
 #import "HeartRate.h"
 #import "StepCounter.h"
 #import "HeartRate.h"
-#import "ResultadoEjercicio.h"
+#import "ResultadoSerie.h"
 
 @interface RutinaEnProgresoViewController ()<StepCounterDelegate,UIAlertViewDelegate>
 @property(nonatomic,strong)IBOutlet UILabel *nombreEjercicio;
@@ -76,7 +76,7 @@
     self.nombreEjercicio.text = self.ejercicioActual.nombre;
     self.ejercicioCompletado = NO;
     
-    ResultadoEjercicio *resultadoEjercicio = [self resultadoEjercicioDe:self.ejercicioActual];
+    ResultadoSerie *resultadoEjercicio = [self resultadoEjercicioDe:self.ejercicioActual];
     self.ejercicioCompletado = resultadoEjercicio.completado;
 }
 
@@ -175,8 +175,8 @@
     }
 }
 
-- (ResultadoEjercicio *)resultadoEjercicioDe:(Ejercicio *)ejercicio{
-    for (ResultadoEjercicio *resultadoEjercicio in self.rutina.resultadoEjercicios) {
+- (ResultadoSerie *)resultadoEjercicioDe:(Ejercicio *)ejercicio{
+    for (ResultadoSerie *resultadoEjercicio in self.rutina.resultadoEjercicios) {
         if ([resultadoEjercicio.idEjercicio isEqualToString:ejercicio.idEjercicio]) {
             return resultadoEjercicio;
         }
@@ -185,13 +185,13 @@
 }
 
 - (void)generarResultadoEjercicio{
-    ResultadoEjercicio *resultado = [[ResultadoEjercicio alloc] initWithEjercicio:self.ejercicioActual];
+    ResultadoSerie *resultado = [[ResultadoSerie alloc] initWithEjercicio:self.ejercicioActual];
     //Lógica
     resultado.completado = YES;
     resultado.repeticiones = @([[StepCounter sharedStepCounter] countReps]);
     //
     for (NSInteger i = 0; i < self.rutina.resultadoEjercicios.count; i++) {
-        ResultadoEjercicio *resultadoEjercicio = self.rutina.resultadoEjercicios[i];
+        ResultadoSerie *resultadoEjercicio = self.rutina.resultadoEjercicios[i];
         if ([resultadoEjercicio.idEjercicio isEqualToString:self.ejercicioActual.idEjercicio]) {
             [self.rutina.resultadoEjercicios replaceObjectAtIndex:i withObject:resultado];
             break;

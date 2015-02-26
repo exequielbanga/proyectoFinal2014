@@ -7,7 +7,7 @@
 //
 
 #import "RutinaEnProgreso.h"
-#import "ResultadoEjercicio.h"
+#import "ResultadoSerie.h"
 
 @implementation RutinaEnProgreso
 
@@ -23,7 +23,7 @@
         self.usuarioRutinas = [rutina.usuarioRutinas copy];
         
         for (Ejercicio *ejercicio in self.ejercicios) {
-            ResultadoEjercicio *resultadoEjercicio = [[ResultadoEjercicio alloc] initWithEjercicio:ejercicio];
+            ResultadoSerie *resultadoEjercicio = [[ResultadoSerie alloc] initWithEjercicio:ejercicio];
             [self.ejercicios addObject:resultadoEjercicio];
         }
     }

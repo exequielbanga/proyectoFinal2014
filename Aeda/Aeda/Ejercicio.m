@@ -7,7 +7,7 @@
 //
 
 #import "Ejercicio.h"
-#import "ResultadoEjercicio.h"
+#import "ResultadoSerie.h"
 
 @implementation Ejercicio
 
@@ -36,7 +36,7 @@
 - (void)setHistorialEjerciciosFromArray:(NSArray *)array{
     self.historialEjercicios = [NSMutableArray new];
     for (NSDictionary *dict in array) {
-        ResultadoEjercicio *resultado = [[ResultadoEjercicio alloc]initWithDictionary:dict];
+        ResultadoSerie *resultado = [[ResultadoSerie alloc]initWithDictionary:dict];
         resultado.idEjercicio = self.idEjercicio;
         [self.historialEjercicios addObject:resultado];
     }
@@ -44,7 +44,7 @@
 
 - (void)setIdEjercicio:(NSString *)idEjercicio{
     _idEjercicio = idEjercicio;
-    for (ResultadoEjercicio *resultado in self.historialEjercicios) {
+    for (ResultadoSerie *resultado in self.historialEjercicios) {
         resultado.idEjercicio = self.idEjercicio;
     }
 }

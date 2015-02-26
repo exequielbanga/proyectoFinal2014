@@ -8,7 +8,7 @@
 
 #import "RutinaViewController.h"
 #import "ResultadoRutina.h"
-#import "ResultadoEjercicio.h"
+#import "ResultadoSerie.h"
 #import "EjercicioView.h"
 #import "RutinaEnProgresoViewController.h"
 #import "EjerciciosRutinaService.h"
