@@ -15,7 +15,8 @@
     NSMutableDictionary *dictionary = [NSMutableDictionary new];
     [dictionary addEntriesFromDictionary:[super mappingDictionary]];
     [dictionary addEntriesFromDictionary:@{
-                                           @"Ejercicios":@"ejerciciosFromArray"
+                                           @"Ejercicios":@"ejerciciosFromArray",
+                                           @"fecha":@"fechaFromString"
                                            }];
     return dictionary;
 }
@@ -46,10 +47,6 @@
         self.usuarioRutinas = [rutina.usuarioRutinas copy];
         self.resultado = 0;
         
-//        for (Ejercicio *ejercicio in self.ejercicios) {
-//            ResultadoEjercicio *resultadoEjercicio = [[ResultadoEjercicio alloc] initWithEjercicio:ejercicio];
-//            [self.ejercicios addObject:resultadoEjercicio];
-//        }
         self.ejercicios = [[rutina ejercicios]copy];
     }
     return self;
@@ -76,6 +73,12 @@
     for (NSDictionary *dict in array) {
         [self.ejercicios addObject:[[Ejercicio alloc]initWithDictionary:dict]];
     }
+}
+
+- (void)setFechaFromString:(NSString *)string{
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    formatter.dateFormat = @"YYYY-MM-dd";
+    self.fecha = [formatter dateFromString:string];
 }
 
 @end
