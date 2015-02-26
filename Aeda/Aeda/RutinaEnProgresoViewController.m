@@ -20,6 +20,7 @@
 @property(nonatomic,strong)IBOutlet UIImageView *ejercicioCompletadoView;
 @property(nonatomic,strong)IBOutlet UILabel *countdownLabel;
 @property(nonatomic,strong)IBOutlet UIButton *pauseStartButton;
+@property(nonatomic,assign)NSUInteger actualIndex;
 
 @property(nonatomic,strong)NSNumber *elementoActual;//Puede ser una serie o una pausa entre series
 
@@ -74,10 +75,10 @@
 #pragma mark - Views
 - (void)updateViews{
     self.nombreEjercicio.text = self.ejercicioActual.nombre;
-    self.ejercicioCompletado = NO;
+//    self.ejercicioCompletado = NO;
     
-    ResultadoSerie *resultadoEjercicio = [self resultadoEjercicioDe:self.ejercicioActual];
-    self.ejercicioCompletado = resultadoEjercicio.completado;
+//    ResultadoSerie *resultadoEjercicio = [self resultadoEjercicioDe:self.ejercicioActual];
+    self.ejercicioCompletado = self.ejercicioActual.completado;
 }
 
 - (void)animarCorazon{
@@ -135,42 +136,45 @@
 - (void)stepCounterDidRecogniceStep:(StepCounter *)stepCounter{
     self.countReps.text = [NSString stringWithFormat:@"%lu",self.elementoActual.intValue - (unsigned long)stepCounter.countReps];
     if (self.elementoActual.intValue <= stepCounter.countReps) {
+        [stepCounter stop];
         [self avanzarElementoRepeticion];
     }
 }
 
 #pragma mark - Logic
 - (NSNumber *)siguienteRepeticion{
-    NSUInteger index = [self.ejercicioActual.repeticiones indexOfObject:self.elementoActual];
-    if (index == self.ejercicioActual.repeticiones.count) {
+    NSUInteger index = self.actualIndex/2;
+    if (index == NSNotFound || index >= self.ejercicioActual.repeticiones.count) {
         return nil;
     }
-    return self.ejercicioActual.repeticiones[index+1];
+    return self.ejercicioActual.repeticiones[index];
 }
 - (NSNumber *)siguienteTiempoEntreRepeticion{
-    NSUInteger index = [self.ejercicioActual.tiemposEntreRepeticiones indexOfObject:self.elementoActual];
-    if (index == self.ejercicioActual.tiemposEntreRepeticiones.count) {
+    NSUInteger index = self.actualIndex/2;
+    if (index == NSNotFound || index >= self.ejercicioActual.tiemposEntreRepeticiones.count) {
         return nil;
     }
-    return self.ejercicioActual.tiemposEntreRepeticiones[index+1];
+    return self.ejercicioActual.tiemposEntreRepeticiones[index];
 }
 
+- (void)descanzo{
+    self.countdownLabel.text = [NSString stringWithFormat:@"%d",self.elementoActual.intValue];
+    [self avanzarElementoRepeticion];
+    [self startCountdown];
+}
 
 - (void)avanzarElementoRepeticion{
-    NSNumber *proximo;
+    self.actualIndex ++;
     if ([self.ejercicioActual.repeticiones containsObject:self.elementoActual]) {
-        proximo = [self siguienteTiempoEntreRepeticion];
-        if (proximo) {
-            [self stop];
+        self.elementoActual = [self siguienteTiempoEntreRepeticion];
+        if (self.elementoActual) {
+            [self descanzo];
         }
     }else{
-        proximo = [self siguienteRepeticion];
-        if (!proximo) {
-            [self stop];
-        }
+        self.elementoActual = [self siguienteRepeticion];
     }
     
-    if (!proximo) {
+    if (!self.elementoActual) {
         [self stop];
     }
 }
@@ -185,25 +189,29 @@
 }
 
 - (void)generarResultadoEjercicio{
-    ResultadoSerie *resultado = [[ResultadoSerie alloc] initWithEjercicio:self.ejercicioActual];
-    //Lógica
-    resultado.completado = YES;
-    resultado.repeticiones = @([[StepCounter sharedStepCounter] countReps]);
-    //
-    for (NSInteger i = 0; i < self.rutina.resultadoEjercicios.count; i++) {
-        ResultadoSerie *resultadoEjercicio = self.rutina.resultadoEjercicios[i];
-        if ([resultadoEjercicio.idEjercicio isEqualToString:self.ejercicioActual.idEjercicio]) {
-            [self.rutina.resultadoEjercicios replaceObjectAtIndex:i withObject:resultado];
-            break;
-        }
-    }
+    self.ejercicioActual.completado = YES;
+//    ResultadoSerie *resultado = [[ResultadoSerie alloc] initWithEjercicio:self.ejercicioActual];
+//    //Lógica
+//    resultado.completado = YES;
+//    resultado.repeticiones = @([[StepCounter sharedStepCounter] countReps]);
+//    //
+//    for (NSInteger i = 0; i < self.rutina.resultadoEjercicios.count; i++) {
+//        ResultadoSerie *resultadoEjercicio = self.rutina.resultadoEjercicios[i];
+//        if ([resultadoEjercicio.idEjercicio isEqualToString:self.ejercicioActual.idEjercicio]) {
+//            [self.rutina.resultadoEjercicios replaceObjectAtIndex:i withObject:resultado];
+//            break;
+//        }
+//    }
 }
 
 - (void)countdownFinish{
+    self.countdownLabel.text = [NSString stringWithFormat:@"%d",self.elementoActual.intValue];
+    self.countReps.text = [NSString stringWithFormat:@"%d",self.elementoActual.intValue];
     [[StepCounter sharedStepCounter] start];
 }
 
 - (void)comenzarEjercicio{
+    self.actualIndex = 0;
     [self.pauseStartButton removeTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
     [self.pauseStartButton addTarget:self action:@selector(pause:) forControlEvents:UIControlEventTouchUpInside];
     [self.pauseStartButton setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];

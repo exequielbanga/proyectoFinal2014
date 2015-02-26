@@ -11,6 +11,14 @@
 
 @implementation Ejercicio
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary{
+    self = [super initWithDictionary:dictionary];
+    if (self) {
+        self.completado = NO;
+    }
+    return self;
+}
+
 - (NSDictionary *)mappingDictionary{
     return @{
              @"descripcion":@"detalle",
@@ -26,9 +34,10 @@
     }
     self.repeticiones = [NSArray arrayWithArray:repeticiones];
 
-    NSMutableArray *pausas = [NSMutableArray arrayWithCapacity:[ejercicioRutina[@"series"]integerValue]];
-    for (NSInteger i = 0; i < [ejercicioRutina[@"series"]integerValue]; i++) {
-        [pausas addObject:@([ejercicioRutina[@"tiempo_pausa"]integerValue])];
+    NSMutableArray *pausas = [NSMutableArray arrayWithCapacity:[ejercicioRutina[@"series"]integerValue]-1];
+    for (NSInteger i = 1; i < [ejercicioRutina[@"series"]integerValue]; i++) {
+//TOTO        [pausas addObject:@([ejercicioRutina[@"tiempo_pausa"]integerValue])];
+        [pausas addObject:@(3)];
     }
     self.tiemposEntreRepeticiones = [NSArray arrayWithArray:pausas];
 }

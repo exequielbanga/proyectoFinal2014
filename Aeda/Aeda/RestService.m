@@ -91,13 +91,16 @@
         
         NSArray* returnObject = (NSArray *)[self requestSuccessWithResponseObject:[NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil]];
         
-        NSString *responseString = [responseObject isKindOfClass:[NSString class]]?responseObject: [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"%@",responseString);
-        if (returnObject) {
-            [self saveCache:returnObject];
-        }
+//        NSString *responseString = [responseObject isKindOfClass:[NSString class]]?responseObject: [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        if (returnObject) {
+//            [self saveCache:returnObject];
+//        }
         if (serviceBlock) {
-            serviceBlock(returnObject, nil);
+            if ([returnObject isKindOfClass:[NSError class]]) {
+                serviceBlock(nil, (NSError *)returnObject);
+            }else{
+                serviceBlock(returnObject, nil);
+            }
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         self.isRunning = NO;

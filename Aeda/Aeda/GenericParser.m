@@ -58,9 +58,10 @@
 
 - (NSError *)errorFromResponse:(id)responseObject{
     if ([responseObject isKindOfClass:[NSDictionary class]]) {
-        NSDictionary *fault = [(NSDictionary *)responseObject valueForKeyPath:@"path.to.error"];
-        if (fault) {
-            // setear el error
+        NSDictionary *dict = (NSDictionary *)responseObject;
+        if ([dict[@"status"] isEqualToString:@"error"]) {
+            self.error = [[NSError alloc]initWithDomain:@"" code:0 userInfo:
+  @{NSLocalizedDescriptionKey:dict[@"message"]}];
         }
     }
     return self.error;

@@ -22,6 +22,9 @@
 
 @property(nonatomic,strong)NSMutableArray   *historialEjercicios;
 
+//Negrada, no va aca
+@property(nonatomic,assign)BOOL completado;
+
 
 //Un array con los pesos para cada repetición
 @property(nonatomic,strong)NSArray          *pesos;
