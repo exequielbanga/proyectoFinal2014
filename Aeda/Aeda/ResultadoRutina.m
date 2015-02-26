@@ -8,6 +8,7 @@
 
 #import "ResultadoRutina.h"
 #import "ResultadoSerie.h"
+#import "ResultadoEjercicio.h"
 
 @implementation ResultadoRutina
 
@@ -79,6 +80,28 @@
     NSDateFormatter *formatter = [NSDateFormatter new];
     formatter.dateFormat = @"YYYY-MM-dd";
     self.fecha = [formatter dateFromString:string];
+}
+
+- (CGFloat)resultado{
+    CGFloat resultadoMaximo = 0;
+    for (Ejercicio *ejercicio in self.ejercicios) {
+        CGFloat resultadoEjercicio = 0;
+        for (NSNumber *repeticion in ejercicio.repeticiones) {
+            resultadoEjercicio += [repeticion floatValue];
+        }
+        resultadoMaximo += resultadoEjercicio;
+    }
+    
+    CGFloat resultadoReal = 0;
+    for (Ejercicio *ejercicio in self.ejercicios) {
+        ResultadoEjercicio *resultadoEjercicio = [[ResultadoEjercicio alloc] initWithEjercicio:ejercicio];
+        CGFloat resultadoSeries = 0;
+        for (NSNumber *repeticion in resultadoEjercicio.resultadoRepeticiones) {
+            resultadoSeries += [repeticion floatValue];
+        }
+        resultadoReal += resultadoSeries;
+    }
+    return resultadoReal/resultadoMaximo;
 }
 
 @end
